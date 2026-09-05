@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260905_4">
+  <link rel="stylesheet" href="styles.css?v=20260905_5">
 
   <!-- Embedded Critical CSS for PIN Security Overlay -->
   <style>
@@ -219,6 +219,7 @@
   <!-- ========================================================================
        SIDEBAR NAVIGATION (Fixed Left)
        ======================================================================== -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <aside class="sidebar">
     <!-- Brand / Company Logo -->
     <div class="brand">
@@ -229,6 +230,9 @@
         <h1 class="brand-title">Pharma Alliance</h1>
         <div class="brand-subtitle">Executive Dashboard</div>
       </div>
+      <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
 
     <hr class="sidebar-divider">
@@ -316,6 +320,9 @@
     <!-- Top Header Bar -->
     <header class="top-header">
       <div class="header-left">
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Sidebar Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <div class="header-entity-logo" id="headerEntityLogo">
           <img src="assets/logo_ksd.png" alt="KSD Pharma Logo" class="header-logo-img" id="headerLogoImg">
         </div>
@@ -1090,7 +1097,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="data.js?v=20260905_4"></script>
-  <script src="app.js?v=20260905_4"></script>
+  <script src="data.js?v=20260905_5"></script>
+  <script src="app.js?v=20260905_5"></script>
 </body>
 </html>
