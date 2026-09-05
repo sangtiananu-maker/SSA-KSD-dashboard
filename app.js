@@ -922,14 +922,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderSSATab = () => {
     const viewInc = document.getElementById('view_ssa_incentive_report');
     const viewAll = document.getElementById('view_ssa_all_pac_report');
+    const kpiValTitle = document.getElementById('kpi_ssa_title_val');
 
     if (state.ssaScope === 'all') {
       if (viewInc) viewInc.style.display = 'none';
       if (viewAll) viewAll.style.display = 'block';
+      if (kpiValTitle) kpiValTitle.textContent = 'ยอดขายรวม (มูลค่า)';
       renderSSAAllPacReport();
     } else {
       if (viewInc) viewInc.style.display = 'block';
       if (viewAll) viewAll.style.display = 'none';
+      if (kpiValTitle) kpiValTitle.textContent = 'ค่าเชียร์รวม (มูลค่า)';
       renderSSAIncentiveReport();
     }
   };
