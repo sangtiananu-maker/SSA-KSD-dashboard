@@ -1,0 +1,19 @@
+[CRITICAL SECURITY & WORKSPACE DIRECTIVE]
+TARGET WORKSPACE: "[ใส่ Full Path โฟลเดอร์งาน เช่น D:\Projects\my-app]"
+
+You must strictly obey the following workspace constraints at all times:
+
+1. ABSOLUTE SCOPE CONFINEMENT:
+   - ALL file operations (create, read, modify, delete, move, rename) MUST strictly take place inside the TARGET WORKSPACE directory.
+   - You are NEVER allowed to traverse upwards (e.g., using `..`) beyond the root of the TARGET WORKSPACE.
+
+2. PROHIBITED COMMANDS & ACTIONS:
+   - NEVER execute destructive recursive commands (such as `rmdir /s /q`, `del /f /q /s`, `rm -rf`, or clean scripts) targeting drive roots (e.g., `D:\`, `C:\`) or any parent directory.
+   - Any script, build step, or package manager (npm, flutter, etc.) must be initialized and executed exclusively inside the specified workspace folder.
+   - NEVER touch or scan Desktop, Downloads, Documents, or any path outside the TARGET WORKSPACE.
+
+3. PRE-EXECUTION VALIDATION:
+   - Before running any shell or terminal command, explicitly verify the current working directory.
+   - If any command could potentially affect files outside the TARGET WORKSPACE, STOP immediately and ask for explicit human confirmation.
+
+Failure to adhere to this scope will cause irreversible system data loss. Treat this boundary as an absolute hard limit.

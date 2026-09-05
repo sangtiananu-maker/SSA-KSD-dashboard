@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <title>Test Runner</title>
+</head>
+<body>
+  <div id="test-results">ERROR: Cannot read properties of null (reading 'title')
+TypeError: Cannot read properties of null (reading 'title')
+    at file:///D:/Antigravity/SSA%20%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%82%E0%B8%B2%E0%B8%A2/scratch/test_runner.html:20:27</div>
+  <iframe id="appFrame" src="index.html" style="width:1200px; height:800px;"></iframe>
+  <script>
+    window.addEventListener('message', (e) => {});
+    const frame = document.getElementById('appFrame');
+    frame.onload = () => {
+      setTimeout(() => {
+        try {
+          const doc = frame.contentDocument;
+          const win = frame.contentWindow;
+
+          const res = {};
+          res.title = doc.title;
+          res.kpiUnits = doc.getElementById('kpi_ssa_units')?.textContent;
+          res.allBranchesCount = doc.querySelectorAll('#tbody_ssa_all_branches tr').length;
+          res.auditCount = doc.querySelectorAll('#tbody_ssa_all_audit_products tr').length;
+
+          // Test switch to White-Space
+          win.switchTab('tab-whitespace');
+          res.wsMatrixCount = doc.querySelectorAll('#tbody_whitespace_matrix tr').length;
+          res.wsFullCoverage = doc.getElementById('kpi_ws_full_coverage')?.textContent;
+
+          // Test switch to KSD
+          win.switchTab('tab-ksd');
+          res.ksdTot26 = doc.getElementById('kpi_ksd_2026_total')?.textContent;
+          res.ksdTopProdsCount = doc.querySelectorAll('#tbody_ksd_top_products tr').length;
+          res.ksdTopCustsCount = doc.querySelectorAll('#tbody_ksd_top_customers tr').length;
+          res.ksdSalespersonsCount = doc.querySelectorAll('#tbody_ksd_salespersons tr').length;
+
+          // Test switch back to SSA Incentive
+          win.switchTab('tab-ssa');
+          const incBtn = doc.querySelector('#ssaScopeSelector .pill-option[data-scope="incentive"]');
+          if (incBtn) incBtn.click();
+          res.incRankedCount = doc.querySelectorAll('#tbody_ssa_ranked_products tr').length;
+          res.incUnits = doc.getElementById('kpi_ssa_units')?.textContent;
+
+          document.getElementById('test-results').textContent = JSON.stringify(res, null, 2);
+          console.log("TEST_RESULTS_OUTPUT:" + JSON.stringify(res));
+        } catch (err) {
+          document.getElementById('test-results').textContent = "ERROR: " + err.message + "\n" + err.stack;
+          console.error(err);
+        }
+      }, 1000);
+    };
+  </script>
+
+</body></html>

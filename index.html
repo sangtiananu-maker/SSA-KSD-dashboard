@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharma Alliance (PAC) - Executive Sales & Incentive Dashboard</title>
+  
+  <!-- Google Fonts: Kanit (Modern Thai Display) & Sarabun (Modern Thai Clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=20260905_2">
+
+  <!-- Embedded Critical CSS for PIN Security Overlay -->
+  <style>
+    .pin-lock-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9999999 !important;
+      background: radial-gradient(circle at center, rgba(17, 24, 39, 0.98) 0%, rgba(11, 15, 25, 1) 100%) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px !important;
+      transition: opacity 0.35s ease, visibility 0.35s ease !important;
+      box-sizing: border-box !important;
+    }
+    [data-theme="light"] .pin-lock-overlay {
+      background: radial-gradient(circle at center, rgba(248, 250, 252, 0.98) 0%, rgba(226, 232, 240, 1) 100%) !important;
+    }
+    .pin-lock-overlay.unlocked {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+    .pin-card {
+      width: 100% !important;
+      max-width: 440px !important;
+      background: #111827 !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+      border-radius: 20px !important;
+      padding: 36px 32px !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(25, 56, 109, 0.25) !important;
+      animation: pinCardSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+    }
+    [data-theme="light"] .pin-card {
+      background: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
+    }
+    @keyframes pinCardSlideUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .pin-icon-circle {
+      width: 68px !important;
+      height: 68px !important;
+      margin: 0 auto 18px auto !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, rgba(25, 56, 109, 0.3) 0%, rgba(126, 25, 87, 0.25) 100%) !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 28px !important;
+      color: #06b6d4 !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+    }
+    .pin-title {
+      font-family: 'Kanit', sans-serif !important;
+      font-size: 22px !important;
+      font-weight: 700 !important;
+      color: #f8fafc !important;
+      margin-bottom: 6px !important;
+    }
+    [data-theme="light"] .pin-title {
+      color: #0f172a !important;
+    }
+    .pin-subtitle {
+      font-size: 14px !important;
+      color: #06b6d4 !important;
+      line-height: 1.5 !important;
+      margin-bottom: 24px !important;
+      font-weight: 600 !important;
+    }
+    .pin-form {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 18px !important;
+      text-align: left !important;
+    }
+    .pin-label {
+      display: block !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: #cbd5e1 !important;
+      margin-bottom: 8px !important;
+    }
+    [data-theme="light"] .pin-label {
+      color: #334155 !important;
+    }
+    .pin-input-wrapper {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .pin-input {
+      width: 100% !important;
+      padding: 14px 48px 14px 18px !important;
+      background: #1f2937 !important;
+      border: 2px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 12px !important;
+      color: #f8fafc !important;
+      font-family: monospace, 'Kanit', sans-serif !important;
+      font-size: 22px !important;
+      letter-spacing: 6px !important;
+      text-align: center !important;
+      transition: all 0.25s ease !important;
+      outline: none !important;
+      box-sizing: border-box !important;
+    }
+    [data-theme="light"] .pin-input {
+      background: #f1f5f9 !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
+    .pin-input:focus {
+      border-color: #2b599f !important;
+      box-shadow: 0 0 0 4px rgba(43, 89, 159, 0.25) !important;
+      background: #111827 !important;
+    }
+    .pin-input.is-invalid {
+      border-color: #f43f5e !important;
+      animation: pinShake 0.4s ease !important;
+    }
+    @keyframes pinShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .pin-vis-btn {
+      position: absolute !important;
+      right: 12px !important;
+      background: none !important;
+      border: none !important;
+      color: #94a3b8 !important;
+      cursor: pointer !important;
+      padding: 8px !important;
+      font-size: 16px !important;
+      border-radius: 6px !important;
+      transition: all 0.25s ease !important;
+    }
+    .pin-vis-btn:hover { color: #f8fafc !important; }
+    [data-theme="light"] .pin-vis-btn:hover { color: #0f172a !important; }
+    .pin-error-msg {
+      display: none;
+      color: #f43f5e !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      margin-top: 6px !important;
+    }
+    .pin-submit-btn {
+      width: 100% !important;
+      padding: 14px !important;
+      background: linear-gradient(135deg, #2b599f 0%, #7e1957 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 12px !important;
+      font-family: 'Kanit', sans-serif !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      transition: all 0.25s ease !important;
+      box-shadow: 0 4px 14px rgba(25, 56, 109, 0.4) !important;
+      box-sizing: border-box !important;
+    }
+    .pin-submit-btn:hover {
+      filter: brightness(1.1) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 6px 20px rgba(126, 25, 87, 0.45) !important;
+    }
+    .pin-hint-text {
+      font-size: 11.5px !important;
+      color: #94a3b8 !important;
+      text-align: center !important;
+      line-height: 1.4 !important;
+      margin-top: 4px !important;
+    }
+  </style>
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- ApexCharts Library -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  
+  <!-- SheetJS for Client-side Excel/CSV Parsing & Export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       SIDEBAR NAVIGATION (Fixed Left)
+       ======================================================================== -->
+  <aside class="sidebar">
+    <!-- Brand / Company Logo -->
+    <div class="brand">
+      <div class="brand-logo-container">
+        <img src="assets/logo_pac.png" alt="Pharma Alliance (PAC) Logo" class="brand-logo-img">
+      </div>
+      <div class="brand-text">
+        <h1 class="brand-title">Pharma Alliance</h1>
+        <div class="brand-subtitle">Executive Dashboard</div>
+      </div>
+    </div>
+
+    <hr class="sidebar-divider">
+
+    <!-- Navigation Menu Items -->
+    <div class="nav-section-title">เมนูหลัก (Main Navigation)</div>
+    <ul class="nav-menu">
+      <li class="nav-item active nav-theme-ksd" data-tab="tab-ksd">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>ยอดขาย KSD (Sell-Out)</span>
+      </li>
+      <li class="nav-item nav-theme-ssa" data-tab="tab-ssa">
+        <i class="fa-solid fa-store"></i>
+        <span>ยอดขาย & ค่าเชียร์ SSA</span>
+      </li>
+      <li class="nav-item nav-theme-pac" data-tab="tab-whitespace">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>โอกาสสินค้ากลยุทธ์</span>
+      </li>
+    </ul>
+
+    <!-- Quick Controls in Sidebar -->
+    <div class="sidebar-controls">
+      <hr class="sidebar-divider">
+
+      <!-- Dark / Light Theme Toggle -->
+      <div class="toggle-wrapper">
+        <span class="control-label" style="margin-bottom: 0;">
+          <i class="fa-solid fa-circle-half-stroke"></i> ธีมสว่าง (Light Mode)
+        </span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       PIN CODE SECURITY OVERLAY (Requires PIN on every reload)
+       ======================================================================== -->
+  <div id="pinLockOverlay" class="pin-lock-overlay">
+    <div class="pin-card">
+      <div class="pin-card-header">
+        <div class="pin-icon-circle">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h2 class="pin-title">ยืนยันรหัสความปลอดภัย</h2>
+        <p class="pin-subtitle" style="font-size: 14.5px; font-weight: 600; color: var(--accent-secondary); margin-top: 4px;">
+          <i class="fa-solid fa-circle-question"></i> บริษัทของเราตั้งอยู่ที่ไหนเอ่ย?
+        </p>
+      </div>
+
+      <form id="pinForm" onsubmit="event.preventDefault();" class="pin-form">
+        <div class="pin-input-group">
+          <label for="pinInput" class="pin-label"><i class="fa-solid fa-key"></i> กรุณากรอกรหัส PIN:</label>
+          <div class="pin-input-wrapper">
+            <input type="password" id="pinInput" class="pin-input" maxlength="12" placeholder="••••" autocomplete="off" autofocus>
+            <button type="button" id="pinToggleVis" class="pin-vis-btn" title="ดูรหัส">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <div id="pinErrorMsg" class="pin-error-msg">
+            <i class="fa-solid fa-circle-exclamation"></i> รหัส PIN ไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง
+          </div>
+        </div>
+
+        <button type="submit" id="pinSubmitBtn" class="pin-submit-btn">
+          <i class="fa-solid fa-lock-open"></i> เข้าสู่ระบบแดชบอร์ด
+        </button>
+
+        <div class="pin-hint-text">
+          <i class="fa-solid fa-circle-info"></i> หน้าเว็บนี้ได้รับการปกป้องด้วยรหัสผ่านส่วนบุคคล และต้องยืนยันทุกครั้งที่รีโหลดหน้าเว็บ
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MAIN WRAPPER
+       ======================================================================== -->
+  <div class="main-wrapper theme-ksd">
+    
+    <!-- Top Header Bar -->
+    <header class="top-header">
+      <div class="header-left">
+        <div class="header-entity-logo" id="headerEntityLogo">
+          <img src="assets/logo_ksd.png" alt="KSD Pharma Logo" class="header-logo-img" id="headerLogoImg">
+        </div>
+        <div class="header-title-badge">
+          <h2 class="page-title" id="pageTitleText">ยอดขาย KSD สู่ตลาด (Distributor Sell-Out) — 20 เดือน</h2>
+          <span class="badge badge-emerald" id="headerPeriodBadge"><i class="fa-solid fa-calendar-check"></i> สิงหาคม 2026</span>
+          <span class="badge badge-ksd" id="headerEntityBadge"><i class="fa-solid fa-truck-fast"></i> KSD Pharma (ยอดขาย Sell-Out)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="content-body">
+
+      <!-- ====================================================================
+           TAB 1: UNIFIED SSA RETAIL SALES & INCENTIVE ANALYSIS
+           ==================================================================== -->
+      <div class="tab-view active" id="tab-ksd">
+        <!-- Company Entity Context Banner -->
+        <div class="company-context-card ksd-context">
+          <div class="context-info">
+            <h3><i class="fa-solid fa-truck-fast" style="color: var(--ksd-primary);"></i> บริษัท เคเอสดี การยา (KSD Pharma Sole Co., Ltd.) — ยอดขาย Sell-Out</h3>
+            <p><strong>ความหมาย Sell-Out ของ KSD:</strong> คือยอดที่ KSD ขายกระจายสินค้าออกไปสู่ลูกค้าทั่วประเทศลาว ทั้งโรงพยาบาล (Hospital), ร้านขายยาทั่วไป (Pharmacy), คลินิก, ยี่ปั๊ว และรวมถึงร้านยา SSA ด้วย (ข้อมูลต่อเนื่อง 20 เดือน: ม.ค. 2025 – ส.ค. 2026)</p>
+          </div>
+          <img src="assets/logo_ksd.png" alt="KSD Pharma Logo" class="context-logo">
+        </div>
+
+        
+        <!-- KSD Control Toolbar -->
+        <div class="chart-card col-12" style="margin-bottom: 20px;">
+          <div class="chart-header" style="flex-direction: column; align-items: stretch; gap: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div class="chart-title">
+                <i class="fa-solid fa-sliders" style="color: var(--ksd-primary);"></i> แผงควบคุมตัวกรองยอดขาย KSD (KSD Sell-Out Control Bar)
+              </div>
+              <!-- Period Dropdown -->
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-regular fa-calendar-check"></i> เลือกระยะเวลา:</span>
+                <div style="min-width: 240px;">
+                  <select id="ksdPeriodSelect" class="select-custom">
+                    <option value="2026-08" selected>สิงหาคม 2026 (เดือนล่าสุด / ละเอียด)</option>
+                    <option value="2026-YTD">มกราคม - สิงหาคม 2026 (สะสม 8 เดือน)</option>
+                    <option value="2026-07">กรกฎาคม 2026</option>
+                    <option value="2026-06">มิถุนายน 2026</option>
+                    <option value="2026-05">พฤษภาคม 2026</option>
+                    <option value="2026-04">เมษายน 2026</option>
+                    <option value="2026-03">มีนาคม 2026</option>
+                    <option value="2026-02">กุมภาพันธ์ 2026</option>
+                    <option value="2026-01">มกราคม 2026</option>
+                    <option value="2025-Full">ทั้งปี 2025 (เต็มปี 12 เดือน)</option>
+                    <option value="2025-YTD">มกราคม - กรกฎาคม 2025 (เทียบเท่า)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 12px;">
+              <!-- KSD Scope Selector -->
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-solid fa-filter"></i> ขอบเขตสินค้า:</span>
+                <div class="pill-selector" id="ksdScopeSelector">
+                  <div class="pill-option active" data-ksd-scope="all"><i class="fa-solid fa-boxes-stacked"></i> สินค้า PAC ทั้งหมด</div>
+                  <div class="pill-option" data-ksd-scope="strat"><i class="fa-solid fa-bullseye"></i> เฉพาะสินค้ากลยุทธ์ (Strategic)</div>
+                </div>
+              </div>
+
+              <!-- KSD Report Mode Selector -->
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-regular fa-calendar"></i> รูปแบบเวลา:</span>
+                <div class="pill-selector" id="ksdReportModeSelector">
+                  <div class="pill-option active" data-ksd-report="monthly">รายเดือน</div>
+                  <div class="pill-option" data-ksd-report="ytd">YTD (สะสม)</div>
+                  <div class="pill-option" data-ksd-report="yearly">รายปี</div>
+                  <div class="pill-option" data-ksd-report="yoy">เทียบปี (YoY)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KSD KPI Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card" style="border-left: 4px solid var(--ksd-primary);">
+            <div class="kpi-header">
+              <span class="kpi-title">KSD Sell-Out สะสมปี 2026 (YTD 8 ด.)</span>
+              <div class="kpi-icon" style="background: var(--ksd-light); color: var(--ksd-primary);"><i class="fa-solid fa-chart-line"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ksd_2026_total">฿24.44M</div>
+            <div class="kpi-subtext"><span class="trend-up"><i class="fa-solid fa-calendar-check"></i> ม.ค. - ส.ค. 2026</span> รวมทุกช่องทางจำหน่าย</div>
+          </div>
+
+          <div class="kpi-card" style="border-left: 4px solid var(--ksd-secondary);">
+            <div class="kpi-header">
+              <span class="kpi-title">KSD Sell-Out รวมปี 2025 (เต็มปี 12 ด.)</span>
+              <div class="kpi-icon" style="background: var(--ksd-light); color: var(--ksd-secondary);"><i class="fa-solid fa-calendar-days"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ksd_2025_total">฿40.14M</div>
+            <div class="kpi-subtext">ยอดขายออก 1,292 ลูกค้าทั่วประเทศ</div>
+          </div>
+
+          <div class="kpi-card emerald">
+            <div class="kpi-header">
+              <span class="kpi-title">KSD Sell-Out เดือนล่าสุด (ส.ค. 2026)</span>
+              <div class="kpi-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ksd_pac_rev">฿3,586,199.80</div>
+            <div class="kpi-subtext"><span id="kpi_ksd_pac_tx">1,962 บิล</span> (55,068 ชิ้น / 578 ลูกค้า)</div>
+          </div>
+
+          <div class="kpi-card cyan">
+            <div class="kpi-header">
+              <span class="kpi-title">สัดส่วนขายยี่ปั๊ว/รพ. vs ร้านยา SSA</span>
+              <div class="kpi-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ksd_ws_share">69.6% / 30.4%</div>
+            <div class="kpi-subtext">Wholesale ฿14.51M / SSA ฿6.35M (YTD 26)</div>
+          </div>
+        </div>
+
+        <!-- Historical 20-Month Sell-Out Trend Chart -->
+        <div class="chart-card col-12" style="margin-top: 20px;">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title"><i class="fa-solid fa-chart-area" style="color: var(--ksd-primary);"></i> แนวโน้มยอดขาย Sell-Out ของ KSD ต่อเนื่อง 20 เดือน (ม.ค. 2025 – ส.ค. 2026)</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+                กราฟเปรียบเทียบยอดขายออกของ KSD รายเดือน: แยกส่วนขายเข้าร้านยาขายปลีก SSA (Retail) และขายให้โรงพยาบาล/ยี่ปั๊วอื่นๆ (Wholesale)
+              </div>
+            </div>
+          </div>
+          <div id="chart_ksd_monthly_trend"></div>
+        </div>
+
+        <!-- KSD Top 10 Products & Top 10 Customers Section -->
+        <div class="dashboard-grid" style="margin-top: 20px; margin-bottom: 20px;">
+          <!-- Top 10 Products -->
+          <div class="chart-card col-6">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title" id="ksd_top_products_title"><i class="fa-solid fa-ranking-star" style="color: var(--ksd-primary);"></i> Top 10 สินค้าขายดี KSD (Top Products)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="ksd_top_products_sub">ประจำงวดที่เลือก แยกตามยอดขายบาท</div>
+              </div>
+            </div>
+            <div id="chart_ksd_top_products"></div>
+            <div class="table-responsive" style="margin-top: 12px; max-height: 280px; overflow-y: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th style="width: 45px;">#</th>
+                    <th>ชื่อสินค้า (Product)</th>
+                    <th>กลุ่ม</th>
+                    <th style="text-align: right;">จำนวน</th>
+                    <th style="text-align: right;">ยอดขาย (บาท)</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_ksd_top_products"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Top 10 Customers -->
+          <div class="chart-card col-6">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title" id="ksd_top_customers_title"><i class="fa-solid fa-hospital-user" style="color: var(--ksd-secondary);"></i> Top 10 ลูกค้ายอดซื้อสูงสุด (Top Customers)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="ksd_top_customers_sub">โรงพยาบาล, ร้านยา, ยี่ปั๊ว และคลินิก</div>
+              </div>
+            </div>
+            <div id="chart_ksd_top_customers"></div>
+            <div class="table-responsive" style="margin-top: 12px; max-height: 280px; overflow-y: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th style="width: 45px;">#</th>
+                    <th>ชื่อลูกค้า (Customer / Partner)</th>
+                    <th>ประเภท</th>
+                    <th>แขวง</th>
+                    <th style="text-align: right;">ยอดซื้อ (บาท)</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_ksd_top_customers"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- KSD Channels and Provinces Breakdown Grid -->
+        <div class="dashboard-grid">
+          <!-- Channels Donut/Bar Chart -->
+          <div class="chart-card col-6">
+            <div class="chart-header">
+              <div class="chart-title"><i class="fa-solid fa-network-wired" style="color: var(--ksd-primary);"></i> ยอดขาย KSD แยกตามประเภทสถานพยาบาล / ลูกค้า (Channels)</div>
+            </div>
+            <div id="chart_ksd_channel_compare"></div>
+          </div>
+
+          <!-- Provinces Ranking Bar Chart -->
+          <div class="chart-card col-6">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title"><i class="fa-solid fa-map-location-dot" style="color: var(--ksd-primary);"></i> การกระจายสินค้า 10 แขวงหลักใน สปป.ลาว (Provinces YTD)</div>
+                <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">เปรียบเทียบยอดขายสะสม YTD ก.ค. (2026 vs 2025) 10 อันดับแรก</div>
+              </div>
+            </div>
+            <div id="chart_ksd_provinces_rank" style="min-height: 350px;"></div>
+            <div class="table-responsive" style="max-height: 220px; overflow-y: auto; margin-top: 10px;">
+              <table class="provinces-mini-table" id="table_ksd_provinces_rank">
+                <thead>
+                  <tr>
+                    <th style="width: 32px; text-align: center;">#</th>
+                    <th>แขวง (Province)</th>
+                    <th style="text-align: right;">ปี 2026 (บาท)</th>
+                    <th style="text-align: right;">ปี 2025 (บาท)</th>
+                    <th style="text-align: right;">สัดส่วน</th>
+                    <th style="text-align: right;">เติบโต YoY</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_ksd_provinces_rank">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- KSD Product Group & Category Breakdown -->
+          <div class="chart-card col-12" id="card_ksd_product_groups">
+            <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <div class="chart-title">
+                  <i class="fa-solid fa-layer-group" style="color: var(--ksd-primary);"></i> 
+                  โครงสร้างยอดขายแยกตามกลุ่มแบรนด์สินค้า (Brand Group Breakdown)
+                </div>
+                <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 3px;" id="ksd_group_breakdown_sub">
+                  วิเคราะห์สัดส่วนยอดขายตามกลุ่มแบรนด์สินค้า (Plaivana, Capsika, Diabederm, Glucosa, ฯลฯ)
+                </div>
+              </div>
+              <div class="pill-selector" id="ksdGroupSelector" style="display: none;">
+                <div class="pill-option active" data-ksdgroup="brand">
+                  <i class="fa-solid fa-tags"></i> แยกตามกลุ่มแบรนด์ (Brand Group)
+                </div>
+                <div class="pill-option" data-ksdgroup="category">
+                  <i class="fa-solid fa-stethoscope"></i> แยกตามกลุ่มการรักษา (Therapeutic Category)
+                </div>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start;">
+              <div>
+                <div id="chart_ksd_group_breakdown"></div>
+              </div>
+              <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">
+                <table class="data-table" id="table_ksd_group_breakdown">
+                  <thead>
+                    <tr>
+                      <th>กลุ่มสินค้า / แบรนด์</th>
+                      <th style="text-align: right;">จำนวนชิ้น</th>
+                      <th style="text-align: right;">ยอดขาย (บาท)</th>
+                      <th style="text-align: right;">สัดส่วน (%)</th>
+                      <th style="text-align: center;">สถานะ</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody_ksd_group_breakdown">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Share Donut Chart -->
+          <div class="chart-card col-5">
+            <div class="chart-header">
+              <div class="chart-title"><i class="fa-solid fa-chart-pie" style="color: var(--ksd-primary);"></i> สัดส่วนยอดขาย PAC ตามทีมขาย KSD (ส.ค. 26)</div>
+            </div>
+            <div id="chart_ksd_team_donut"></div>
+          </div>
+
+          <!-- Salesperson Leaderboard -->
+          <div class="chart-card col-7">
+            <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <div class="chart-title"><i class="fa-solid fa-trophy" style="color: var(--ksd-primary);"></i> ทีมและพนักงานขาย KSD (ส.ค. 2026)</div>
+              <span class="badge" style="background: rgba(235, 107, 34, 0.12); color: var(--ksd-primary); border: 1px solid rgba(235, 107, 34, 0.3); font-size: 11px; padding: 4px 10px; border-radius: 6px;">
+                <i class="fa-solid fa-circle-info"></i> บิลรายใบ ส.ค. 26 (1,962 บิล)
+              </span>
+            </div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px; background: rgba(0,0,0,0.02); padding: 6px 10px; border-radius: 6px; border-left: 3px solid var(--ksd-primary);">
+              💡 ข้อมูลรายชื่อพนักงานขายมีเฉพาะในบิลรายใบ ส.ค. 2026 (งวด ม.ค.-ก.ค. 2026 และปี 2025 เป็นยอดสรุปภาพรวมรายลูกค้าและ SKU)
+            </div>
+            <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+              <table class="data-table" id="table_ksd_salespersons">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>พนักงานขาย</th>
+                    <th>ทีม</th>
+                    <th>บิล</th>
+                    <th style="text-align: right;">จำนวนชิ้น</th>
+                    <th style="text-align: right;">ยอดขาย (บาท)</th>
+                    <th>สินค้าหลัก</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_ksd_salespersons">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB 6: PAC STRATEGIC PRODUCTS CATALOG 2026
+           ==================================================================== -->
+      <div class="tab-view" id="tab-ssa">
+        <!-- Company Entity Context Banner -->
+        <div class="company-context-card ssa-context">
+          <div class="context-info">
+            <h3><i class="fa-solid fa-store" style="color: var(--ssa-primary);"></i> ร้านยาใสสะอาด (Saysaath Pharmacy Chain) — ยอดขายหน้าร้าน & วิเคราะห์ค่าเชียร์</h3>
+            <p>ศูนย์รวมข้อมูลยอดขายปลีกหน้าร้าน (Retail Sell-Out) และประสิทธิภาพการจ่ายค่าเชียร์สนับสนุนร้านยา SSA ทั้ง 6 สาขา</p>
+          </div>
+          <img src="assets/logo_ssa.png" alt="SSA Pharmacy Logo" class="context-logo">
+        </div>
+
+        <!-- Master Filter & Control Toolbar -->
+        <div class="chart-card col-12" style="margin-bottom: 20px;">
+          <div class="chart-header" style="flex-direction: column; align-items: stretch; gap: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div class="chart-title">
+                <i class="fa-solid fa-sliders" style="color: var(--ssa-primary);"></i> แผงควบคุมตัวกรองข้อมูล (Dashboard Control Bar)
+              </div>
+              <!-- Period Dropdown and Metric Toggle -->
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <div style="min-width: 170px;">
+                  <select id="ssaPeriodSelect" class="select-custom"></select>
+                </div>
+                <div class="pill-selector" id="ssaMetricSelector">
+                  <div class="pill-option active" data-metric="qty"><i class="fa-solid fa-box-open"></i> จำนวนชิ้น</div>
+                  <div class="pill-option" data-metric="val"><i class="fa-solid fa-coins"></i> มูลค่าเงิน</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls Row 1: Scope, Group by Brand, Report Type -->
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 12px;">
+              <!-- 1. Product Scope Switch -->
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-solid fa-filter"></i> ขอบเขตสินค้า:</span>
+                <div class="pill-selector" id="ssaScopeSelector">
+                  <div class="pill-option active" data-scope="all"><i class="fa-solid fa-boxes-stacked"></i> สินค้า PAC ทั้งหมด</div>
+                  <div class="pill-option" data-scope="incentive"><i class="fa-solid fa-award"></i> เฉพาะสินค้าที่มีค่าเชียร์</div>
+                </div>
+              </div>
+
+              <!-- 2. Group by Brand Switch -->
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-solid fa-layer-group"></i> การจัดกลุ่ม:</span>
+                <div class="pill-selector" id="ssaGroupSelector">
+                  <div class="pill-option active" data-group="sku"><i class="fa-solid fa-barcode"></i> แยกตาม SKU/ขนาด</div>
+                  <div class="pill-option" data-group="brand"><i class="fa-solid fa-cubes-stacked"></i> ยุบกลุ่มตามแบรนด์ (เช่น Plaivana)</div>
+                </div>
+              </div>
+
+              <!-- 3. Report Mode -->
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-regular fa-calendar"></i> รูปแบบ:</span>
+                <div class="pill-selector" id="ssaReportModeSelector">
+                  <div class="pill-option active" data-report="monthly">รายเดือน</div>
+                  <div class="pill-option" data-report="ytd">YTD (สะสม)</div>
+                  <div class="pill-option" data-report="yearly">รายปี</div>
+                  <div class="pill-option" data-report="yoy">เปรียบเทียบปี (YoY)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls Row 2: Branch Selector Drill-Down -->
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; border-top: 1px dashed var(--border-color); padding-top: 12px;">
+              <span style="font-size: 12.5px; font-weight: 600; color: var(--text-secondary);"><i class="fa-solid fa-store"></i> เลือกร้านยา / สาขาที่เจาะลึก:</span>
+              <div class="branch-tabs-bar" id="ssaBranchTabs">
+                <button class="branch-tab-btn active" data-branch="ALL"><i class="fa-solid fa-hospital-user"></i> ทุกสาขา (รวม 6 สาขา)</button>
+                <button class="branch-tab-btn" data-branch="SSA1">SSA 1 (หนองด้วง/สีหอม)</button>
+                <button class="branch-tab-btn" data-branch="SSA2">SSA 2 (IMDC)</button>
+                <button class="branch-tab-btn" data-branch="SSA3">SSA 3 (สะพานทอง)</button>
+                <button class="branch-tab-btn" data-branch="SSA5">SSA 5 (จอมมณี)</button>
+                <button class="branch-tab-btn" data-branch="SSA6">SSA 6 (แสงสว่าง)</button>
+                <button class="branch-tab-btn" data-branch="SSA7">SSA 7 (เก้ายอด)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card emerald">
+            <div class="kpi-header">
+              <span class="kpi-title" id="kpi_ssa_title_units">ยอดขายรวม (ชิ้น)</span>
+              <div class="kpi-icon"><i class="fa-solid fa-box-open"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ssa_units">0</div>
+            <div class="kpi-subtext" id="kpi_ssa_units_diff"></div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title" id="kpi_ssa_title_val">ยอดขายรวม (มูลค่า)</span>
+              <div class="kpi-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ssa_val">0</div>
+            <div class="kpi-subtext" id="kpi_ssa_val_diff"></div>
+          </div>
+
+          <div class="kpi-card cyan">
+            <div class="kpi-header">
+              <span class="kpi-title">สาขาที่ผลงานสูงสุด / อันดับสาขา</span>
+              <div class="kpi-icon"><i class="fa-solid fa-ranking-star"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ssa_top_branch">-</div>
+            <div class="kpi-subtext" id="kpi_ssa_top_branch_sub">จากร้านยาเครือ SSA ทั้ง 6 สาขา</div>
+          </div>
+
+          <div class="kpi-card amber">
+            <div class="kpi-header">
+              <span class="kpi-title">สินค้าขายดีอันดับ 1</span>
+              <div class="kpi-icon"><i class="fa-solid fa-pills"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ssa_top_product" style="font-size: 18px; line-height: 1.3;">-</div>
+            <div class="kpi-subtext" id="kpi_ssa_top_product_sub">ตามขอบเขตและเงื่อนไขที่เลือก</div>
+          </div>
+        </div>
+
+                <!-- ====================================================================
+             VIEW A: DEDICATED 17-MONTH LONGITUDINAL INCENTIVE ANALYSIS
+             ==================================================================== -->
+        <div id="view_ssa_incentive_report">
+          <!-- FEATURE 1: 6-Branch Trend Multi-Line Chart (17 Months) -->
+        <div class="chart-card col-12" style="margin-bottom: 20px;">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title"><i class="fa-solid fa-chart-line" style="color: var(--ssa-primary);"></i> แนวโน้มยอดขายรายสาขา 6 สาขา (Branch Performance Trend)</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;" id="sub_branch_trend">
+                แกน Y คือยอดขาย (ชิ้น) และแกน X คือเดือน/เวลาต่อเนื่อง แยกสีตามสาขาชัดเจน
+              </div>
+            </div>
+          </div>
+          <div id="chart_ssa_branch_trend"></div>
+        </div>
+
+        <!-- FEATURE 4: Highlight Products Trend + Interactive Checklist -->
+        <div class="chart-card col-12" style="margin-bottom: 20px;">
+          <div class="chart-header" style="flex-direction: column; align-items: stretch; gap: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <div class="chart-title"><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> แนวโน้มยอดขายสินค้า Top 10 และสินค้าสังเกตการณ์ (Highlight Products Trend)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+                  กราฟเส้นของสินค้า Top 10 และสินค้าที่มีความเคลื่อนไหวสำคัญ โดยคุณสามารถติ๊กเลือกสินค้าเพิ่มเติมด้านล่างเพื่อแสดงในกราฟนี้ได้ทันที
+                </div>
+              </div>
+              <span id="highlightSelectedBadge" class="badge badge-emerald">แสดง 10 รายการ</span>
+            </div>
+
+            <!-- Search and Checklist Container -->
+            <div class="highlight-checklist-wrapper" style="border-top: 1px solid var(--border-color); padding-top: 10px;">
+              <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                <div class="search-wrapper" style="flex: 1; max-width: 350px;">
+                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                  <input type="text" id="highlightSearchInput" class="search-input" placeholder="พิมพ์ค้นหายาเพื่อเลือกเพิ่มในกราฟ...">
+                </div>
+                <button class="btn btn-outline" id="btnResetHighlights" style="font-size: 11.5px; padding: 6px 12px;"><i class="fa-solid fa-rotate-left"></i> รีเซ็ตเป็น Top 10</button>
+              </div>
+              <div class="highlight-checklist" id="ssa_highlight_checklist"></div>
+            </div>
+          </div>
+          <div id="chart_ssa_highlight_trend"></div>
+        </div>
+
+        <!-- FEATURE 2: Top Growth & Top Drop Drivers Grid (5-10 Items) -->
+        <div class="dashboard-grid" style="margin-bottom: 20px;">
+          <!-- Growth Drivers -->
+          <div class="chart-card col-6">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title"><i class="fa-solid fa-arrow-trend-up" style="color: var(--accent-emerald);"></i> สินค้าขยายตัวสูงสุด (Top Growth Drivers)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">เปรียบเทียบยอดขายกับงวดก่อนหน้าเพื่อหาตัวขับเคลื่อนการเติบโต</div>
+              </div>
+              <div class="pill-selector" id="growthLimitSelector">
+                <div class="pill-option active" data-limit="5">Top 5</div>
+                <div class="pill-option" data-limit="10">Top 10</div>
+              </div>
+            </div>
+            <div id="chart_ssa_growth_drivers"></div>
+          </div>
+
+          <!-- Drop Drivers -->
+          <div class="chart-card col-6">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title"><i class="fa-solid fa-arrow-trend-down" style="color: var(--accent-rose);"></i> สินค้าหดตัวสูงสุด (Top Drop Drivers)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">สินค้าที่ยอดขายลดลงเทียบกับงวดก่อนหน้าเพื่อตรวจสอบหน้าร้าน</div>
+              </div>
+              <div class="pill-selector" id="dropLimitSelector">
+                <div class="pill-option active" data-limit="5">Top 5</div>
+                <div class="pill-option" data-limit="10">Top 10</div>
+              </div>
+            </div>
+            <div id="chart_ssa_drop_drivers"></div>
+          </div>
+        </div>
+
+        <!-- FEATURE 3: Ranked Products Table with Rank Shift Indicators -->
+        <div class="chart-card col-12">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title" id="ranked_table_title">
+                <i class="fa-solid fa-ranking-star" style="color: var(--ssa-primary);"></i> ลำดับยอดขายสินค้าทุกรายการ และการเปลี่ยนแปลงลำดับ (Ranked Products & Rank Shift)
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+                แสดงยอดขายสินค้าทุกรายการเป็นลำดับจากมากไปน้อย พร้อมบอกด้วยว่าตัวใดเพิ่มขึ้นหรือลดลง (เปลี่ยนลำดับ) จากเดือนที่แล้ว
+              </div>
+            </div>
+            <div class="chart-actions">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="rankedTableSearch" class="search-input" placeholder="ค้นหาชื่อยา หรือ แบรนด์...">
+              </div>
+              <div class="pill-selector">
+                <div class="pill-option active" id="rankSortQty"><i class="fa-solid fa-arrow-down-9-1"></i> เรียงตามจำนวน (ชิ้น)</div>
+                <div class="pill-option" id="rankSortVal"><i class="fa-solid fa-arrow-down-wide-short"></i> เรียงตามมูลค่า</div>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="table_ssa_ranked_products">
+              <thead>
+                <tr>
+                  <th style="width: 70px;">อันดับ</th>
+                  <th style="width: 130px; text-align: center;">เปลี่ยนลำดับ (Shift)</th>
+                  <th>ชื่อสินค้า (Product Name - English)</th>
+                  <th>กลุ่มแบรนด์ (Brand)</th>
+                  <th style="text-align: right;">ยอดขายงวดนี้</th>
+                  <th style="text-align: right;">ผลต่าง (Diff)</th>
+                  <th style="text-align: right;">อัตราเติบโต (% Growth)</th>
+                  <th style="text-align: right;">มูลค่ารวม</th>
+                </tr>
+              </thead>
+              <tbody id="tbody_ssa_ranked_products">
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+
+        <!-- ====================================================================
+             VIEW B: DEDICATED AUGUST 2026 RETAIL AUDIT CENSUS REPORT (ALL 181 SKUs)
+             ==================================================================== -->
+        <div id="view_ssa_all_pac_report" style="display: none;">
+          <!-- Executive Context Banner -->
+          <div class="company-context-card pac-context" style="margin-bottom: 20px;">
+            <div class="context-info">
+              <h3><i class="fa-solid fa-clipboard-check" style="color: var(--pac-primary);"></i> รายงานสำรวจยอดขายปลีกหน้าร้านสิงหาคม 2026 (SSA Retail Audit Census - August 2026)</h3>
+              <p>รายงานฉบับสมบูรณ์จากการสำรวจหน้าร้านจริงของยา PAC ครบทั้ง 181 รายการ ใน 6 สาขาเครือร้านยาใสสะอาด ยอดรวม <strong>68,902 ชิ้น / 963,168,531.43 กีบ</strong> (รายงานเฉพาะกิจฉบับสำรวจหน้าร้าน ไม่นำไปเปรียบเทียบในกราฟเส้นย้อนหลังกับเดือนที่มีเฉพาะรายการค่าเชียร์ เพื่อความถูกต้องของข้อมูล)</p>
+            </div>
+            <img src="assets/logo_pac.png" alt="Pharma Alliance Logo" class="context-logo">
+          </div>
+
+          <!-- Charts Grid: 6 Branches Compare + Top 10 Best Sellers -->
+          <div class="dashboard-grid" style="margin-bottom: 20px;">
+            <div class="chart-card col-7">
+              <div class="chart-header">
+                <div>
+                  <div class="chart-title"><i class="fa-solid fa-chart-column" style="color: var(--ssa-primary);"></i> ยอดขายยา PAC แยกตามสาขาร้านยา SSA ทั้ง 6 สาขา (ส.ค. 2026)</div>
+                  <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">เปรียบเทียบจำนวนขาย (ชิ้น) และมูลค่ายอดขาย (ล้านกีบ LAK) ของแต่ละสาขา</div>
+                </div>
+              </div>
+              <div id="chart_ssa_all_branch_compare"></div>
+            </div>
+            
+            <div class="chart-card col-5">
+              <div class="chart-header">
+                <div>
+                  <div class="chart-title"><i class="fa-solid fa-fire" style="color: var(--accent-amber);"></i> Top 10 ยา PAC ขายดีสูงสุดในร้านยา SSA</div>
+                  <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">จัดอันดับยาที่มีจำนวนขายปลีกหน้าร้านสูงสุด (ส.ค. 2026)</div>
+                </div>
+              </div>
+              <div id="chart_ssa_all_top_products"></div>
+            </div>
+          </div>
+
+          <!-- Table 1: 6 Branches Summary Breakdown -->
+          <div class="chart-card col-12" style="margin-bottom: 20px;">
+            <div class="chart-header">
+              <div class="chart-title"><i class="fa-solid fa-store" style="color: var(--ssa-primary);"></i> สรุปผลงานยอดขายยา PAC ทั้ง 6 สาขา (SSA Branches Summary Breakdown)</div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table" id="table_ssa_all_branches">
+                <thead>
+                  <tr>
+                    <th style="width: 80px;">รหัสสาขา</th>
+                    <th>ชื่อสาขาร้านยาใสสะอาด</th>
+                    <th style="text-align: right;">จำนวนที่ขายได้ (ชิ้น)</th>
+                    <th style="text-align: right;">ยอดขายรวม (กีบ LAK)</th>
+                    <th style="text-align: right;">สัดส่วนยอดขาย (% Share)</th>
+                    <th>ยา PAC ที่ขายดีอันดับ 1 ของสาขา</th>
+                    <th style="text-align: center;">เจาะลึกสาขา</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_ssa_all_branches">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Table 2: 181 SKU Complete Retail Audit Table -->
+          <div class="chart-card col-12">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title"><i class="fa-solid fa-list-check" style="color: var(--ssa-primary);"></i> ตารางตรวจสอบยอดขายปลีกยา PAC ครบทุกรายการ (181 SKU Complete Audit Table)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">แสดงยอดขายหน้าร้านจริงครบทุกรายการ พร้อมยอดจำหน่ายแยกรายสาขา</div>
+              </div>
+              <div class="chart-actions">
+                <div class="search-wrapper">
+                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                  <input type="text" id="auditTableSearch" class="search-input" placeholder="ค้นหาชื่อยา, SKU, แบรนด์...">
+                </div>
+                <div class="pill-selector" id="auditMetricSelector">
+                  <div class="pill-option active" data-audit-metric="qty"><i class="fa-solid fa-box"></i> จำนวน (ชิ้น)</div>
+                  <div class="pill-option" data-audit-metric="lak"><i class="fa-solid fa-coins"></i> มูลค่า (กีบ LAK)</div>
+                </div>
+              </div>
+            </div>
+                        <!-- Branch Focus Banner (Shown when inspecting a specific branch) -->
+            <div id="ssa_branch_focus_banner" style="display: none; margin: 12px 0 16px 0; padding: 12px 18px; background: rgba(0, 153, 68, 0.08); border: 1.5px solid rgba(0, 153, 68, 0.35); border-radius: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="badge badge-emerald" style="font-size: 12.5px; padding: 5px 10px;"><i class="fa-solid fa-store"></i> โหมดเจาะลึกรายสาขา</span>
+                <span id="ssa_branch_focus_text" style="font-weight: 600; color: var(--text-color); font-size: 13.5px;">กำลังเจาะลึกข้อมูล: สาขา 1</span>
+              </div>
+              <button class="btn btn-outline" style="font-size: 11.5px; padding: 5px 12px; border-color: var(--ssa-primary); color: var(--ssa-primary);" onclick="window.clearStoreBranchFocus()">
+                <i class="fa-solid fa-rotate-left"></i> ยกเลิกการเจาะลึก (ดูรวม 6 สาขา)
+              </button>
+            </div>
+            <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+              <table class="data-table" id="table_ssa_all_audit_products">
+                <thead>
+                  <tr>
+                    <th style="width: 50px;">#</th>
+                    <th style="width: 80px;">SKU</th>
+                    <th>ชื่อสินค้า (Product Name)</th>
+                    <th>กลุ่มแบรนด์</th>
+                    <th>ประเภท</th>
+                    <th style="text-align: right;">รวม 6 สาขา</th>
+                    <th style="text-align: right;">SSA 1</th>
+                    <th style="text-align: right;">SSA 2</th>
+                    <th style="text-align: right;">SSA 3</th>
+                    <th style="text-align: right;">SSA 5</th>
+                    <th style="text-align: right;">SSA 6</th>
+                    <th style="text-align: right;">SSA 7</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_ssa_all_audit_products">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 5: KSD DISTRIBUTOR (SELL-OUT TO HOSPITALS, PHARMACIES & SSA)
+           ==================================================================== -->
+      
+      <!-- ====================================================================
+           TAB 2: STRATEGIC WHITE-SPACE MATRIX (6 SSA BRANCHES COVERAGE)
+           ==================================================================== -->
+      <div class="tab-view" id="tab-whitespace">
+        <!-- Company Context Banner -->
+        <div class="company-context-card pac-context">
+          <div class="context-info">
+            <h3><i class="fa-solid fa-table-cells" style="color: var(--pac-primary);"></i> โอกาสสินค้ากลยุทธ์ PAC ในร้านยาเครือใสสะอาด (Strategic White-Space Matrix)</h3>
+            <p>ตารางตรวจสอบการกระจายตัวและความครอบคลุมของสินค้ากลยุทธ์ PAC Catalog 2026 ในร้านยา SSA ทั้ง 6 สาขา เพื่อค้นหาโอกาสในการกระจายสินค้า (White-Space Gap) และตรวจเช็กสต็อกหน้าร้าน</p>
+          </div>
+          <img src="assets/logo_pac.png" alt="Pharma Alliance Logo" class="context-logo">
+        </div>
+
+        <!-- White-Space KPI Summary Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card" style="border-left: 4px solid var(--pac-primary);">
+            <div class="kpi-header">
+              <span class="kpi-title">สินค้ากลยุทธ์ในแคตตาล็อก</span>
+              <div class="kpi-icon" style="background: var(--pac-light); color: var(--pac-primary);"><i class="fa-solid fa-bullseye"></i></div>
+            </div>
+            <div class="kpi-value">77 รายการ</div>
+            <div class="kpi-subtext">เป้าหมายการเจาะตลาดปี 2026</div>
+          </div>
+
+          <div class="kpi-card emerald">
+            <div class="kpi-header">
+              <span class="kpi-title">จำหน่ายครบ 6 สาขา (100% Coverage)</span>
+              <div class="kpi-icon"><i class="fa-solid fa-circle-check"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ws_full_coverage">14 รายการ</div>
+            <div class="kpi-subtext">มีจำหน่ายกระจายครบทุกหน้าร้าน</div>
+          </div>
+
+          <div class="kpi-card amber">
+            <div class="kpi-header">
+              <span class="kpi-title">มีช่องว่างขาดจำหน่ายบางสาขา (Gap)</span>
+              <div class="kpi-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ws_gaps">63 รายการ</div>
+            <div class="kpi-subtext">โอกาสในการขยายการวางจำหน่ายเพิ่ม</div>
+          </div>
+
+          <div class="kpi-card cyan">
+            <div class="kpi-header">
+              <span class="kpi-title">ยอดขายรวมสินค้ากลยุทธ์หน้าร้าน</span>
+              <div class="kpi-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi_ws_total_qty">4,876 ชิ้น</div>
+            <div class="kpi-subtext">ยอดขายหน้าร้านเครือ SSA รวมทุกสาขา</div>
+          </div>
+        </div>
+
+        <!-- Matrix Control & Search Toolbar -->
+        <div class="chart-card col-12" style="margin-top: 20px;">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title"><i class="fa-solid fa-border-all" style="color: var(--pac-primary);"></i> ตารางตรวจสอบความครอบคลุมสินค้ากลยุทธ์รายสาขา (6 Branches White-Space Matrix)</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                สัญลักษณ์ <span style="color: var(--accent-emerald); font-weight: 700;"><i class="fa-solid fa-check"></i> ตัวเลข</span> = มีวางจำหน่ายและยอดขาย (ชิ้น), <span style="color: var(--accent-rose); font-weight: 700;"><i class="fa-solid fa-xmark"></i> ขาด</span> = สินค้ายังไม่มีวางจำหน่ายในสาขานั้น
+              </div>
+            </div>
+            <div class="chart-actions">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="wsSearchInput" class="search-input" placeholder="ค้นหาชื่อยา หรือ SKU...">
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="table_whitespace_matrix">
+              <thead>
+                <tr>
+                  <th style="width: 38px; text-align: center;">#</th>
+                  <th style="width: 72px;">SKU</th>
+                  <th style="min-width: 170px; max-width: 240px;">ชื่อสินค้า (Product Name)</th>
+                  <th style="width: 75px; text-align: center;">หมวดหมู่</th>
+                  <th style="width: 70px; text-align: right;">รวม (ชิ้น)</th>
+                  <th style="width: 65px; text-align: center;">SSA 1<span class="th-sub">หนองด้วง</span></th>
+                  <th style="width: 65px; text-align: center;">SSA 2<span class="th-sub">IMDC</span></th>
+                  <th style="width: 65px; text-align: center;">SSA 3<span class="th-sub">สะพานทอง</span></th>
+                  <th style="width: 65px; text-align: center;">SSA 5<span class="th-sub">จอมมณี</span></th>
+                  <th style="width: 65px; text-align: center;">SSA 6<span class="th-sub">แสงสว่าง</span></th>
+                  <th style="width: 65px; text-align: center;">SSA 7<span class="th-sub">เก้ายอด</span></th>
+                </tr>
+              </thead>
+              <tbody id="tbody_whitespace_matrix">
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <div>© 2026 Pharma Alliance (PAC) Co., Ltd. — Confidential & Proprietary Business Intelligence</div>
+      <div>ข้อมูลอัปเดตล่าสุด: สิงหาคม 2026 | พร้อมใช้งานบน GitHub Pages</div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js?v=20260905_2"></script>
+  <script src="app.js?v=20260905_2"></script>
+</body>
+</html>

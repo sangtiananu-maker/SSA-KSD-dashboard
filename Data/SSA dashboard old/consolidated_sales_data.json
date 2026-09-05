@@ -1,0 +1,5246 @@
+[
+  {
+    "month_str": "Apr",
+    "month_num": 4,
+    "year": 2025,
+    "date_key": "2025-04",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 38,
+          "SSA2": 1,
+          "SSA3": 10,
+          "SSA5": 0,
+          "SSA6": 13,
+          "SSA7": 5
+        },
+        "total_qty": 67,
+        "total_incentive": 670.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 50,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 17,
+          "SSA6": 0,
+          "SSA7": 15
+        },
+        "total_qty": 90,
+        "total_incentive": 900.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 9,
+          "SSA6": 2,
+          "SSA7": 1
+        },
+        "total_qty": 28,
+        "total_incentive": 280.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 10,
+          "SSA5": 2,
+          "SSA6": 50,
+          "SSA7": 34
+        },
+        "total_qty": 108,
+        "total_incentive": 1080.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 8,
+          "SSA6": 3,
+          "SSA7": 12
+        },
+        "total_qty": 41,
+        "total_incentive": 410.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 8,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 6
+        },
+        "total_qty": 16,
+        "total_incentive": 160.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 1,
+          "SSA3": 6,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 8
+        },
+        "total_qty": 31,
+        "total_incentive": 310.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 15.0,
+        "branches": {
+          "SSA1": 17,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 6,
+          "SSA6": 10,
+          "SSA7": 11
+        },
+        "total_qty": 50,
+        "total_incentive": 750.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 11,
+          "SSA2": 5,
+          "SSA3": 0,
+          "SSA5": 5,
+          "SSA6": 23,
+          "SSA7": 4
+        },
+        "total_qty": 48,
+        "total_incentive": 480.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 23,
+          "SSA2": 1,
+          "SSA3": 58,
+          "SSA5": 22,
+          "SSA6": 11,
+          "SSA7": 15
+        },
+        "total_qty": 130,
+        "total_incentive": 1300.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 2,
+          "SSA3": 42,
+          "SSA5": 24,
+          "SSA6": 18,
+          "SSA7": 13
+        },
+        "total_qty": 106,
+        "total_incentive": 1060.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 19,
+          "SSA2": 1,
+          "SSA3": 19,
+          "SSA5": 16,
+          "SSA6": 8,
+          "SSA7": 5
+        },
+        "total_qty": 68,
+        "total_incentive": 680.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 8,
+          "SSA7": 0
+        },
+        "total_qty": 8,
+        "total_incentive": 160.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 40.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 8,
+        "total_incentive": 320.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 13,
+          "SSA5": 39,
+          "SSA6": 59,
+          "SSA7": 20
+        },
+        "total_qty": 143,
+        "total_incentive": 429.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 36,
+          "SSA5": 2,
+          "SSA6": 11,
+          "SSA7": 41
+        },
+        "total_qty": 104,
+        "total_incentive": 520.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 42,
+          "SSA2": 0,
+          "SSA3": 60,
+          "SSA5": 18,
+          "SSA6": 6,
+          "SSA7": 33
+        },
+        "total_qty": 159,
+        "total_incentive": 3180.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 90,
+          "SSA2": 12,
+          "SSA3": 53,
+          "SSA5": 63,
+          "SSA6": 27,
+          "SSA7": 22
+        },
+        "total_qty": 267,
+        "total_incentive": 2670.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 1,
+          "SSA3": 18,
+          "SSA5": 4,
+          "SSA6": 17,
+          "SSA7": 14
+        },
+        "total_qty": 70,
+        "total_incentive": 700.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 41,
+          "SSA2": 0,
+          "SSA3": 21,
+          "SSA5": 13,
+          "SSA6": 12,
+          "SSA7": 18
+        },
+        "total_qty": 105,
+        "total_incentive": 1050.0
+      }
+    ]
+  },
+  {
+    "month_str": "May",
+    "month_num": 5,
+    "year": 2025,
+    "date_key": "2025-05",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 45,
+          "SSA2": 1,
+          "SSA3": 12,
+          "SSA5": 1,
+          "SSA6": 18,
+          "SSA7": 53
+        },
+        "total_qty": 130,
+        "total_incentive": 650.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 20,
+          "SSA2": 5,
+          "SSA3": 15,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 41
+        },
+        "total_qty": 91,
+        "total_incentive": 455.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 4,
+          "SSA6": 4,
+          "SSA7": 1
+        },
+        "total_qty": 16,
+        "total_incentive": 160.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 17,
+          "SSA6": 31,
+          "SSA7": 30
+        },
+        "total_qty": 111,
+        "total_incentive": 555.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 1,
+          "SSA3": 6,
+          "SSA5": 5,
+          "SSA6": 12,
+          "SSA7": 4
+        },
+        "total_qty": 40,
+        "total_incentive": 400.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 1,
+          "SSA6": 2,
+          "SSA7": 0
+        },
+        "total_qty": 7,
+        "total_incentive": 70.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 4,
+          "SSA6": 2,
+          "SSA7": 16
+        },
+        "total_qty": 37,
+        "total_incentive": 185.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 1,
+          "SSA3": 12,
+          "SSA5": 14,
+          "SSA6": 7,
+          "SSA7": 7
+        },
+        "total_qty": 73,
+        "total_incentive": 730.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 9,
+          "SSA6": 17,
+          "SSA7": 7
+        },
+        "total_qty": 36,
+        "total_incentive": 360.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 2,
+          "SSA3": 44,
+          "SSA5": 34,
+          "SSA6": 15,
+          "SSA7": 16
+        },
+        "total_qty": 144,
+        "total_incentive": 1440.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 39,
+          "SSA2": 0,
+          "SSA3": 43,
+          "SSA5": 25,
+          "SSA6": 17,
+          "SSA7": 21
+        },
+        "total_qty": 145,
+        "total_incentive": 1450.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 4,
+          "SSA3": 18,
+          "SSA5": 8,
+          "SSA6": 7,
+          "SSA7": 7
+        },
+        "total_qty": 71,
+        "total_incentive": 710.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 4,
+        "total_incentive": 80.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 40.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 4,
+        "total_incentive": 160.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 17,
+          "SSA5": 38,
+          "SSA6": 70,
+          "SSA7": 36
+        },
+        "total_qty": 168,
+        "total_incentive": 504.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 34,
+          "SSA2": 0,
+          "SSA3": 44,
+          "SSA5": 25,
+          "SSA6": 23,
+          "SSA7": 83
+        },
+        "total_qty": 209,
+        "total_incentive": 1045.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 17,
+          "SSA5": 12,
+          "SSA6": 4,
+          "SSA7": 14
+        },
+        "total_qty": 61,
+        "total_incentive": 1220.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 59,
+          "SSA2": 10,
+          "SSA3": 48,
+          "SSA5": 66,
+          "SSA6": 27,
+          "SSA7": 55
+        },
+        "total_qty": 265,
+        "total_incentive": 2650.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 3,
+          "SSA3": 17,
+          "SSA5": 14,
+          "SSA6": 0,
+          "SSA7": 27
+        },
+        "total_qty": 63,
+        "total_incentive": 315.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 62,
+          "SSA2": 3,
+          "SSA3": 5,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 43
+        },
+        "total_qty": 123,
+        "total_incentive": 615.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 2,
+        "total_incentive": 6.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 14,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 14,
+        "total_incentive": 350.0
+      }
+    ]
+  },
+  {
+    "month_str": "Jun",
+    "month_num": 6,
+    "year": 2025,
+    "date_key": "2025-06",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 42,
+          "SSA2": 2,
+          "SSA3": 4,
+          "SSA5": 3,
+          "SSA6": 7,
+          "SSA7": 24
+        },
+        "total_qty": 82,
+        "total_incentive": 410.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 7,
+          "SSA3": 19,
+          "SSA5": 13,
+          "SSA6": 0,
+          "SSA7": 24
+        },
+        "total_qty": 84,
+        "total_incentive": 420.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 1,
+          "SSA3": 5,
+          "SSA5": 8,
+          "SSA6": 3,
+          "SSA7": 4
+        },
+        "total_qty": 28,
+        "total_incentive": 280.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 20,
+          "SSA2": 1,
+          "SSA3": 3,
+          "SSA5": 8,
+          "SSA6": 7,
+          "SSA7": 20
+        },
+        "total_qty": 59,
+        "total_incentive": 295.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 3,
+          "SSA3": 6,
+          "SSA5": 17,
+          "SSA6": 10,
+          "SSA7": 9
+        },
+        "total_qty": 58,
+        "total_incentive": 580.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 3
+        },
+        "total_qty": 11,
+        "total_incentive": 110.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 0,
+          "SSA3": 40,
+          "SSA5": 8,
+          "SSA6": 6,
+          "SSA7": 13
+        },
+        "total_qty": 88,
+        "total_incentive": 440.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 6,
+          "SSA6": 0,
+          "SSA7": 5
+        },
+        "total_qty": 15,
+        "total_incentive": 150.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 4,
+          "SSA6": 12,
+          "SSA7": 0
+        },
+        "total_qty": 20,
+        "total_incentive": 200.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 35,
+          "SSA2": 6,
+          "SSA3": 52,
+          "SSA5": 23,
+          "SSA6": 15,
+          "SSA7": 27
+        },
+        "total_qty": 158,
+        "total_incentive": 1580.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 44,
+          "SSA2": 1,
+          "SSA3": 52,
+          "SSA5": 29,
+          "SSA6": 12,
+          "SSA7": 12
+        },
+        "total_qty": 150,
+        "total_incentive": 1500.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 3,
+          "SSA3": 20,
+          "SSA5": 15,
+          "SSA6": 5,
+          "SSA7": 8
+        },
+        "total_qty": 66,
+        "total_incentive": 660.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 6
+        },
+        "total_qty": 6,
+        "total_incentive": 120.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 40.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 1,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 3,
+        "total_incentive": 120.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 15,
+          "SSA5": 29,
+          "SSA6": 50,
+          "SSA7": 25
+        },
+        "total_qty": 137,
+        "total_incentive": 411.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 5,
+          "SSA3": 1,
+          "SSA5": 38,
+          "SSA6": 8,
+          "SSA7": 27
+        },
+        "total_qty": 116,
+        "total_incentive": 580.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 0,
+          "SSA3": 21,
+          "SSA5": 12,
+          "SSA6": 1,
+          "SSA7": 13
+        },
+        "total_qty": 57,
+        "total_incentive": 1140.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 84,
+          "SSA2": 2,
+          "SSA3": 50,
+          "SSA5": 71,
+          "SSA6": 28,
+          "SSA7": 45
+        },
+        "total_qty": 280,
+        "total_incentive": 2800.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 22,
+          "SSA2": 1,
+          "SSA3": 11,
+          "SSA5": 8,
+          "SSA6": 4,
+          "SSA7": 14
+        },
+        "total_qty": 60,
+        "total_incentive": 300.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 25,
+          "SSA2": 5,
+          "SSA3": 16,
+          "SSA5": 6,
+          "SSA6": 1,
+          "SSA7": 29
+        },
+        "total_qty": 82,
+        "total_incentive": 410.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 18,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 21,
+        "total_incentive": 525.0
+      }
+    ]
+  },
+  {
+    "month_str": "Jul",
+    "month_num": 7,
+    "year": 2025,
+    "date_key": "2025-07",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 7,
+          "SSA3": 25,
+          "SSA5": 16,
+          "SSA6": 16,
+          "SSA7": 60
+        },
+        "total_qty": 129,
+        "total_incentive": 645.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 2,
+          "SSA3": 6,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 25
+        },
+        "total_qty": 53,
+        "total_incentive": 265.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 9,
+          "SSA2": 1,
+          "SSA3": 3,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 1
+        },
+        "total_qty": 24,
+        "total_incentive": 240.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 9,
+          "SSA2": 4,
+          "SSA3": 7,
+          "SSA5": 9,
+          "SSA6": 9,
+          "SSA7": 39
+        },
+        "total_qty": 77,
+        "total_incentive": 385.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 2,
+          "SSA3": 9,
+          "SSA5": 11,
+          "SSA6": 10,
+          "SSA7": 12
+        },
+        "total_qty": 62,
+        "total_incentive": 620.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 5,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 7,
+        "total_incentive": 70.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 0,
+          "SSA3": 16,
+          "SSA5": 13,
+          "SSA6": 8,
+          "SSA7": 12
+        },
+        "total_qty": 70,
+        "total_incentive": 350.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 17,
+          "SSA2": 2,
+          "SSA3": 7,
+          "SSA5": 29,
+          "SSA6": 0,
+          "SSA7": 2
+        },
+        "total_qty": 57,
+        "total_incentive": 570.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 9,
+          "SSA6": 11,
+          "SSA7": 0
+        },
+        "total_qty": 23,
+        "total_incentive": 230.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 22,
+          "SSA2": 3,
+          "SSA3": 28,
+          "SSA5": 54,
+          "SSA6": 17,
+          "SSA7": 22
+        },
+        "total_qty": 146,
+        "total_incentive": 1460.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 49,
+          "SSA2": 4,
+          "SSA3": 53,
+          "SSA5": 24,
+          "SSA6": 17,
+          "SSA7": 18
+        },
+        "total_qty": 165,
+        "total_incentive": 1650.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 46,
+          "SSA2": 4,
+          "SSA3": 19,
+          "SSA5": 21,
+          "SSA6": 15,
+          "SSA7": 5
+        },
+        "total_qty": 110,
+        "total_incentive": 1100.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 5,
+          "SSA6": 0,
+          "SSA7": 20
+        },
+        "total_qty": 27,
+        "total_incentive": 540.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 40.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 2,
+        "total_incentive": 80.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 109,
+          "SSA6": 45,
+          "SSA7": 38
+        },
+        "total_qty": 208,
+        "total_incentive": 624.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 34,
+          "SSA5": 55,
+          "SSA6": 25,
+          "SSA7": 105
+        },
+        "total_qty": 231,
+        "total_incentive": 1155.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 26,
+          "SSA2": 0,
+          "SSA3": 12,
+          "SSA5": 31,
+          "SSA6": 7,
+          "SSA7": 20
+        },
+        "total_qty": 96,
+        "total_incentive": 1920.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 84,
+          "SSA2": 14,
+          "SSA3": 65,
+          "SSA5": 116,
+          "SSA6": 30,
+          "SSA7": 74
+        },
+        "total_qty": 383,
+        "total_incentive": 3830.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 8,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 6,
+          "SSA6": 17,
+          "SSA7": 21
+        },
+        "total_qty": 58,
+        "total_incentive": 290.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 2,
+          "SSA3": 2,
+          "SSA5": 6,
+          "SSA6": 9,
+          "SSA7": 23
+        },
+        "total_qty": 57,
+        "total_incentive": 285.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 24,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 25,
+        "total_incentive": 625.0
+      }
+    ]
+  },
+  {
+    "month_str": "Aug",
+    "month_num": 8,
+    "year": 2025,
+    "date_key": "2025-08",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 45,
+          "SSA2": 2,
+          "SSA3": 8,
+          "SSA5": 12,
+          "SSA6": 7,
+          "SSA7": 18
+        },
+        "total_qty": 92,
+        "total_incentive": 460.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 60,
+          "SSA2": 3,
+          "SSA3": 12,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 24
+        },
+        "total_qty": 109,
+        "total_incentive": 545.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 11,
+          "SSA2": 0,
+          "SSA3": 7,
+          "SSA5": 20,
+          "SSA6": 1,
+          "SSA7": 3
+        },
+        "total_qty": 42,
+        "total_incentive": 420.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 6,
+          "SSA6": 11,
+          "SSA7": 26
+        },
+        "total_qty": 67,
+        "total_incentive": 335.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 14,
+          "SSA6": 9,
+          "SSA7": 5
+        },
+        "total_qty": 53,
+        "total_incentive": 530.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 2,
+          "SSA6": 1,
+          "SSA7": 1
+        },
+        "total_qty": 14,
+        "total_incentive": 140.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 2,
+          "SSA3": 9,
+          "SSA5": 5,
+          "SSA6": 4,
+          "SSA7": 32
+        },
+        "total_qty": 79,
+        "total_incentive": 395.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 22,
+          "SSA2": 3,
+          "SSA3": 9,
+          "SSA5": 20,
+          "SSA6": 0,
+          "SSA7": 11
+        },
+        "total_qty": 65,
+        "total_incentive": 650.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 4,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 4,
+        "total_incentive": 40.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 53,
+          "SSA2": 1,
+          "SSA3": 45,
+          "SSA5": 48,
+          "SSA6": 19,
+          "SSA7": 22
+        },
+        "total_qty": 188,
+        "total_incentive": 1880.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 2,
+          "SSA3": 46,
+          "SSA5": 35,
+          "SSA6": 14,
+          "SSA7": 24
+        },
+        "total_qty": 153,
+        "total_incentive": 1530.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 2,
+          "SSA3": 22,
+          "SSA5": 7,
+          "SSA6": 2,
+          "SSA7": 6
+        },
+        "total_qty": 52,
+        "total_incentive": 520.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 2,
+          "SSA6": 0,
+          "SSA7": 10
+        },
+        "total_qty": 18,
+        "total_incentive": 360.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 40.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 5,
+          "SSA5": 5,
+          "SSA6": 0,
+          "SSA7": 4
+        },
+        "total_qty": 17,
+        "total_incentive": 680.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 4,
+          "SSA3": 2,
+          "SSA5": 51,
+          "SSA6": 64,
+          "SSA7": 10
+        },
+        "total_qty": 146,
+        "total_incentive": 292.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 24,
+          "SSA2": 4,
+          "SSA3": 42,
+          "SSA5": 19,
+          "SSA6": 32,
+          "SSA7": 50
+        },
+        "total_qty": 171,
+        "total_incentive": 855.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 3,
+          "SSA7": 0
+        },
+        "total_qty": 3,
+        "total_incentive": 60.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 84,
+          "SSA2": 5,
+          "SSA3": 97,
+          "SSA5": 78,
+          "SSA6": 27,
+          "SSA7": 61
+        },
+        "total_qty": 352,
+        "total_incentive": 1760.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 11,
+          "SSA2": 1,
+          "SSA3": 18,
+          "SSA5": 12,
+          "SSA6": 15,
+          "SSA7": 10
+        },
+        "total_qty": 67,
+        "total_incentive": 335.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 1,
+          "SSA3": 9,
+          "SSA5": 11,
+          "SSA6": 3,
+          "SSA7": 18
+        },
+        "total_qty": 63,
+        "total_incentive": 315.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 2,
+        "total_incentive": 6.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 25,
+          "SSA6": 0,
+          "SSA7": 2
+        },
+        "total_qty": 30,
+        "total_incentive": 750.0
+      }
+    ]
+  },
+  {
+    "month_str": "Sep",
+    "month_num": 9,
+    "year": 2025,
+    "date_key": "2025-09",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 1,
+          "SSA3": 32,
+          "SSA5": 7,
+          "SSA6": 7,
+          "SSA7": 23
+        },
+        "total_qty": 97,
+        "total_incentive": 485.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 35,
+          "SSA2": 0,
+          "SSA3": 19,
+          "SSA5": 28,
+          "SSA6": 2,
+          "SSA7": 23
+        },
+        "total_qty": 107,
+        "total_incentive": 535.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 1,
+          "SSA3": 8,
+          "SSA5": 7,
+          "SSA6": 6,
+          "SSA7": 3
+        },
+        "total_qty": 37,
+        "total_incentive": 370.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 56,
+          "SSA2": 1,
+          "SSA3": 9,
+          "SSA5": 4,
+          "SSA6": 21,
+          "SSA7": 19
+        },
+        "total_qty": 110,
+        "total_incentive": 550.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 35,
+          "SSA2": 0,
+          "SSA3": 16,
+          "SSA5": 5,
+          "SSA6": 7,
+          "SSA7": 14
+        },
+        "total_qty": 77,
+        "total_incentive": 770.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 2,
+          "SSA6": 1,
+          "SSA7": 0
+        },
+        "total_qty": 13,
+        "total_incentive": 130.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 3,
+          "SSA3": 24,
+          "SSA5": 5,
+          "SSA6": 6,
+          "SSA7": 16
+        },
+        "total_qty": 72,
+        "total_incentive": 360.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 28,
+          "SSA2": 1,
+          "SSA3": 8,
+          "SSA5": 26,
+          "SSA6": 6,
+          "SSA7": 8
+        },
+        "total_qty": 77,
+        "total_incentive": 770.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 13,
+        "total_incentive": 130.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 50,
+          "SSA2": 3,
+          "SSA3": 49,
+          "SSA5": 64,
+          "SSA6": 26,
+          "SSA7": 31
+        },
+        "total_qty": 223,
+        "total_incentive": 2230.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 39,
+          "SSA2": 0,
+          "SSA3": 36,
+          "SSA5": 23,
+          "SSA6": 13,
+          "SSA7": 20
+        },
+        "total_qty": 131,
+        "total_incentive": 1310.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 26,
+          "SSA2": 0,
+          "SSA3": 18,
+          "SSA5": 32,
+          "SSA6": 7,
+          "SSA7": 9
+        },
+        "total_qty": 92,
+        "total_incentive": 920.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 1,
+          "SSA3": 0,
+          "SSA5": 5,
+          "SSA6": 0,
+          "SSA7": 14
+        },
+        "total_qty": 25,
+        "total_incentive": 250.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 1,
+          "SSA6": 5,
+          "SSA7": 0
+        },
+        "total_qty": 13,
+        "total_incentive": 260.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 2,
+          "SSA3": 12,
+          "SSA5": 20,
+          "SSA6": 79,
+          "SSA7": 13
+        },
+        "total_qty": 139,
+        "total_incentive": 278.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 18,
+          "SSA5": 13,
+          "SSA6": 70,
+          "SSA7": 13
+        },
+        "total_qty": 128,
+        "total_incentive": 640.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 86,
+          "SSA2": 13,
+          "SSA3": 58,
+          "SSA5": 101,
+          "SSA6": 17,
+          "SSA7": 70
+        },
+        "total_qty": 345,
+        "total_incentive": 1725.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 25,
+          "SSA2": 1,
+          "SSA3": 18,
+          "SSA5": 30,
+          "SSA6": 13,
+          "SSA7": 16
+        },
+        "total_qty": 103,
+        "total_incentive": 515.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 1,
+          "SSA3": 7,
+          "SSA5": 13,
+          "SSA6": 2,
+          "SSA7": 51
+        },
+        "total_qty": 106,
+        "total_incentive": 530.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 8,
+          "SSA6": 0,
+          "SSA7": 7
+        },
+        "total_qty": 17,
+        "total_incentive": 51.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 43,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 5
+        },
+        "total_qty": 59,
+        "total_incentive": 1475.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 44,
+          "SSA2": 5,
+          "SSA3": 24,
+          "SSA5": 31,
+          "SSA6": 19,
+          "SSA7": 31
+        },
+        "total_qty": 154,
+        "total_incentive": 1540.0
+      }
+    ]
+  },
+  {
+    "month_str": "Oct",
+    "month_num": 10,
+    "year": 2025,
+    "date_key": "2025-10",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 39,
+          "SSA2": 0,
+          "SSA3": 7,
+          "SSA5": 40,
+          "SSA6": 3,
+          "SSA7": 7
+        },
+        "total_qty": 96,
+        "total_incentive": 480.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 53,
+          "SSA2": 1,
+          "SSA3": 12,
+          "SSA5": 31,
+          "SSA6": 0,
+          "SSA7": 19
+        },
+        "total_qty": 116,
+        "total_incentive": 580.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 9,
+          "SSA2": 0,
+          "SSA3": 5,
+          "SSA5": 8,
+          "SSA6": 3,
+          "SSA7": 4
+        },
+        "total_qty": 29,
+        "total_incentive": 290.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 58,
+          "SSA2": 1,
+          "SSA3": 7,
+          "SSA5": 30,
+          "SSA6": 12,
+          "SSA7": 10
+        },
+        "total_qty": 118,
+        "total_incentive": 590.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 102,
+          "SSA2": 2,
+          "SSA3": 10,
+          "SSA5": 10,
+          "SSA6": 11,
+          "SSA7": 12
+        },
+        "total_qty": 147,
+        "total_incentive": 1470.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 6,
+          "SSA6": 0,
+          "SSA7": 8
+        },
+        "total_qty": 18,
+        "total_incentive": 180.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 42,
+          "SSA2": 2,
+          "SSA3": 22,
+          "SSA5": 3,
+          "SSA6": 2,
+          "SSA7": 13
+        },
+        "total_qty": 84,
+        "total_incentive": 420.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 2,
+          "SSA3": 5,
+          "SSA5": 33,
+          "SSA6": 14,
+          "SSA7": 4
+        },
+        "total_qty": 85,
+        "total_incentive": 850.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 1,
+          "SSA3": 9,
+          "SSA5": 9,
+          "SSA6": 10,
+          "SSA7": 1
+        },
+        "total_qty": 31,
+        "total_incentive": 310.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 48,
+          "SSA2": 0,
+          "SSA3": 47,
+          "SSA5": 45,
+          "SSA6": 13,
+          "SSA7": 18
+        },
+        "total_qty": 171,
+        "total_incentive": 1710.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 39,
+          "SSA2": 1,
+          "SSA3": 30,
+          "SSA5": 19,
+          "SSA6": 9,
+          "SSA7": 20
+        },
+        "total_qty": 118,
+        "total_incentive": 1180.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 22,
+          "SSA2": 1,
+          "SSA3": 28,
+          "SSA5": 28,
+          "SSA6": 10,
+          "SSA7": 6
+        },
+        "total_qty": 95,
+        "total_incentive": 950.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 4,
+          "SSA6": 5,
+          "SSA7": 0
+        },
+        "total_qty": 16,
+        "total_incentive": 160.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 2,
+          "SSA7": 5
+        },
+        "total_qty": 12,
+        "total_incentive": 240.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 29,
+          "SSA2": 0,
+          "SSA3": 51,
+          "SSA5": 19,
+          "SSA6": 38,
+          "SSA7": 1
+        },
+        "total_qty": 138,
+        "total_incentive": 276.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 10,
+          "SSA5": 7,
+          "SSA6": 23,
+          "SSA7": 39
+        },
+        "total_qty": 97,
+        "total_incentive": 485.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 77,
+          "SSA2": 5,
+          "SSA3": 52,
+          "SSA5": 112,
+          "SSA6": 27,
+          "SSA7": 49
+        },
+        "total_qty": 322,
+        "total_incentive": 1610.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 4,
+          "SSA3": 17,
+          "SSA5": 26,
+          "SSA6": 7,
+          "SSA7": 20
+        },
+        "total_qty": 84,
+        "total_incentive": 420.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 23,
+          "SSA2": 5,
+          "SSA3": 15,
+          "SSA5": 16,
+          "SSA6": 9,
+          "SSA7": 27
+        },
+        "total_qty": 95,
+        "total_incentive": 475.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 1,
+          "SSA6": 0,
+          "SSA7": 9
+        },
+        "total_qty": 12,
+        "total_incentive": 36.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 26,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 20,
+          "SSA6": 2,
+          "SSA7": 3
+        },
+        "total_qty": 62,
+        "total_incentive": 1550.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 1,
+          "SSA3": 24,
+          "SSA5": 13,
+          "SSA6": 12,
+          "SSA7": 11
+        },
+        "total_qty": 88,
+        "total_incentive": 880.0
+      }
+    ]
+  },
+  {
+    "month_str": "Nov",
+    "month_num": 11,
+    "year": 2025,
+    "date_key": "2025-11",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 26,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 31,
+          "SSA6": 2,
+          "SSA7": 15
+        },
+        "total_qty": 83,
+        "total_incentive": 415.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 29,
+          "SSA2": 1,
+          "SSA3": 12,
+          "SSA5": 17,
+          "SSA6": 5,
+          "SSA7": 30
+        },
+        "total_qty": 94,
+        "total_incentive": 470.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 0,
+          "SSA3": 13,
+          "SSA5": 18,
+          "SSA6": 1,
+          "SSA7": 15
+        },
+        "total_qty": 57,
+        "total_incentive": 570.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 4,
+          "SSA6": 2,
+          "SSA7": 0
+        },
+        "total_qty": 39,
+        "total_incentive": 195.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 20,
+          "SSA2": 2,
+          "SSA3": 7,
+          "SSA5": 12,
+          "SSA6": 6,
+          "SSA7": 1
+        },
+        "total_qty": 48,
+        "total_incentive": 480.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 8,
+        "total_incentive": 80.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 30,
+          "SSA2": 3,
+          "SSA3": 19,
+          "SSA5": 3,
+          "SSA6": 3,
+          "SSA7": 5
+        },
+        "total_qty": 63,
+        "total_incentive": 315.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 20,
+          "SSA2": 1,
+          "SSA3": 5,
+          "SSA5": 27,
+          "SSA6": 8,
+          "SSA7": 6
+        },
+        "total_qty": 67,
+        "total_incentive": 670.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 3,
+          "SSA6": 9,
+          "SSA7": 0
+        },
+        "total_qty": 17,
+        "total_incentive": 170.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 46,
+          "SSA2": 4,
+          "SSA3": 54,
+          "SSA5": 57,
+          "SSA6": 17,
+          "SSA7": 15
+        },
+        "total_qty": 193,
+        "total_incentive": 1930.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 50,
+          "SSA2": 1,
+          "SSA3": 35,
+          "SSA5": 17,
+          "SSA6": 12,
+          "SSA7": 7
+        },
+        "total_qty": 122,
+        "total_incentive": 1220.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 11,
+          "SSA6": 8,
+          "SSA7": 6
+        },
+        "total_qty": 55,
+        "total_incentive": 550.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 1,
+          "SSA3": 0,
+          "SSA5": 1,
+          "SSA6": 9,
+          "SSA7": 13
+        },
+        "total_qty": 24,
+        "total_incentive": 240.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 2,
+          "SSA6": 2,
+          "SSA7": 8
+        },
+        "total_qty": 15,
+        "total_incentive": 300.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 0,
+          "SSA3": 15,
+          "SSA5": 9,
+          "SSA6": 19,
+          "SSA7": 14
+        },
+        "total_qty": 63,
+        "total_incentive": 126.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 81,
+          "SSA2": 0,
+          "SSA3": 23,
+          "SSA5": 46,
+          "SSA6": 14,
+          "SSA7": 54
+        },
+        "total_qty": 218,
+        "total_incentive": 1090.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 10,
+          "SSA6": 2,
+          "SSA7": 0
+        },
+        "total_qty": 18,
+        "total_incentive": 360.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 116,
+          "SSA2": 10,
+          "SSA3": 81,
+          "SSA5": 144,
+          "SSA6": 19,
+          "SSA7": 44
+        },
+        "total_qty": 414,
+        "total_incentive": 2070.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 2,
+          "SSA3": 27,
+          "SSA5": 27,
+          "SSA6": 8,
+          "SSA7": 29
+        },
+        "total_qty": 106,
+        "total_incentive": 530.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 57,
+          "SSA2": 5,
+          "SSA3": 19,
+          "SSA5": 19,
+          "SSA6": 6,
+          "SSA7": 36
+        },
+        "total_qty": 142,
+        "total_incentive": 710.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 1,
+          "SSA6": 0,
+          "SSA7": 2
+        },
+        "total_qty": 5,
+        "total_incentive": 15.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 17,
+          "SSA6": 2,
+          "SSA7": 2
+        },
+        "total_qty": 48,
+        "total_incentive": 1200.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 45,
+          "SSA2": 0,
+          "SSA3": 35,
+          "SSA5": 31,
+          "SSA6": 21,
+          "SSA7": 11
+        },
+        "total_qty": 143,
+        "total_incentive": 1430.0
+      }
+    ]
+  },
+  {
+    "month_str": "Dec",
+    "month_num": 12,
+    "year": 2025,
+    "date_key": "2025-12",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 24,
+          "SSA2": 0,
+          "SSA3": 13,
+          "SSA5": 25,
+          "SSA6": 2,
+          "SSA7": 10
+        },
+        "total_qty": 74,
+        "total_incentive": 370.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 55,
+          "SSA2": 1,
+          "SSA3": 17,
+          "SSA5": 28,
+          "SSA6": 1,
+          "SSA7": 46
+        },
+        "total_qty": 148,
+        "total_incentive": 740.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 2,
+          "SSA3": 1,
+          "SSA5": 18,
+          "SSA6": 1,
+          "SSA7": 0
+        },
+        "total_qty": 24,
+        "total_incentive": 240.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 25,
+          "SSA2": 2,
+          "SSA3": 14,
+          "SSA5": 2,
+          "SSA6": 23,
+          "SSA7": 10
+        },
+        "total_qty": 76,
+        "total_incentive": 380.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 0,
+          "SSA6": 7,
+          "SSA7": 4
+        },
+        "total_qty": 37,
+        "total_incentive": 370.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 13,
+          "SSA6": 0,
+          "SSA7": 6
+        },
+        "total_qty": 27,
+        "total_incentive": 270.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 1,
+          "SSA3": 8,
+          "SSA5": 15,
+          "SSA6": 6,
+          "SSA7": 11
+        },
+        "total_qty": 74,
+        "total_incentive": 370.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 25,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 27,
+          "SSA6": 13,
+          "SSA7": 7
+        },
+        "total_qty": 80,
+        "total_incentive": 800.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 1,
+          "SSA3": 4,
+          "SSA5": 4,
+          "SSA6": 12,
+          "SSA7": 2
+        },
+        "total_qty": 27,
+        "total_incentive": 270.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 74,
+          "SSA2": 3,
+          "SSA3": 63,
+          "SSA5": 41,
+          "SSA6": 16,
+          "SSA7": 23
+        },
+        "total_qty": 220,
+        "total_incentive": 2200.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 50,
+          "SSA2": 3,
+          "SSA3": 40,
+          "SSA5": 34,
+          "SSA6": 18,
+          "SSA7": 18
+        },
+        "total_qty": 163,
+        "total_incentive": 1630.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 1,
+        "total_incentive": 10.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 2,
+          "SSA6": 8,
+          "SSA7": 15
+        },
+        "total_qty": 41,
+        "total_incentive": 410.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 4,
+          "SSA6": 3,
+          "SSA7": 1
+        },
+        "total_qty": 15,
+        "total_incentive": 300.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 0,
+          "SSA3": 22,
+          "SSA5": 12,
+          "SSA6": 10,
+          "SSA7": 12
+        },
+        "total_qty": 71,
+        "total_incentive": 142.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 54,
+          "SSA2": 0,
+          "SSA3": 10,
+          "SSA5": 59,
+          "SSA6": 2,
+          "SSA7": 82
+        },
+        "total_qty": 207,
+        "total_incentive": 1035.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 4,
+          "SSA6": 2,
+          "SSA7": 9
+        },
+        "total_qty": 38,
+        "total_incentive": 760.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 96,
+          "SSA2": 11,
+          "SSA3": 98,
+          "SSA5": 134,
+          "SSA6": 20,
+          "SSA7": 37
+        },
+        "total_qty": 396,
+        "total_incentive": 1980.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 1,
+          "SSA3": 5,
+          "SSA5": 20,
+          "SSA6": 10,
+          "SSA7": 21
+        },
+        "total_qty": 89,
+        "total_incentive": 445.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 65,
+          "SSA2": 5,
+          "SSA3": 6,
+          "SSA5": 22,
+          "SSA6": 9,
+          "SSA7": 19
+        },
+        "total_qty": 126,
+        "total_incentive": 630.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 6,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 10,
+        "total_incentive": 30.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 0,
+          "SSA3": 15,
+          "SSA5": 44,
+          "SSA6": 3,
+          "SSA7": 4
+        },
+        "total_qty": 93,
+        "total_incentive": 2325.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 37,
+          "SSA2": 9,
+          "SSA3": 26,
+          "SSA5": 34,
+          "SSA6": 16,
+          "SSA7": 15
+        },
+        "total_qty": 137,
+        "total_incentive": 1370.0
+      }
+    ]
+  },
+  {
+    "month_str": "Jan",
+    "month_num": 1,
+    "year": 2026,
+    "date_key": "2026-01",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 3,
+          "SSA3": 14,
+          "SSA5": 41,
+          "SSA6": 2,
+          "SSA7": 39
+        },
+        "total_qty": 132,
+        "total_incentive": 660.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 96,
+          "SSA2": 0,
+          "SSA3": 20,
+          "SSA5": 30,
+          "SSA6": 2,
+          "SSA7": 34
+        },
+        "total_qty": 182,
+        "total_incentive": 910.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 15,
+        "total_incentive": 150.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 0,
+          "SSA3": 7,
+          "SSA5": 9,
+          "SSA6": 12,
+          "SSA7": 9
+        },
+        "total_qty": 70,
+        "total_incentive": 350.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 30,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 14,
+          "SSA6": 5,
+          "SSA7": 13
+        },
+        "total_qty": 73,
+        "total_incentive": 730.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 12,
+          "SSA6": 0,
+          "SSA7": 3
+        },
+        "total_qty": 21,
+        "total_incentive": 210.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 25,
+          "SSA2": 1,
+          "SSA3": 15,
+          "SSA5": 5,
+          "SSA6": 4,
+          "SSA7": 8
+        },
+        "total_qty": 58,
+        "total_incentive": 290.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 41,
+          "SSA6": 6,
+          "SSA7": 13
+        },
+        "total_qty": 104,
+        "total_incentive": 1040.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 2,
+          "SSA3": 2,
+          "SSA5": 5,
+          "SSA6": 28,
+          "SSA7": 0
+        },
+        "total_qty": 38,
+        "total_incentive": 380.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 65,
+          "SSA2": 0,
+          "SSA3": 46,
+          "SSA5": 70,
+          "SSA6": 16,
+          "SSA7": 28
+        },
+        "total_qty": 225,
+        "total_incentive": 2250.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 48,
+          "SSA2": 2,
+          "SSA3": 34,
+          "SSA5": 30,
+          "SSA6": 16,
+          "SSA7": 10
+        },
+        "total_qty": 140,
+        "total_incentive": 1400.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 15,
+          "SSA2": 1,
+          "SSA3": 23,
+          "SSA5": 16,
+          "SSA6": 9,
+          "SSA7": 2
+        },
+        "total_qty": 66,
+        "total_incentive": 660.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 15
+        },
+        "total_qty": 25,
+        "total_incentive": 250.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 0,
+          "SSA6": 5,
+          "SSA7": 6
+        },
+        "total_qty": 19,
+        "total_incentive": 380.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 36,
+          "SSA2": 0,
+          "SSA3": 5,
+          "SSA5": 19,
+          "SSA6": 7,
+          "SSA7": 9
+        },
+        "total_qty": 76,
+        "total_incentive": 152.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 59,
+          "SSA2": 0,
+          "SSA3": 40,
+          "SSA5": 182,
+          "SSA6": 8,
+          "SSA7": 146
+        },
+        "total_qty": 435,
+        "total_incentive": 2175.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 0,
+          "SSA3": 17,
+          "SSA5": 13,
+          "SSA6": 1,
+          "SSA7": 9
+        },
+        "total_qty": 67,
+        "total_incentive": 1340.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 97,
+          "SSA2": 4,
+          "SSA3": 103,
+          "SSA5": 111,
+          "SSA6": 25,
+          "SSA7": 54
+        },
+        "total_qty": 394,
+        "total_incentive": 1970.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 22,
+          "SSA5": 20,
+          "SSA6": 16,
+          "SSA7": 57
+        },
+        "total_qty": 133,
+        "total_incentive": 1330.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 36,
+          "SSA2": 5,
+          "SSA3": 21,
+          "SSA5": 16,
+          "SSA6": 9,
+          "SSA7": 29
+        },
+        "total_qty": 116,
+        "total_incentive": 1160.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 9,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 24,
+          "SSA6": 0,
+          "SSA7": 11
+        },
+        "total_qty": 44,
+        "total_incentive": 132.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 23,
+          "SSA2": 0,
+          "SSA3": 21,
+          "SSA5": 20,
+          "SSA6": 1,
+          "SSA7": 4
+        },
+        "total_qty": 69,
+        "total_incentive": 1725.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 46,
+          "SSA2": 1,
+          "SSA3": 25,
+          "SSA5": 20,
+          "SSA6": 22,
+          "SSA7": 18
+        },
+        "total_qty": 132,
+        "total_incentive": 1320.0
+      }
+    ]
+  },
+  {
+    "month_str": "Feb",
+    "month_num": 2,
+    "year": 2026,
+    "date_key": "2026-02",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 61,
+          "SSA2": 3,
+          "SSA3": 20,
+          "SSA5": 28,
+          "SSA6": 4,
+          "SSA7": 39
+        },
+        "total_qty": 155,
+        "total_incentive": 775.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 52,
+          "SSA2": 2,
+          "SSA3": 14,
+          "SSA5": 20,
+          "SSA6": 6,
+          "SSA7": 31
+        },
+        "total_qty": 125,
+        "total_incentive": 625.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 10,
+        "total_incentive": 100.0
+      },
+      {
+        "product_name": "Capsika-25 LotionSpongPak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Capsika-75 Lotion Spong Pak 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 1,
+          "SSA3": 7,
+          "SSA5": 10,
+          "SSA6": 9,
+          "SSA7": 11
+        },
+        "total_qty": 54,
+        "total_incentive": 270.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 75,
+          "SSA2": 2,
+          "SSA3": 8,
+          "SSA5": 20,
+          "SSA6": 9,
+          "SSA7": 13
+        },
+        "total_qty": 127,
+        "total_incentive": 1270.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 8,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 3
+        },
+        "total_qty": 20,
+        "total_incentive": 200.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 17,
+          "SSA2": 5,
+          "SSA3": 8,
+          "SSA5": 6,
+          "SSA6": 3,
+          "SSA7": 10
+        },
+        "total_qty": 49,
+        "total_incentive": 245.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 24,
+          "SSA2": 3,
+          "SSA3": 5,
+          "SSA5": 32,
+          "SSA6": 10,
+          "SSA7": 14
+        },
+        "total_qty": 88,
+        "total_incentive": 880.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 2,
+          "SSA3": 3,
+          "SSA5": 0,
+          "SSA6": 11,
+          "SSA7": 3
+        },
+        "total_qty": 24,
+        "total_incentive": 240.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 54,
+          "SSA2": 1,
+          "SSA3": 40,
+          "SSA5": 58,
+          "SSA6": 17,
+          "SSA7": 21
+        },
+        "total_qty": 191,
+        "total_incentive": 1910.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 43,
+          "SSA2": 2,
+          "SSA3": 31,
+          "SSA5": 25,
+          "SSA6": 12,
+          "SSA7": 15
+        },
+        "total_qty": 128,
+        "total_incentive": 1280.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 23,
+          "SSA2": 0,
+          "SSA3": 18,
+          "SSA5": 17,
+          "SSA6": 4,
+          "SSA7": 11
+        },
+        "total_qty": 73,
+        "total_incentive": 730.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 2,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 9,
+          "SSA6": 7,
+          "SSA7": 12
+        },
+        "total_qty": 30,
+        "total_incentive": 300.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 5,
+          "SSA6": 3,
+          "SSA7": 3
+        },
+        "total_qty": 17,
+        "total_incentive": 340.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 71,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 17,
+          "SSA6": 12,
+          "SSA7": 6
+        },
+        "total_qty": 114,
+        "total_incentive": 228.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 24,
+          "SSA2": 0,
+          "SSA3": 17,
+          "SSA5": 148,
+          "SSA6": 3,
+          "SSA7": 97
+        },
+        "total_qty": 289,
+        "total_incentive": 1445.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 66,
+          "SSA5": 30,
+          "SSA6": 6,
+          "SSA7": 42
+        },
+        "total_qty": 162,
+        "total_incentive": 3240.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 81,
+          "SSA2": 2,
+          "SSA3": 58,
+          "SSA5": 91,
+          "SSA6": 21,
+          "SSA7": 40
+        },
+        "total_qty": 293,
+        "total_incentive": 1465.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 3,
+          "SSA3": 26,
+          "SSA5": 21,
+          "SSA6": 8,
+          "SSA7": 15
+        },
+        "total_qty": 87,
+        "total_incentive": 870.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 37,
+          "SSA2": 7,
+          "SSA3": 41,
+          "SSA5": 15,
+          "SSA6": 9,
+          "SSA7": 14
+        },
+        "total_qty": 123,
+        "total_incentive": 1230.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 15,
+          "SSA6": 0,
+          "SSA7": 1
+        },
+        "total_qty": 22,
+        "total_incentive": 66.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 0,
+          "SSA3": 5,
+          "SSA5": 5,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 23,
+        "total_incentive": 575.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 42,
+          "SSA2": 0,
+          "SSA3": 27,
+          "SSA5": 35,
+          "SSA6": 21,
+          "SSA7": 21
+        },
+        "total_qty": 146,
+        "total_incentive": 1460.0
+      }
+    ]
+  },
+  {
+    "month_str": "Mar",
+    "month_num": 3,
+    "year": 2026,
+    "date_key": "2026-03",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 57,
+          "SSA2": 1,
+          "SSA3": 10,
+          "SSA5": 34,
+          "SSA6": 3,
+          "SSA7": 8
+        },
+        "total_qty": 113,
+        "total_incentive": 565.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 28,
+          "SSA2": 1,
+          "SSA3": 6,
+          "SSA5": 44,
+          "SSA6": 8,
+          "SSA7": 17
+        },
+        "total_qty": 104,
+        "total_incentive": 520.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 3,
+          "SSA6": 2,
+          "SSA7": 0
+        },
+        "total_qty": 37,
+        "total_incentive": 370.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 29,
+          "SSA2": 0,
+          "SSA3": 12,
+          "SSA5": 13,
+          "SSA6": 10,
+          "SSA7": 7
+        },
+        "total_qty": 71,
+        "total_incentive": 355.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 20,
+          "SSA2": 0,
+          "SSA3": 7,
+          "SSA5": 15,
+          "SSA6": 2,
+          "SSA7": 6
+        },
+        "total_qty": 50,
+        "total_incentive": 500.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 8,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 1
+        },
+        "total_qty": 15,
+        "total_incentive": 150.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 1,
+          "SSA3": 12,
+          "SSA5": 40,
+          "SSA6": 2,
+          "SSA7": 18
+        },
+        "total_qty": 86,
+        "total_incentive": 430.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 19,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 22,
+          "SSA6": 19,
+          "SSA7": 4
+        },
+        "total_qty": 70,
+        "total_incentive": 700.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 5,
+          "SSA3": 2,
+          "SSA5": 4,
+          "SSA6": 20,
+          "SSA7": 7
+        },
+        "total_qty": 39,
+        "total_incentive": 390.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 103,
+          "SSA2": 2,
+          "SSA3": 50,
+          "SSA5": 74,
+          "SSA6": 16,
+          "SSA7": 25
+        },
+        "total_qty": 270,
+        "total_incentive": 2700.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 47,
+          "SSA2": 0,
+          "SSA3": 57,
+          "SSA5": 23,
+          "SSA6": 17,
+          "SSA7": 15
+        },
+        "total_qty": 159,
+        "total_incentive": 1590.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 29,
+          "SSA2": 5,
+          "SSA3": 28,
+          "SSA5": 13,
+          "SSA6": 6,
+          "SSA7": 11
+        },
+        "total_qty": 92,
+        "total_incentive": 920.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 5,
+          "SSA6": 9,
+          "SSA7": 12
+        },
+        "total_qty": 28,
+        "total_incentive": 280.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 6,
+          "SSA6": 2,
+          "SSA7": 2
+        },
+        "total_qty": 16,
+        "total_incentive": 320.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 8,
+          "SSA6": 8,
+          "SSA7": 0
+        },
+        "total_qty": 46,
+        "total_incentive": 92.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 36,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 140,
+          "SSA6": 8,
+          "SSA7": 59
+        },
+        "total_qty": 249,
+        "total_incentive": 1245.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 63,
+          "SSA2": 0,
+          "SSA3": 45,
+          "SSA5": 51,
+          "SSA6": 9,
+          "SSA7": 39
+        },
+        "total_qty": 207,
+        "total_incentive": 4140.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 79,
+          "SSA2": 2,
+          "SSA3": 80,
+          "SSA5": 85,
+          "SSA6": 14,
+          "SSA7": 39
+        },
+        "total_qty": 299,
+        "total_incentive": 1495.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 23,
+          "SSA2": 4,
+          "SSA3": 19,
+          "SSA5": 24,
+          "SSA6": 20,
+          "SSA7": 41
+        },
+        "total_qty": 131,
+        "total_incentive": 655.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 43,
+          "SSA2": 7,
+          "SSA3": 38,
+          "SSA5": 20,
+          "SSA6": 19,
+          "SSA7": 47
+        },
+        "total_qty": 174,
+        "total_incentive": 870.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 25,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 37,
+        "total_incentive": 111.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 15,
+          "SSA5": 12,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 41,
+        "total_incentive": 1025.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 82,
+          "SSA2": 7,
+          "SSA3": 68,
+          "SSA5": 98,
+          "SSA6": 41,
+          "SSA7": 48
+        },
+        "total_qty": 344,
+        "total_incentive": 3440.0
+      }
+    ]
+  },
+  {
+    "month_str": "Apr",
+    "month_num": 4,
+    "year": 2026,
+    "date_key": "2026-04",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 15,
+          "SSA6": 2,
+          "SSA7": 16
+        },
+        "total_qty": 58,
+        "total_incentive": 290.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 14,
+          "SSA3": 19,
+          "SSA5": 49,
+          "SSA6": 8,
+          "SSA7": 47
+        },
+        "total_qty": 169,
+        "total_incentive": 845.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 7,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 7,
+        "total_incentive": 70.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 26,
+          "SSA2": 0,
+          "SSA3": 13,
+          "SSA5": 20,
+          "SSA6": 11,
+          "SSA7": 14
+        },
+        "total_qty": 84,
+        "total_incentive": 420.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 21,
+          "SSA6": 8,
+          "SSA7": 11
+        },
+        "total_qty": 66,
+        "total_incentive": 660.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 12,
+          "SSA6": 1,
+          "SSA7": 1
+        },
+        "total_qty": 27,
+        "total_incentive": 270.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 10,
+          "SSA2": 1,
+          "SSA3": 32,
+          "SSA5": 20,
+          "SSA6": 0,
+          "SSA7": 21
+        },
+        "total_qty": 84,
+        "total_incentive": 420.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 21,
+          "SSA2": 3,
+          "SSA3": 8,
+          "SSA5": 11,
+          "SSA6": 14,
+          "SSA7": 6
+        },
+        "total_qty": 63,
+        "total_incentive": 630.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 3,
+          "SSA5": 4,
+          "SSA6": 16,
+          "SSA7": 3
+        },
+        "total_qty": 26,
+        "total_incentive": 260.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 45,
+          "SSA2": 1,
+          "SSA3": 56,
+          "SSA5": 52,
+          "SSA6": 19,
+          "SSA7": 15
+        },
+        "total_qty": 188,
+        "total_incentive": 1880.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 54,
+          "SSA2": 0,
+          "SSA3": 44,
+          "SSA5": 30,
+          "SSA6": 16,
+          "SSA7": 26
+        },
+        "total_qty": 170,
+        "total_incentive": 1700.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 17,
+          "SSA2": 0,
+          "SSA3": 18,
+          "SSA5": 20,
+          "SSA6": 12,
+          "SSA7": 6
+        },
+        "total_qty": 73,
+        "total_incentive": 730.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 1,
+          "SSA3": 6,
+          "SSA5": 3,
+          "SSA6": 6,
+          "SSA7": 15
+        },
+        "total_qty": 35,
+        "total_incentive": 350.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 7,
+          "SSA6": 3,
+          "SSA7": 8
+        },
+        "total_qty": 25,
+        "total_incentive": 500.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 74,
+          "SSA5": 47,
+          "SSA6": 10,
+          "SSA7": 0
+        },
+        "total_qty": 149,
+        "total_incentive": 298.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 86,
+          "SSA2": 0,
+          "SSA3": 24,
+          "SSA5": 143,
+          "SSA6": 36,
+          "SSA7": 77
+        },
+        "total_qty": 366,
+        "total_incentive": 1830.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 27,
+          "SSA2": 0,
+          "SSA3": 27,
+          "SSA5": 13,
+          "SSA6": 7,
+          "SSA7": 23
+        },
+        "total_qty": 97,
+        "total_incentive": 1940.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 86,
+          "SSA2": 5,
+          "SSA3": 101,
+          "SSA5": 71,
+          "SSA6": 11,
+          "SSA7": 28
+        },
+        "total_qty": 302,
+        "total_incentive": 1510.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 8,
+          "SSA2": 1,
+          "SSA3": 33,
+          "SSA5": 21,
+          "SSA6": 7,
+          "SSA7": 9
+        },
+        "total_qty": 79,
+        "total_incentive": 395.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 2,
+          "SSA3": 34,
+          "SSA5": 27,
+          "SSA6": 21,
+          "SSA7": 35
+        },
+        "total_qty": 137,
+        "total_incentive": 685.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 9,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 27,
+        "total_incentive": 81.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 19,
+          "SSA6": 0,
+          "SSA7": 7
+        },
+        "total_qty": 49,
+        "total_incentive": 1225.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 69,
+          "SSA2": 9,
+          "SSA3": 65,
+          "SSA5": 94,
+          "SSA6": 45,
+          "SSA7": 47
+        },
+        "total_qty": 329,
+        "total_incentive": 3290.0
+      },
+      {
+        "product_name": "Raqua cleansing gel 80 mL",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Diabederm lotion 10% 200mL",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      }
+    ]
+  },
+  {
+    "month_str": "May",
+    "month_num": 5,
+    "year": 2026,
+    "date_key": "2026-05",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 36,
+          "SSA2": 0,
+          "SSA3": 12,
+          "SSA5": 119,
+          "SSA6": 2,
+          "SSA7": 2
+        },
+        "total_qty": 171,
+        "total_incentive": 855.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 35,
+          "SSA2": 2,
+          "SSA3": 6,
+          "SSA5": 20,
+          "SSA6": 10,
+          "SSA7": 26
+        },
+        "total_qty": 99,
+        "total_incentive": 495.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 1,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 1,
+        "total_incentive": 10.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 22,
+          "SSA2": 11,
+          "SSA3": 12,
+          "SSA5": 21,
+          "SSA6": 22,
+          "SSA7": 6
+        },
+        "total_qty": 94,
+        "total_incentive": 470.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 33,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 28,
+          "SSA6": 5,
+          "SSA7": 22
+        },
+        "total_qty": 99,
+        "total_incentive": 990.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 2
+        },
+        "total_qty": 9,
+        "total_incentive": 90.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 47,
+          "SSA2": 0,
+          "SSA3": 10,
+          "SSA5": 42,
+          "SSA6": 2,
+          "SSA7": 11
+        },
+        "total_qty": 112,
+        "total_incentive": 560.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 11,
+          "SSA5": 31,
+          "SSA6": 15,
+          "SSA7": 12
+        },
+        "total_qty": 81,
+        "total_incentive": 810.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 7,
+          "SSA2": 0,
+          "SSA3": 7,
+          "SSA5": 3,
+          "SSA6": 11,
+          "SSA7": 1
+        },
+        "total_qty": 29,
+        "total_incentive": 290.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 65,
+          "SSA2": 3,
+          "SSA3": 59,
+          "SSA5": 57,
+          "SSA6": 29,
+          "SSA7": 22
+        },
+        "total_qty": 235,
+        "total_incentive": 2350.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 61,
+          "SSA2": 0,
+          "SSA3": 30,
+          "SSA5": 24,
+          "SSA6": 7,
+          "SSA7": 20
+        },
+        "total_qty": 142,
+        "total_incentive": 1420.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 32,
+          "SSA2": 0,
+          "SSA3": 29,
+          "SSA5": 20,
+          "SSA6": 7,
+          "SSA7": 7
+        },
+        "total_qty": 95,
+        "total_incentive": 950.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 7,
+          "SSA6": 4,
+          "SSA7": 5
+        },
+        "total_qty": 23,
+        "total_incentive": 230.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 6,
+          "SSA6": 0,
+          "SSA7": 6
+        },
+        "total_qty": 22,
+        "total_incentive": 440.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 0,
+          "SSA3": 67,
+          "SSA5": 40,
+          "SSA6": 3,
+          "SSA7": 0
+        },
+        "total_qty": 126,
+        "total_incentive": 252.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 44,
+          "SSA2": 0,
+          "SSA3": 18,
+          "SSA5": 212,
+          "SSA6": 7,
+          "SSA7": 108
+        },
+        "total_qty": 389,
+        "total_incentive": 1945.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 66,
+          "SSA2": 0,
+          "SSA3": 54,
+          "SSA5": 24,
+          "SSA6": 9,
+          "SSA7": 57
+        },
+        "total_qty": 210,
+        "total_incentive": 4200.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 103,
+          "SSA2": 7,
+          "SSA3": 65,
+          "SSA5": 66,
+          "SSA6": 22,
+          "SSA7": 45
+        },
+        "total_qty": 308,
+        "total_incentive": 1540.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 6,
+          "SSA2": 2,
+          "SSA3": 18,
+          "SSA5": 30,
+          "SSA6": 17,
+          "SSA7": 9
+        },
+        "total_qty": 82,
+        "total_incentive": 410.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 36,
+          "SSA2": 3,
+          "SSA3": 26,
+          "SSA5": 9,
+          "SSA6": 11,
+          "SSA7": 25
+        },
+        "total_qty": 110,
+        "total_incentive": 550.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 10,
+          "SSA6": 0,
+          "SSA7": 4
+        },
+        "total_qty": 27,
+        "total_incentive": 81.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 12,
+          "SSA2": 0,
+          "SSA3": 21,
+          "SSA5": 18,
+          "SSA6": 0,
+          "SSA7": 9
+        },
+        "total_qty": 60,
+        "total_incentive": 1500.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 104,
+          "SSA2": 10,
+          "SSA3": 87,
+          "SSA5": 81,
+          "SSA6": 43,
+          "SSA7": 39
+        },
+        "total_qty": 364,
+        "total_incentive": 3640.0
+      },
+      {
+        "product_name": "Raqua cleansing gel 80 mL",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 1,
+          "SSA7": 0
+        },
+        "total_qty": 1,
+        "total_incentive": 5.0
+      },
+      {
+        "product_name": "Diabederm lotion 10% 200mL",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 1,
+        "total_incentive": 10.0
+      }
+    ]
+  },
+  {
+    "month_str": "Jun",
+    "month_num": 6,
+    "year": 2026,
+    "date_key": "2026-06",
+    "products": [
+      {
+        "product_name": "Capsika 0.0125%gel 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 13,
+          "SSA2": 0,
+          "SSA3": 8,
+          "SSA5": 77,
+          "SSA6": 2,
+          "SSA7": 17
+        },
+        "total_qty": 117,
+        "total_incentive": 585.0
+      },
+      {
+        "product_name": "Capsika-25 (0.025%) Gel 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 16,
+          "SSA2": 3,
+          "SSA3": 11,
+          "SSA5": 34,
+          "SSA6": 7,
+          "SSA7": 29
+        },
+        "total_qty": 100,
+        "total_incentive": 500.0
+      },
+      {
+        "product_name": "Capsika-25 Lotion Spray 100ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "AROTIKA Rub 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 11,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 15,
+          "SSA6": 18,
+          "SSA7": 12
+        },
+        "total_qty": 62,
+        "total_incentive": 310.0
+      },
+      {
+        "product_name": "AROTIKA Rub SprayPak 60ml BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 29,
+          "SSA2": 0,
+          "SSA3": 6,
+          "SSA5": 33,
+          "SSA6": 9,
+          "SSA7": 11
+        },
+        "total_qty": 88,
+        "total_incentive": 880.0
+      },
+      {
+        "product_name": "AROTIKA Rub Location 80ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 3,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 3,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 8,
+        "total_incentive": 80.0
+      },
+      {
+        "product_name": "Plaivana cream 14% 35g BDC",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 14,
+          "SSA2": 0,
+          "SSA3": 10,
+          "SSA5": 27,
+          "SSA6": 4,
+          "SSA7": 20
+        },
+        "total_qty": 75,
+        "total_incentive": 375.0
+      },
+      {
+        "product_name": "Arotika cool spay 60ml",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 9,
+          "SSA5": 27,
+          "SSA6": 12,
+          "SSA7": 10
+        },
+        "total_qty": 76,
+        "total_incentive": 760.0
+      },
+      {
+        "product_name": "Clenascar gel 15g BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 3,
+          "SSA3": 0,
+          "SSA5": 2,
+          "SSA6": 10,
+          "SSA7": 0
+        },
+        "total_qty": 19,
+        "total_incentive": 190.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Red Sach1x30",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 62,
+          "SSA2": 0,
+          "SSA3": 43,
+          "SSA5": 45,
+          "SSA6": 23,
+          "SSA7": 26
+        },
+        "total_qty": 199,
+        "total_incentive": 1990.0
+      },
+      {
+        "product_name": "Glucosa-500mg Cap/BI BDC",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 50,
+          "SSA2": 3,
+          "SSA3": 50,
+          "SSA5": 39,
+          "SSA6": 19,
+          "SSA7": 25
+        },
+        "total_qty": 186,
+        "total_incentive": 1860.0
+      },
+      {
+        "product_name": "Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 18,
+          "SSA2": 0,
+          "SSA3": 22,
+          "SSA5": 19,
+          "SSA6": 4,
+          "SSA7": 5
+        },
+        "total_qty": 68,
+        "total_incentive": 680.0
+      },
+      {
+        "product_name": "Prozeus 15 10Sach",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 1,
+          "SSA3": 6,
+          "SSA5": 7,
+          "SSA6": 9,
+          "SSA7": 13
+        },
+        "total_qty": 41,
+        "total_incentive": 410.0
+      },
+      {
+        "product_name": "Prozeus 15 (ກະປ໋ອງ)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 6,
+          "SSA6": 1,
+          "SSA7": 14
+        },
+        "total_qty": 26,
+        "total_incentive": 520.0
+      },
+      {
+        "product_name": "Tristan (etoricoxib) 90mg",
+        "incentive_price": 2.0,
+        "branches": {
+          "SSA1": 4,
+          "SSA2": 0,
+          "SSA3": 39,
+          "SSA5": 24,
+          "SSA6": 32,
+          "SSA7": 5
+        },
+        "total_qty": 104,
+        "total_incentive": 208.0
+      },
+      {
+        "product_name": "Gastro bismol 524",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 36,
+          "SSA2": 0,
+          "SSA3": 19,
+          "SSA5": 77,
+          "SSA6": 7,
+          "SSA7": 124
+        },
+        "total_qty": 263,
+        "total_incentive": 1315.0
+      },
+      {
+        "product_name": "Finasteride 1mg (3BI/Box)",
+        "incentive_price": 20.0,
+        "branches": {
+          "SSA1": 0,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 0,
+        "total_incentive": 0.0
+      },
+      {
+        "product_name": "Nacoxib 90 mg",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 86,
+          "SSA2": 0,
+          "SSA3": 86,
+          "SSA5": 79,
+          "SSA6": 17,
+          "SSA7": 47
+        },
+        "total_qty": 315,
+        "total_incentive": 1575.0
+      },
+      {
+        "product_name": "Diabederm Cream 10% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 8,
+          "SSA2": 0,
+          "SSA3": 10,
+          "SSA5": 26,
+          "SSA6": 5,
+          "SSA7": 34
+        },
+        "total_qty": 83,
+        "total_incentive": 415.0
+      },
+      {
+        "product_name": "Diabederm Cream 20% 35g",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 23,
+          "SSA2": 1,
+          "SSA3": 33,
+          "SSA5": 34,
+          "SSA6": 13,
+          "SSA7": 22
+        },
+        "total_qty": 126,
+        "total_incentive": 630.0
+      },
+      {
+        "product_name": "Zentozide 1x4's",
+        "incentive_price": 3.0,
+        "branches": {
+          "SSA1": 5,
+          "SSA2": 0,
+          "SSA3": 2,
+          "SSA5": 1,
+          "SSA6": 0,
+          "SSA7": 1
+        },
+        "total_qty": 9,
+        "total_incentive": 27.0
+      },
+      {
+        "product_name": "Precius 6x10's",
+        "incentive_price": 25.0,
+        "branches": {
+          "SSA1": 20,
+          "SSA2": 0,
+          "SSA3": 16,
+          "SSA5": 16,
+          "SSA6": 0,
+          "SSA7": 9
+        },
+        "total_qty": 61,
+        "total_incentive": 1525.0
+      },
+      {
+        "product_name": "Clena TM EX (Anti melasma) 15g",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 73,
+          "SSA2": 4,
+          "SSA3": 67,
+          "SSA5": 79,
+          "SSA6": 63,
+          "SSA7": 31
+        },
+        "total_qty": 317,
+        "total_incentive": 3170.0
+      },
+      {
+        "product_name": "Raqua cleansing gel 80 mL",
+        "incentive_price": 5.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 0,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 1,
+        "total_incentive": 5.0
+      },
+      {
+        "product_name": "Diabederm lotion 10% 200mL",
+        "incentive_price": 10.0,
+        "branches": {
+          "SSA1": 1,
+          "SSA2": 0,
+          "SSA3": 1,
+          "SSA5": 0,
+          "SSA6": 0,
+          "SSA7": 0
+        },
+        "total_qty": 2,
+        "total_incentive": 20.0
+      }
+    ]
+  }
+]

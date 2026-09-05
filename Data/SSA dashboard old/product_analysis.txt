@@ -1,0 +1,59 @@
+Total unique product names: 27
+
+List of all unique product names:
+- AROTIKA Rub 35g BDC
+- AROTIKA Rub Location 80ml
+- AROTIKA Rub SprayPak 60ml BDC
+- Arotika cool spay 60ml
+- Capsika 0.0125%gel 35g BDC
+- Capsika-25 (0.025%) Gel 35g
+- Capsika-25 Lotion Spray 100ml
+- Capsika-25 LotionSpongPak 80ml
+- Capsika-75 Lotion Spong Pak 80ml
+- Clena TM EX (Anti melasma) 15g
+- Clenascar gel 15g BDC
+- Diabederm Cream 10% 35g
+- Diabederm Cream 20% 35g
+- Diabederm lotion 10% 200mL
+- Finasteride 1mg (3BI/Box)
+- Gastro bismol 524
+- Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ
+- Glucosa 1500mg Red Sach1x30
+- Glucosa-500mg Cap/BI BDC
+- Nacoxib 90 mg
+- Plaivana cream 14% 35g BDC
+- Precius 6x10's
+- Prozeus 15 (ກະປ໋ອງ)
+- Prozeus 15 10Sach
+- Raqua cleansing gel 80 mL
+- Tristan (etoricoxib) 90mg
+- Zentozide 1x4's
+
+Checking product presence consistency:
+Product 'Diabederm lotion 10% 200mL' appears in 2/14 months
+Product 'Raqua cleansing gel 80 mL' appears in 2/14 months
+Product 'Clena TM EX (Anti melasma) 15g' appears in 9/14 months
+Product 'Capsika-25 LotionSpongPak 80ml' appears in 11/14 months
+Product 'Capsika-75 Lotion Spong Pak 80ml' appears in 11/14 months
+Product 'Zentozide 1x4's' appears in 13/14 months
+Product 'Precius 6x10's' appears in 13/14 months
+Product 'Diabederm Cream 10% 35g' appears in 14/14 months
+Product 'Diabederm Cream 20% 35g' appears in 14/14 months
+Product 'Nacoxib 90 mg' appears in 14/14 months
+Product 'Prozeus 15 (ກະປ໋ອງ)' appears in 14/14 months
+Product 'Plaivana cream 14% 35g BDC' appears in 14/14 months
+Product 'Clenascar gel 15g BDC' appears in 14/14 months
+Product 'Capsika 0.0125%gel 35g BDC' appears in 14/14 months
+Product 'Prozeus 15 10Sach' appears in 14/14 months
+Product 'AROTIKA Rub Location 80ml' appears in 14/14 months
+Product 'AROTIKA Rub SprayPak 60ml BDC' appears in 14/14 months
+Product 'Arotika cool spay 60ml' appears in 14/14 months
+Product 'Glucosa 1500mg Red Sach1x30' appears in 14/14 months
+Product 'Capsika-25 (0.025%) Gel 35g' appears in 14/14 months
+Product 'Finasteride 1mg (3BI/Box)' appears in 14/14 months
+Product 'AROTIKA Rub 35g BDC' appears in 14/14 months
+Product 'Capsika-25 Lotion Spray 100ml' appears in 14/14 months
+Product 'Gastro bismol 524' appears in 14/14 months
+Product 'Tristan (etoricoxib) 90mg' appears in 14/14 months
+Product 'Glucosa 1500mg Lemon Sach BDC 30ຊອງ/ກ' appears in 14/14 months
+Product 'Glucosa-500mg Cap/BI BDC' appears in 14/14 months

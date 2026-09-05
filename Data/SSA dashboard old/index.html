@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSA Pharmacy Incentive Sales Dashboard</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=3.0">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ApexCharts Library -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Frozen on Left) -->
+    <aside class="sidebar">
+        <!-- Brand / Logo -->
+        <div class="brand">
+            <i class="fa-solid fa-chart-line brand-icon"></i>
+            <div class="brand-info">
+                <h1 class="brand-title">SSA Pharmacy</h1>
+                <div class="brand-subtitle">Incentive Dashboard</div>
+            </div>
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <!-- Controls Section -->
+        <div class="sidebar-menu">
+
+            <!-- 0. Language Selector -->
+            <div class="sidebar-group">
+                <span class="sidebar-label"><i class="fa-solid fa-globe"></i> <span data-i18n="lang_label">ภาษา / Language</span></span>
+                <div class="select-wrapper">
+                    <select id="langSelect">
+                        <option value="th">🇹🇭 ภาษาไทย (TH)</option>
+                        <option value="en">🇬🇧 English (EN)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 1. Report Type Selection -->
+            <div class="sidebar-group">
+                <span class="sidebar-label"><i class="fa-regular fa-file-lines"></i> <span data-i18n="report_type_label">รูปแบบรายงาน</span></span>
+                <div class="sidebar-tabs" id="reportTypeGroup">
+                    <button class="sidebar-tab-btn-control active" data-type="monthly" data-i18n="report_monthly">รายเดือน</button>
+                    <button class="sidebar-tab-btn-control" data-type="ytd" data-i18n="report_ytd">Year to Date (YTD)</button>
+                    <button class="sidebar-tab-btn-control" data-type="yearly" data-i18n="report_yearly">รายปี</button>
+                    <button class="sidebar-tab-btn-control" data-type="yoy" data-i18n="report_yoy">เปรียบเทียบปี (YoY)</button>
+                </div>
+            </div>
+
+            <!-- 2. Time Selector Dropdown -->
+            <div class="sidebar-group">
+                <span class="sidebar-label" id="timeFilterLabel"><i class="fa-regular fa-calendar"></i> <span data-i18n="select_month">เลือกเดือน</span></span>
+                <div class="select-wrapper">
+                    <select id="timeSelect">
+                        <!-- Options populated dynamically -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- 3. Metric Type Toggle (Quantity vs Value) -->
+            <div class="sidebar-group">
+                <span class="sidebar-label"><i class="fa-solid fa-sliders"></i> <span data-i18n="display_by">แสดงผลตาม</span></span>
+                <div class="metric-toggle-group" id="metricTypeGroup">
+                    <button class="metric-toggle-btn active" data-metric="qty">
+                        <i class="fa-solid fa-box-open"></i> <span data-i18n="metric_qty">จำนวนยูนิต</span>
+                    </button>
+                    <button class="metric-toggle-btn" data-metric="incentive">
+                        <i class="fa-solid fa-hand-holding-dollar"></i> <span data-i18n="metric_incentive">มูลค่าค่าเชียร์</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4. Product Name Blinding Selector -->
+            <div class="sidebar-group">
+                <span class="sidebar-label"><i class="fa-solid fa-eye-slash"></i> <span data-i18n="name_mode_label">โหมดแสดงชื่อสินค้า</span></span>
+                <div class="metric-toggle-group" id="nameModeGroup">
+                    <button class="metric-toggle-btn active" data-mode="real">
+                        <i class="fa-solid fa-tag"></i> <span data-i18n="name_mode_real">ชื่อจริง</span>
+                    </button>
+                    <button class="metric-toggle-btn" data-mode="blinded">
+                        <i class="fa-solid fa-mask"></i> <span data-i18n="name_mode_blinded">ปกปิด</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Footer (Theme Toggle) -->
+        <div class="sidebar-footer">
+            <span class="sidebar-label"><i class="fa-solid fa-circle-half-stroke"></i> <span data-i18n="display_mode">โหมดการแสดงผล</span></span>
+            <button class="theme-toggle" id="themeToggleBtn">
+                <i class="fa-solid fa-sun" id="themeIcon"></i>
+                <span id="themeText" data-i18n="light_mode">โหมดสว่าง</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content Area (Scrollable on Right) -->
+    <main class="main-content">
+        <!-- Top bar header for status description -->
+        <div class="top-info-bar">
+            <div>
+                <h2 id="pageSubTitle" class="page-subtitle-text">ภาพรวมยอดขายสินค้าค่าเชียร์ รายเดือน</h2>
+            </div>
+        </div>
+
+        <!-- KPI Highlight Rows -->
+        <section class="kpi-grid" id="kpiGrid">
+            <!-- Total Qty Card -->
+            <div class="kpi-card">
+                <div class="kpi-info">
+                    <h3 data-i18n="kpi_total_qty">ยอดขายสะสม (ยูนิต)</h3>
+                    <div class="kpi-val" id="kpiTotalQty">0</div>
+                    <div class="kpi-diff" id="kpiTotalQtyDiff"></div>
+                </div>
+                <div class="kpi-icon-wrapper">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+            </div>
+
+            <!-- Total Incentive Card -->
+            <div class="kpi-card">
+                <div class="kpi-info">
+                    <h3 data-i18n="kpi_total_incentive">ค่าเชียร์รวม (บาท)</h3>
+                    <div class="kpi-val" id="kpiTotalIncentive">฿0</div>
+                    <div class="kpi-diff" id="kpiTotalIncentiveDiff"></div>
+                </div>
+                <div class="kpi-icon-wrapper" style="color: #10b981;">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+            </div>
+
+            <!-- Top Branch Card -->
+            <div class="kpi-card">
+                <div class="kpi-info">
+                    <h3 data-i18n="kpi_top_branch">สาขาที่ยอดขายสูงสุด</h3>
+                    <div class="kpi-val" id="kpiTopBranch">-</div>
+                    <div class="kpi-diff" id="kpiTopBranchDiff"></div>
+                </div>
+                <div class="kpi-icon-wrapper" style="color: #f59e0b;">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+            </div>
+
+            <!-- Top Product Card -->
+            <div class="kpi-card">
+                <div class="kpi-info">
+                    <h3 data-i18n="kpi_top_product">สินค้าขายดีที่สุด</h3>
+                    <div class="kpi-val" id="kpiTopProduct" style="font-size: 16px; margin-top: 8px; line-height: 1.3;">-</div>
+                    <div class="kpi-diff" id="kpiTopProductDiff"></div>
+                </div>
+                <div class="kpi-icon-wrapper" style="color: #ec4899;">
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Summary Insights Card (Full Width) -->
+        <section class="dashboard-grid-1" id="aiSummarySection">
+            <div class="card ai-card">
+                <div class="card-header ai-card-header">
+                    <div class="ai-header-title">
+                        <i class="fa-solid fa-wand-magic-sparkles ai-sparkle-icon"></i>
+                        <div>
+                            <h2 class="card-title" id="aiSummaryTitle" data-i18n="ai_summary_title">✨ AI Insights Summary</h2>
+                            <div class="card-subtitle" id="aiSummarySubtitle" data-i18n="ai_summary_subtitle">บทวิเคราะห์และข้อเสนอแนะเชิงกลยุทธ์เชิงลึกจาก AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-summary-content" id="aiSummaryContent">
+                    <!-- Dynamic Summary Content Loaded Here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Charts Section (Branch Performance & Distribution) -->
+        <section class="dashboard-grid-2">
+            <!-- Branch Performance Trend -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="branchTrendTitle"><i class="fa-solid fa-chart-area"></i> <span data-i18n="chart_branch_trend_title">แนวโน้มผลงานรายสาขา</span></h2>
+                        <div class="card-subtitle" id="branchTrendSubtitle" data-i18n="chart_branch_trend_sub">ยอดขายรายเดือนในแต่ละสาขา</div>
+                    </div>
+                </div>
+                <div id="branchTrendChart" style="min-height: 350px;"></div>
+            </div>
+
+            <!-- Branch Sales Quantity Distribution -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="branchShareTitle"><i class="fa-solid fa-chart-pie"></i> <span data-i18n="chart_branch_share_title">สัดส่วนยอดขายรายสาขา</span></h2>
+                        <div class="card-subtitle" id="branchShareSubtitle" data-i18n="chart_branch_share_sub">สัดส่วนจำนวนยูนิตที่ขายได้ในแต่ละสาขา</div>
+                    </div>
+                </div>
+                <div id="branchShareChart" style="min-height: 350px; display: flex; align-items: center; justify-content: center;"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Highlight Trends & AI Product Analysis -->
+        <section class="dashboard-grid-2" id="highlightProductsSection">
+            <!-- Left Side: Highlight Products Trend -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="highlightTrendTitle"><i class="fa-solid fa-star"></i> <span data-i18n="chart_highlight_title">แนวโน้มยอดขายสินค้าไฮไลท์</span></h2>
+                        <div class="card-subtitle" id="highlightTrendSubtitle" data-i18n="chart_highlight_sub">เลือกสินค้าที่ต้องการดูแนวโน้มการเติบโตย้อนหลัง 14 เดือน</div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Checklist for selecting highlight products -->
+                <div class="highlight-checklist" id="highlightChecklist">
+                    <!-- Checkboxes populated dynamically -->
+                </div>
+                
+                <div id="highlightTrendChart" style="min-height: 350px;"></div>
+            </div>
+
+            <!-- Right Side: AI Product Analysis -->
+            <div class="card ai-card">
+                <div class="card-header ai-card-header" style="flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                    <div class="ai-header-title">
+                        <i class="fa-solid fa-brain ai-brain-icon"></i>
+                        <div>
+                            <h2 class="card-title" id="aiProductTitle" data-i18n="ai_product_title">🧠 AI Product Analysis</h2>
+                            <div class="card-subtitle" id="aiProductSubtitle" data-i18n="ai_product_subtitle">บทวิเคราะห์รายผลิตภัณฑ์เชิงลึกประจำงวด</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Selector Dropdown -->
+                    <div class="select-wrapper" style="width: 100%; margin-top: 4px;">
+                        <select id="aiProductSelect" style="width: 100%;">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product Summary metrics for selected product -->
+                <div class="ai-product-stats" id="aiProductStats">
+                    <!-- Dynamic metrics populated here -->
+                </div>
+
+                <!-- AI Analysis content -->
+                <div class="ai-product-content" id="aiProductContent">
+                    <!-- Populate dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Products List and Growth Drivers Section -->
+        <section class="dashboard-grid-2">
+            <!-- All products ranked by quantity/incentive -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title" id="topProductsTitle"><i class="fa-solid fa-ranking-star"></i> <span data-i18n="chart_products_title">อันดับสินค้าทั้งหมด</span></h2>
+                        <div class="card-subtitle" id="topProductsSubtitle" data-i18n="chart_products_sub">เรียงลำดับสินค้าทั้งหมดจากยอดขายมากไปน้อย</div>
+                    </div>
+                </div>
+                <div id="topProductsChart" style="min-height: 400px;"></div>
+            </div>
+
+            <!-- Growth & Drop Drivers per Branch -->
+            <div class="card" id="driversCard">
+                <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                    <div>
+                        <h2 class="card-title" id="driversCardTitle"><i class="fa-solid fa-arrows-up-down"></i> <span data-i18n="chart_drivers_title">ตัวขับเคลื่อนยอดขาย (Growth &amp; Drop Drivers)</span></h2>
+                        <div class="card-subtitle" id="driversCardSubtitle" data-i18n="chart_drivers_sub">เปรียบเทียบยอดขายกับช่วงก่อนหน้าเพื่อหาตัวเร่งและตัวดึงยอดขายรายสาขา</div>
+                    </div>
+                </div>
+                
+                <!-- Branch tab selectors -->
+                <div class="branch-tabs-container" id="branchTabs">
+                    <button class="branch-tab-btn active" data-branch="SSA1">SSA1</button>
+                    <button class="branch-tab-btn" data-branch="SSA2">SSA2</button>
+                    <button class="branch-tab-btn" data-branch="SSA3">SSA3</button>
+                    <button class="branch-tab-btn" data-branch="SSA5">SSA5</button>
+                    <button class="branch-tab-btn" data-branch="SSA6">SSA6</button>
+                    <button class="branch-tab-btn" data-branch="SSA7">SSA7</button>
+                </div>
+                
+                <div class="growth-drop-row">
+                    <!-- Growth Drivers -->
+                    <div>
+                        <h3 class="filter-label" id="growthTitle" style="margin-bottom: 12px; color: var(--success); font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                            <i class="fa-solid fa-chevron-up"></i> <span data-i18n="growth_title">Top 5 ขยายตัวสูงสุด (Growth)</span>
+                        </h3>
+                        <div id="branchGrowthChart" style="min-height: 250px;"></div>
+                    </div>
+                    
+                    <!-- Drop Drivers -->
+                    <div>
+                        <h3 class="filter-label" id="dropTitle" style="margin-bottom: 12px; color: var(--danger); font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                            <i class="fa-solid fa-chevron-down"></i> <span data-i18n="drop_title">Top 5 หดตัวสูงสุด (Drop)</span>
+                        </h3>
+                        <div id="branchDropChart" style="min-height: 250px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Data script (Declares salesData) -->
+    <script src="data.js"></script>
+    <!-- AI insights pre-computed database -->
+    <script src="insights_data.js"></script>
+    <!-- Application logic -->
+    <script src="dashboard.js?v=3.0"></script>
+</body>
+</html>
