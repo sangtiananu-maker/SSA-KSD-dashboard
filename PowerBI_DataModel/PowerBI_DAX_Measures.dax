@@ -1,0 +1,134 @@
+// ==============================================================================
+// PHARMA ALLIANCE (PAC) - EXECUTIVE POWER BI DAX MEASURES
+// Star Schema Model DAX Calculation Formulas
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. KSD SALES & DISTRIBUTION MEASURES
+// ------------------------------------------------------------------------------
+
+[Total KSD Revenue THB] = 
+SUM('Fact_KSD_Product_Sales'[Amount_THB])
+
+[Total KSD Units] = 
+SUM('Fact_KSD_Product_Sales'[Quantity])
+
+[Total Orders Count] = 
+SUM('Fact_KSD_Product_Sales'[Orders_Count])
+
+[Strategic KSD Revenue THB] = 
+CALCULATE(
+    [Total KSD Revenue THB],
+    'Fact_KSD_Product_Sales'[Is_Strategic] = "Yes"
+)
+
+[Strategic Revenue Share %] = 
+DIVIDE([Strategic KSD Revenue THB], [Total KSD Revenue THB], 0)
+
+[KSD Revenue YoY Growth %] = 
+VAR CurrentSales = [Total KSD Revenue THB]
+VAR PreviousYearSales = 
+    CALCULATE(
+        [Total KSD Revenue THB],
+        SAMEPERIODLASTYEAR('Dim_Date'[Date])
+    )
+RETURN
+    DIVIDE(CurrentSales - PreviousYearSales, PreviousYearSales, 0)
+
+[KSD Revenue YTD THB] = 
+TOTALYTD([Total KSD Revenue THB], 'Dim_Date'[Date])
+
+
+// ------------------------------------------------------------------------------
+// 2. SSA PHARMACY RETAIL MEASURES (6 BRANCHES)
+// ------------------------------------------------------------------------------
+
+[Total SSA Revenue LAK] = 
+SUM('Fact_SSA_Sales'[Amount_LAK])
+
+[Total SSA Units] = 
+SUM('Fact_SSA_Sales'[Quantity])
+
+[SSA Revenue Est THB] = 
+SUM('Fact_SSA_Sales'[Amount_THB_Est])
+
+[Average Units per Branch] = 
+AVERAGEX(
+    VALUES('Dim_Store'[Store_ID]),
+    [Total SSA Units]
+)
+
+[Active Product Count (SSA)] = 
+CALCULATE(
+    DISTINCTCOUNT('Fact_SSA_Sales'[Product_SKU]),
+    'Fact_SSA_Sales'[Quantity] > 0
+)
+
+[Strategic SSA Revenue LAK] = 
+CALCULATE(
+    [Total SSA Revenue LAK],
+    'Dim_Product'[Is_Strategic] = "Yes"
+)
+
+[Strategic Retail Share %] = 
+DIVIDE([Strategic SSA Revenue LAK], [Total SSA Revenue LAK], 0)
+
+
+// ------------------------------------------------------------------------------
+// 3. INCENTIVE ANALYTICS MEASURES (17 OFFICIAL MONTHS)
+// ------------------------------------------------------------------------------
+
+[Total Incentive Paid THB] = 
+SUM('Fact_Incentive'[Incentive_Amount_THB])
+
+[Total Incentive Units] = 
+SUM('Fact_Incentive'[Quantity])
+
+[Average Incentive Per Unit THB] = 
+DIVIDE([Total Incentive Paid THB], [Total Incentive Units], 0)
+
+[Official Incentive THB] = 
+CALCULATE(
+    [Total Incentive Paid THB],
+    'Fact_Incentive'[Status] = "Official"
+)
+
+[Incentive YoY Growth %] = 
+VAR CurrentInc = [Total Incentive Paid THB]
+VAR PriorYearInc = 
+    CALCULATE(
+        [Total Incentive Paid THB],
+        SAMEPERIODLASTYEAR('Dim_Date'[Date])
+    )
+RETURN
+    DIVIDE(CurrentInc - PriorYearInc, PriorYearInc, 0)
+
+[Incentive YTD THB] = 
+TOTALYTD([Total Incentive Paid THB], 'Dim_Date'[Date])
+
+
+// ------------------------------------------------------------------------------
+// 4. STRATEGIC PENETRATION & PERFORMANCE
+// ------------------------------------------------------------------------------
+
+[Total Strategic SKUs] = 
+CALCULATE(
+    DISTINCTCOUNT('Dim_Product'[Product_SKU]),
+    'Dim_Product'[Is_Strategic] = "Yes"
+)
+
+[Sold Strategic SKUs] = 
+CALCULATE(
+    DISTINCTCOUNT('Fact_SSA_Sales'[Product_SKU]),
+    'Dim_Product'[Is_Strategic] = "Yes",
+    'Fact_SSA_Sales'[Quantity] > 0
+)
+
+[Strategic SKU Penetration Rate %] = 
+DIVIDE([Sold Strategic SKUs], [Total Strategic SKUs], 0)
+
+[Active Selling Stores Count] = 
+CALCULATE(
+    DISTINCTCOUNT('Fact_SSA_Sales'[Store_ID]),
+    'Fact_SSA_Sales'[Quantity] > 0
+)

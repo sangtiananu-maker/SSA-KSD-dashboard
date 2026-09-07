@@ -14,12 +14,14 @@
 
 ## 🚀 วิธีเปิดใช้งานบนเครื่องคอมพิวเตอร์ของคุณ (ไม่ต้องต่อเน็ต ไม่ต้องเขียนโค้ด)
 
-1. ไปที่โฟลเดอร์ `D:\Antigravity\SSA ยอดขาย`
-2. **ดับเบิลคลิกที่ไฟล์ `index.html`** เพื่อเปิดดูผ่าน Google Chrome, Microsoft Edge หรือเบราว์เซอร์ใดก็ได้ทันที!
+ไปที่โฟลเดอร์ `D:\Antigravity\SSA ยอดขาย`:
+- **แดชบอร์ดรูปแบบเดิม (Classic Dashboard)**: ดับเบิลคลิกที่ไฟล์ `index.html`
+- **แดชบอร์ดรูปแบบ Power BI (Power BI Web Edition)**: ดับเบิลคลิกที่ไฟล์ `powerbi.html`
+*(ทั้งสองหน้ามีปุ่มกดสลับมุมมองหากันได้ตลอดเวลา)*
 
 ---
 
-## 🌐 วิธีนำขึ้น GitHub Pages (GitHub Site) แบบคลิกเดียว
+## 🌐 วิธีนำขึ้น GitHub Pages (เปิดดูได้ทั้ง 2 แดชบอร์ด)
 
 ระบบนี้ถูกออกแบบให้เป็น **Client-Side Static Web 100%** ไม่มีเซิร์ฟเวอร์หลังบ้าน จึงนำขึ้น GitHub Pages ได้ฟรี รวดเร็ว ปลอดภัย และเปิดดูผ่านมือถือหรือแท็บเล็ตได้ทุกที่ทั่วโลก:
 
@@ -32,10 +34,15 @@
 ### ขั้นตอนที่ 2: อัปโหลดชุดไฟล์ขึ้นไป
 1. ในหน้า Repository ที่เพิ่งสร้าง ให้คลิกที่ **"uploading an existing file"** (หรือลากไฟล์ใส่ผ่าน GitHub Desktop)
 2. ลากไฟล์เหล่านี้จากโฟลเดอร์ `D:\Antigravity\SSA ยอดขาย` ไปวางใน GitHub:
-   - `index.html`
+   - `index.html` (แดชบอร์ดชุดเดิม)
    - `styles.css`
    - `app.js`
-   - `data.js`
+   - `powerbi.html` (แดชบอร์ดโหมด Power BI)
+   - `powerbi_styles.css`
+   - `powerbi_app.js`
+   - `data.js` (ฐานข้อมูลร่วม)
+   - `assets/` (โลโก้ PAC, KSD, SSA)
+   - `PowerBI_DataModel/` (โมเดลข้อมูลสำหรับ Power BI Desktop)
    - `.nojekyll`
    - `README.md`
 3. คลิกปุ่ม **"Commit changes"** สีเขียวด้านล่าง
@@ -44,9 +51,10 @@
 1. ไปที่เมนู **Settings** (รูปเฟือง) ด้านบนของ Repository
 2. เลื่อนเมนูด้านซ้ายไปที่หัวข้อ **Pages**
 3. ตรงส่วน **Branch** ให้เลือกเป็น `main` (หรือ `master`) แล้วโฟลเดอร์เลือกเป็น `/(root)` จากนั้นกด **Save**
-4. รอประมาณ 1-2 นาที คุณจะได้ลิงก์เว็บไซต์ เช่น:  
-   `https://<your-username>.github.io/pac-ssa-sales-dashboard/`
-5. นำลิงก์นี้ไปเปิดดูผ่านมือถือ, iPad หรือแชร์ให้ทีมผู้บริหารเปิดดูได้ทันที!
+4. รอประมาณ 1-2 นาที คุณจะได้ลิงก์เว็บไซต์ ซึ่งสามารถเข้าดูได้ทั้ง 2 ระบบ:
+   - **Classic Dashboard**: `https://<your-username>.github.io/<repo-name>/`
+   - **Power BI Edition**: `https://<your-username>.github.io/<repo-name>/powerbi.html`
+5. นำลิงก์นี้ไปเปิดดูผ่านคอมพิวเตอร์, มือถือ หรือแชร์ให้ทีมผู้บริหารเปิดดูได้ทันที!
 
 ---
 
