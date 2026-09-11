@@ -341,6 +341,11 @@
         </div>
       </div>
       <div class="header-right" style="margin-left: auto; display: flex; align-items: center; gap: 10px; padding-right: 16px;">
+        <button type="button" class="gemma-trigger-btn" id="gemmaTriggerBtn" title="เปิดใช้งาน Gemma 3 AI Copilot">
+          <i class="fa-solid fa-brain"></i>
+          <span class="full-text">Gemma 3 AI</span>
+          <span class="ai-badge">WebGPU</span>
+        </button>
         <a href="powerbi.html" style="display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(135deg, #118DFF 0%, #12239E 100%); color: #ffffff; text-decoration: none; padding: 7px 14px; border-radius: 8px; font-weight: 600; font-size: 13px; box-shadow: 0 3px 10px rgba(17, 141, 255, 0.35); transition: all 0.2s ease;">
           <i class="fa-solid fa-chart-column" style="color: #f2c811;"></i>
           <span>📊 เปิดมุมมอง Power BI Edition</span>
@@ -1110,8 +1115,116 @@
     </footer>
   </div>
 
+  <!-- ========================================================================
+       GEMMA 3 AI COPILOT CONSENT MODAL (Opt-in Volunteer System)
+       ======================================================================== -->
+  <div id="gemmaConsentModal" class="gemma-modal-overlay">
+    <div class="gemma-consent-card">
+      <div class="gemma-card-icon">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+      <h3 class="gemma-card-title">
+        <span>เปิดใช้งาน Gemma 3 AI Copilot</span>
+        <span class="gemma-status-pill"><i class="fa-solid fa-microchip"></i> WebGPU In-Browser</span>
+      </h3>
+      <p class="gemma-card-desc">
+        ฟังก์ชันนี้ใช้โมเดลภาษาขนาดใหญ่ <strong>Gemma 3 270M Instruct</strong> ประมวลผลบนการ์ดจอ/อุปกรณ์ของคุณโดยตรงผ่านเทคโนโลยี WebGPU (100% Private, ไร้เซิร์ฟเวอร์ และทำงานออฟไลน์ได้หลังดาวน์โหลด)
+      </p>
+      <div class="gemma-info-box">
+        <div style="font-weight: 600; margin-bottom: 4px;"><i class="fa-solid fa-circle-info" style="color: #06b6d4;"></i> ข้อมูลก่อนดาวน์โหลด:</div>
+        <ul>
+          <li><strong>ขนาดไฟล์โมเดล:</strong> ประมาณ <strong>~140 MB</strong> (ดาวน์โหลดครั้งแรกครั้งเดียว)</li>
+          <li><strong>การจัดเก็บ:</strong> บันทึกเก็บไว้ใน Browser Cache (IndexedDB) บนเครื่องคุณ</li>
+          <li><strong>ครั้งต่อไป:</strong> เปิดใช้งานได้ทันทีใน 1-2 วินาที โดยไม่ต้องดาวน์โหลดซ้ำ</li>
+          <li><strong>คำแนะนำ:</strong> แนะนำให้เชื่อมต่อเครือข่าย <strong>Wi-Fi</strong> ก่อนดาวน์โหลด</li>
+        </ul>
+      </div>
+
+      <!-- Download Progress Section -->
+      <div id="gemmaProgressBox" class="gemma-progress-box">
+        <div class="gemma-progress-bar-bg">
+          <div id="gemmaProgressFill" class="gemma-progress-bar-fill"></div>
+        </div>
+        <div class="gemma-progress-text">
+          <span id="gemmaProgressStatus">กำลังเริ่มดาวน์โหลด...</span>
+          <span id="gemmaProgressPercent">0%</span>
+        </div>
+      </div>
+
+      <div id="gemmaModalActions" class="gemma-modal-actions">
+        <button type="button" id="btnGemmaCancel" class="btn-gemma-cancel">ไว้คราวหลัง (ยกเลิก)</button>
+        <button type="button" id="btnGemmaAccept" class="btn-gemma-accept">
+          <i class="fa-solid fa-download"></i> ยินยอมและเริ่มดาวน์โหลด (~140 MB)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GEMMA 3 AI COPILOT SLIDE-OVER DRAWER
+       ======================================================================== -->
+  <div id="gemmaDrawerOverlay" class="gemma-drawer-overlay"></div>
+  <aside id="gemmaDrawer" class="gemma-drawer">
+    <div class="gemma-drawer-header">
+      <div class="gemma-drawer-title">
+        <i class="fa-solid fa-brain" style="color: #a855f7;"></i>
+        <span>Gemma 3 AI Copilot</span>
+        <span id="gemmaHeaderStatusPill" class="gemma-status-pill">
+          <i class="fa-solid fa-circle-check"></i> พร้อมใช้งาน
+        </span>
+      </div>
+      <button type="button" id="gemmaDrawerCloseBtn" class="gemma-drawer-close" aria-label="Close Copilot">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Quick Action Pills -->
+    <div class="gemma-quick-actions">
+      <button type="button" class="gemma-prompt-pill" data-prompt="summary-monthly">
+        <i class="fa-solid fa-chart-pie" style="color: #06b6d4;"></i> สรุปยอดขาย ส.ค. 2026
+      </button>
+      <button type="button" class="gemma-prompt-pill" data-prompt="store-visit">
+        <i class="fa-solid fa-store" style="color: #10b981;"></i> เตรียมตรวจสาขา SSA
+      </button>
+      <button type="button" class="gemma-prompt-pill" data-prompt="white-space">
+        <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> โอกาสสินค้ากลยุทธ์
+      </button>
+      <button type="button" class="gemma-prompt-pill" data-prompt="incentive-tips">
+        <i class="fa-solid fa-coins" style="color: #ec4899;"></i> ดันยอดค่าเชียร์
+      </button>
+    </div>
+
+    <!-- Chat Message History -->
+    <div id="gemmaChatMessages" class="gemma-chat-messages">
+      <div class="gemma-msg assistant">
+        <div class="gemma-msg-avatar"><i class="fa-solid fa-brain"></i></div>
+        <div class="gemma-bubble">
+          สวัสดีครับ! ผมคือ <strong>Gemma 3 AI Copilot</strong> ประมวลผลสดบนเครื่องของคุณผ่าน WebGPU<br><br>
+          คุณสามารถคลิกปุ่มวิเคราะห์ด่วนด้านบน หรือพิมพ์สอบถามเกี่ยวกับยอดขายร้านยา SSA, การกระจายสินค้า KSD หรือข้อมูลตัวยาได้เลยครับ
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input Form -->
+    <div class="gemma-input-wrapper">
+      <form id="gemmaInputForm" class="gemma-input-form" onsubmit="event.preventDefault();">
+        <input type="text" id="gemmaTextInput" class="gemma-text-input" placeholder="ถามคำถามเกี่ยวกับยอดขาย หรือข้อมูลยา..." autocomplete="off">
+        <button type="submit" id="gemmaSendBtn" class="gemma-send-btn" aria-label="Send">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+      <div class="gemma-drawer-footer-actions">
+        <span>Gemma 3 270M Instruct (In-Browser WebGPU)</span>
+        <button type="button" id="btnGemmaClearCache" class="btn-gemma-clear-cache" title="ล้างไฟล์โมเดลจากหน่วยความจำเบราว์เซอร์">
+          <i class="fa-regular fa-trash-can"></i> ล้าง Cache โมเดล
+        </button>
+      </div>
+    </div>
+  </aside>
+
   <!-- Scripts -->
-  <script src="data.js?v=20260911_1"></script>
-  <script src="app.js?v=20260911_1"></script>
+  <script src="data.js?v=20260911_2"></script>
+  <script src="gemma_engine.js?v=20260911_2"></script>
+  <script src="app.js?v=20260911_2"></script>
 </body>
 </html>

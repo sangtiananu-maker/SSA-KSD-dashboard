@@ -81,54 +81,91 @@ document.addEventListener('DOMContentLoaded', () => {
     return rawName;
   };
 
-  // Helper: Get Brand Group Name
+  // Helper: Get Brand Group Name (Complete 76-Brand Normalized Taxonomy, 0 'Other')
   const getBrandGroup = (item) => {
     if (!item) return 'Other';
     if (typeof item === 'object' && item.brand_group) return item.brand_group;
     const name = typeof item === 'string' ? item : (item.english_name || item.name || item.product_name || item.ksd_name || '');
     const n = name.toLowerCase();
-    if (n.includes('plaivana') || n.includes('ไพลวาน่า')) return 'Plaivana';
-    if (n.includes('capsika') || n.includes('แคปซิก้า')) return 'Capsika';
-    if (n.includes('diabe') || n.includes('ไดอาเบ')) return 'Diabederm';
+
+    // Standardized Brand Rules
     if (n.includes('arotika') || n.includes('อโรติกา')) return 'Arotika';
+    if (n.includes('cleanoze')) return 'Cleanoze';
     if (n.includes('clenascar') || n.includes('clena')) return 'Clenascar';
+    if (n.includes('clindamycin')) return 'Clindamycin';
+    if (n.includes('clinicold')) return 'Clinicold';
+    if (n.includes('clinovir')) return 'Clinovir';
+    if (n.includes('diabe') || n.includes('ไดอาเบ')) return 'Diabederm';
+    if (n.includes('fango') || n.includes('แฟงโก')) return 'Fango';
+    if (n.includes('feenoze')) return 'Feenoze';
+    if (n.includes('finasteride') || n.includes('ฟีนาสเตอไรด์')) return 'Finasteride';
+    if (n.includes('bismol') || n.includes('บิสมอล')) return 'Gastro-Bismol';
+    if (n.includes('gastrosec')) return 'Gastrosec';
+    if (n.includes('hepivir')) return 'Hepivir';
+    if (n.includes('kachana') || n.includes('kachaa')) return 'Kachana';
+    if (n.includes('nacoxib') || n.includes('นาคอกซิบ')) return 'Nacoxib';
+    if (n.includes('precius') || n.includes('prozeus') || n.includes('โปรซีอุส')) return 'Prozeus';
+    if (n.includes('raqua') || n.includes('ราควา')) return 'Raqua';
+    if (n.includes('spasium')) return 'Spasium';
+    if (n.includes('tristan') || n.includes('ทริสตัน')) return 'Tristan';
+    if (n.includes('gynogesic') || n.includes('ไกโนเจซิค')) return 'Gynogesic';
+    if (n.includes('gynovir')) return 'Gynovir';
+    if (n.includes('guticin')) return 'Guticin';
+    if (n.includes('glucocron')) return 'Glucocron';
+    if (n.includes('glucodab')) return 'Glucodab';
     if (n.includes('glucosa') || n.includes('กลูโคซ่า')) return 'Glucosa';
     if (n.includes('glucovia') || n.includes('กลูโคเวีย')) return 'Glucovia';
-    if (n.includes('prozeus') || n.includes('precius') || n.includes('โปรซีอุส')) return 'Prozeus';
-    if (n.includes('fango') || n.includes('แฟงโก')) return 'Fango';
-    if (n.includes('zencera') || n.includes('เซนเซร่า')) return 'Zencera';
-    if (n.includes('zertin') || n.includes('เซอร์ติน')) return 'Zertin';
-    if (n.includes('anxac') || n.includes('แอนแซก')) return 'Anxac';
-    if (n.includes('mucobox') || n.includes('มิวโคบ็อกซ์')) return 'Mucobox';
-    if (n.includes('axamin') || n.includes('อากซามิน')) return 'Axamin';
-    if (n.includes('cefalex') || n.includes('เซฟาเลก')) return 'Cefalexin';
-    if (n.includes('allerlax') || n.includes('อัลเลอแร็กซ์')) return 'Allerlax';
-    if (n.includes('kleniderm') || n.includes('คลีโนเดิร์ม')) return 'Kleniderm';
-    if (n.includes('klenivet') || n.includes('คลีนิเวท')) return 'Klenivet';
-    if (n.includes('klenigel') || n.includes('คลีนิเจล')) return 'Klenigel';
-    if (n.includes('klenimed') || n.includes('คลีนิเมด')) return 'Klenimed';
-    if (n.includes('icof') || n.includes('ไอค็อฟ')) return 'Icof';
-    if (n.includes('noraphen') || n.includes('โนลาเฟน')) return 'Noraphen';
+    if (n.includes('klenivet') || n.includes('clinivate') || n.includes('คลีนิเวท')) return 'Klenivet';
+    if (n.includes('klenigel') || n.includes('clinigel') || n.includes('คลีนิเจล')) return 'Klenigel';
+    if (n.includes('klenipred')) return 'Klenipred';
+    if (n.includes('kleniderm') || n.includes('clinoderm') || n.includes('คลีโนเดิร์ม')) return 'Kleniderm';
+    if (n.includes('klenimed') || n.includes('clinimet') || n.includes('คลีนิเมด')) return 'Klenimed';
+    if (n.includes('spascopan') || n.includes('สปาสโคแพน')) return 'Spascopan';
+    if (n.includes('skinfect') || n.includes('สกินเฟก')) return 'Skinfect';
+    if (n.includes('stugin') || n.includes('สตูจิน')) return 'Stugin';
+    if (n.includes('sporaxyl') || n.includes('sporosil') || n.includes('sporoxyl') || n.includes('สปอโรซิล')) return 'Sporosil';
+    if (n.includes('zyno') || n.includes('zeno') || n.includes('ซีโน')) return 'Zyno';
+    if (n.includes('ciproxyl') || n.includes('ciprocin') || n.includes('ซิโปรซิน')) return 'Ciprocin';
+    if (n.includes('domper') || n.includes('doper') || n.includes('ดอมเพอร์')) return 'Domper-M';
+    if (n.includes('doxy')) return 'Doxycycline';
+    if (n.includes('tradolgesic')) return 'Tradolgesic';
+    if (n.includes('norfloxin')) return 'Norfloxin';
+    if (n.includes('binduretic')) return 'Binduretic';
+    if (n.includes('b-themin')) return 'B-Themin';
+    if (n.includes('fartussin')) return 'Fartussin';
+    if (n.includes('pharmacon')) return 'Pharmacon';
+    if (n.includes('pharmacef')) return 'Pharmacef';
     if (n.includes('famotab') || n.includes('ฟาโมแทบ')) return 'Famotab';
     if (n.includes('flunarizine') || n.includes('ฟูนาริซีน')) return 'Flunarizine';
+    if (n.includes('mycosin')) return 'Mycosin';
+    if (n.includes('myola')) return 'Myola';
+    if (n.includes('mucobox') || n.includes('มิวโคบ็อกซ์')) return 'Mucobox';
+    if (n.includes('roxithromycin')) return 'Roxithromycin';
+    if (n.includes('axamin') || n.includes('อากซามิน')) return 'Axamin';
+    if (n.includes('allerax') || n.includes('allerlax') || n.includes('อัลเลอแร็กซ์')) return 'Allerlax';
+    if (n.includes('cefalex') || n.includes('cephalexyl') || n.includes('เซฟาเลก')) return 'Cefalexin';
+    if (n.includes('cefuroxime')) return 'Cefuroxime';
+    if (n.includes('zertin') || n.includes('zertine') || n.includes('เซอร์ติน')) return 'Zertin';
+    if (n.includes('zencera') || n.includes('zenzera') || n.includes('เซนเซร่า')) return 'Zencera';
+    if (n.includes('zentozide') || n.includes('zentocide') || n.includes('เซนโตไซด์')) return 'Zentocide';
+    if (n.includes('dextromethorphan')) return 'Dextromethorphan';
+    if (n.includes('nepthai')) return 'Nepthai';
+    if (n.includes('bestatin')) return 'Bestatin';
+    if (n.includes('betahist')) return 'Betahist';
+    if (n.includes('predcap')) return 'Predcap';
+    if (n.includes('fexotine')) return 'Fexotine';
     if (n.includes('metformin') || n.includes('เมตฟอร์มิน')) return 'Metformin';
+    if (n.includes('capsika') || n.includes('แคปซิก้า')) return 'Capsika';
+    if (n.includes('calza')) return 'Calza';
+    if (n.includes('anxac') || n.includes('anzac') || n.includes('แอนแซก')) return 'Anxac';
+    if (n.includes('cotricin')) return 'Cotricin';
+    if (n.includes('noraphen') || n.includes('โนลาเฟน')) return 'Noraphen';
     if (n.includes('lopil') || n.includes('โลปิล')) return 'Lopil';
+    if (n.includes('lorita') || n.includes('โลลิต้า')) return 'Lorita';
     if (n.includes('oflocee') || n.includes('โอฟลอซี')) return 'Oflocee';
-    if (n.includes('lorita') || n.includes('โลลิต้า')) return 'Lolita';
-    if (n.includes('skinfect') || n.includes('สกินเฟก')) return 'Skinfect';
-    if (n.includes('spascopan') || n.includes('สปาสโคแพน')) return 'Spascopan';
-    if (n.includes('sporosil') || n.includes('สปอโรซิล')) return 'Sporosil';
-    if (n.includes('stugin') || n.includes('สตูจิน')) return 'Stugin';
-    if (n.includes('doper') || n.includes('ดอมเพอร์')) return 'Doper-M';
-    if (n.includes('gynogesic') || n.includes('ไกโนเจซิค')) return 'Gynogesic';
-    if (n.includes('bismol') || n.includes('บิสมอล')) return 'G-Bismol';
-    if (n.includes('zeno') || n.includes('ซีโน')) return 'Zeno';
-    if (n.includes('ciprocin') || n.includes('ซิโปรซิน')) return 'Ciprocin';
-    if (n.includes('zentocide') || n.includes('เซนโตไซด์')) return 'Zentocide';
-    if (n.includes('tristan') || n.includes('ทริสตัน')) return 'Tristan';
-    if (n.includes('nacoxib') || n.includes('นาคอกซิบ')) return 'Nacoxib';
-    if (n.includes('finasteride') || n.includes('ฟีนาสเตอไรด์')) return 'Finasteride';
-    if (n.includes('raqua') || n.includes('ราควา')) return 'Raqua';
+    if (n.includes('glynin')) return 'Glynin';
+    if (n.includes('plaivana') || n.includes('ไพลวาน่า')) return 'Plaivana';
+    if (n.includes('icof') || n.includes('ไอค็อฟ')) return 'Icof';
     if (n.includes('sportika') || n.includes('สปอร์ตติกา')) return 'Sportika';
     if (n.includes('cleevec') || n.includes('คลีเวค')) return 'Cleevec';
     if (n.includes('cleepro') || n.includes('คลีโปร')) return 'Cleepro';
@@ -2636,6 +2673,222 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==============================================================================
+  // GEMMA 3 270M AI COPILOT LOGIC (WebGPU In-Browser Inference)
+  // ==============================================================================
+  const initGemmaCopilot = () => {
+    const triggerBtn = document.getElementById('gemmaTriggerBtn');
+    const consentModal = document.getElementById('gemmaConsentModal');
+    const btnCancel = document.getElementById('btnGemmaCancel');
+    const btnAccept = document.getElementById('btnGemmaAccept');
+    const progressBox = document.getElementById('gemmaProgressBox');
+    const progressFill = document.getElementById('gemmaProgressFill');
+    const progressStatus = document.getElementById('gemmaProgressStatus');
+    const progressPercent = document.getElementById('gemmaProgressPercent');
+    const modalActions = document.getElementById('gemmaModalActions');
+
+    const drawer = document.getElementById('gemmaDrawer');
+    const drawerOverlay = document.getElementById('gemmaDrawerOverlay');
+    const drawerCloseBtn = document.getElementById('gemmaDrawerCloseBtn');
+    const headerStatusPill = document.getElementById('gemmaHeaderStatusPill');
+
+    const chatMessages = document.getElementById('gemmaChatMessages');
+    const inputForm = document.getElementById('gemmaInputForm');
+    const textInput = document.getElementById('gemmaTextInput');
+    const sendBtn = document.getElementById('gemmaSendBtn');
+    const btnClearCache = document.getElementById('btnGemmaClearCache');
+    const promptPills = document.querySelectorAll('.gemma-prompt-pill');
+
+    if (!triggerBtn || !consentModal || !drawer) return;
+
+    // Helper: Open Drawer
+    const openDrawer = async () => {
+      drawer.classList.add('active');
+      drawerOverlay.classList.add('active');
+      if (textInput) textInput.focus();
+
+      // Ensure model is loaded in background if already cached
+      if (window.GemmaEngine && !window.GemmaEngine.isReady()) {
+        try {
+          if (headerStatusPill) {
+            headerStatusPill.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังเตรียมโมเดล...';
+            headerStatusPill.style.color = '#f59e0b';
+          }
+          await window.GemmaEngine.loadGemmaPipeline();
+          if (headerStatusPill) {
+            headerStatusPill.innerHTML = '<i class="fa-solid fa-circle-check"></i> พร้อมใช้งาน';
+            headerStatusPill.style.color = '#10b981';
+          }
+        } catch (err) {
+          console.error('[GemmaCopilot] Engine init error:', err);
+          if (headerStatusPill) {
+            headerStatusPill.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> พร้อมใช้งาน (CPU)';
+            headerStatusPill.style.color = '#f59e0b';
+          }
+        }
+      }
+    };
+
+    // Helper: Close Drawer
+    const closeDrawer = () => {
+      drawer.classList.remove('active');
+      drawerOverlay.classList.remove('active');
+    };
+
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+    // Trigger Click
+    triggerBtn.addEventListener('click', async () => {
+      if (!window.GemmaEngine) {
+        alert('ไลบรารี GemmaEngine กำลังเตรียมการ กรุณาลองใหม่อีกครั้ง');
+        return;
+      }
+
+      const isCached = await window.GemmaEngine.checkModelCached();
+      if (isCached) {
+        openDrawer();
+      } else {
+        consentModal.classList.add('active');
+      }
+    });
+
+    // Cancel Consent
+    if (btnCancel) {
+      btnCancel.addEventListener('click', () => {
+        consentModal.classList.remove('active');
+      });
+    }
+
+    // Accept Consent & Download
+    if (btnAccept) {
+      btnAccept.addEventListener('click', async () => {
+        modalActions.style.display = 'none';
+        progressBox.style.display = 'block';
+
+        try {
+          await window.GemmaEngine.loadGemmaPipeline(
+            (progress) => {
+              if (progressFill) progressFill.style.width = `${progress.percent}%`;
+              if (progressPercent) progressPercent.textContent = `${progress.percent}%`;
+              if (progressStatus) {
+                progressStatus.textContent = `กำลังดาวน์โหลด: ${progress.loadedMB} / ${progress.totalMB || '140'} MB...`;
+              }
+            },
+            (statusText) => {
+              if (progressStatus) progressStatus.textContent = statusText;
+            }
+          );
+
+          // Success
+          setTimeout(() => {
+            consentModal.classList.remove('active');
+            modalActions.style.display = 'flex';
+            progressBox.style.display = 'none';
+            openDrawer();
+          }, 600);
+        } catch (err) {
+          alert('เกิดข้อผิดพลาดในการดาวน์โหลดโมเดล: ' + (err.message || err));
+          modalActions.style.display = 'flex';
+          progressBox.style.display = 'none';
+        }
+      });
+    }
+
+    // Append Message to Chat
+    const appendMessage = (role, text) => {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `gemma-msg ${role}`;
+      const avatarIcon = role === 'user' ? 'fa-user' : 'fa-brain';
+      msgDiv.innerHTML = `
+        <div class="gemma-msg-avatar"><i class="fa-solid ${avatarIcon}"></i></div>
+        <div class="gemma-bubble">${text}</div>
+      `;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return msgDiv.querySelector('.gemma-bubble');
+    };
+
+    // Handle Form Submit
+    const handleSend = async (customPrompt, systemContext) => {
+      const userText = customPrompt || (textInput ? textInput.value.trim() : '');
+      if (!userText) return;
+
+      if (!customPrompt && textInput) {
+        textInput.value = '';
+      }
+
+      appendMessage('user', userText);
+
+      // Loading bubble for assistant
+      const assistantBubble = appendMessage('assistant', '<i class="fa-solid fa-spinner fa-spin"></i> กำลังวิเคราะห์ข้อมูล...');
+      if (sendBtn) sendBtn.disabled = true;
+
+      try {
+        if (!window.GemmaEngine.isReady()) {
+          assistantBubble.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังโหลดโมเดลเข้าหน่วยความจำ WebGPU...';
+          await window.GemmaEngine.loadGemmaPipeline();
+        }
+
+        const context = systemContext || window.GemmaEngine.buildExecutiveContext(PAC_DATA);
+        
+        let hasStreamed = false;
+        await window.GemmaEngine.generateResponse(userText, context, (token, fullText) => {
+          if (!hasStreamed) {
+            assistantBubble.innerHTML = '';
+            hasStreamed = true;
+          }
+          assistantBubble.textContent = fullText;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+
+      } catch (err) {
+        assistantBubble.innerHTML = `<span style="color: var(--accent-rose);"><i class="fa-solid fa-circle-exclamation"></i> ไม่สามารถประมวลผลได้: ${err.message || err}</span>`;
+      } finally {
+        if (sendBtn) sendBtn.disabled = false;
+      }
+    };
+
+    if (inputForm) {
+      inputForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSend();
+      });
+    }
+
+    // Quick Prompts
+    promptPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const type = pill.dataset.prompt;
+        if (type === 'summary-monthly') {
+          const ctx = window.GemmaEngine.buildExecutiveContext(PAC_DATA);
+          handleSend('ช่วยสรุปสภาวะยอดขายร้านยา SSA ประจำเดือนสิงหาคม 2026 อย่างกระชับ พร้อมระบุสาขาที่ผลงานดีเด่น และสินค้าขายดี Top 5', ctx);
+        } else if (type === 'store-visit') {
+          const activeBranch = state.ssaBranch !== 'ALL' ? state.ssaBranch : 'SSA1';
+          const ctx = window.GemmaEngine.buildStoreVisitContext(PAC_DATA, activeBranch);
+          handleSend(`ช่วยเตรียมข้อมูลก่อนลงตรวจเยี่ยมร้านยา ${activeBranch} โดยสรุปสินค้าที่เป็น Hero ของสาขานี้ และสินค้ากลยุทธ์ที่ยังไม่มียอดขายเลย (White Space) เพื่อนำไปหารือกับผู้จัดการร้าน`, ctx);
+        } else if (type === 'white-space') {
+          const ctx = window.GemmaEngine.buildExecutiveContext(PAC_DATA);
+          handleSend('จากข้อมูลสินค้าและสาขา มีสินค้ากลุ่มกลยุทธ์ตัวไหนที่มีโอกาสขยายหน้าร้านเพิ่มขึ้นได้อีกบ้าง และควรโฟกัสสาขาใด', ctx);
+        } else if (type === 'incentive-tips') {
+          const ctx = window.GemmaEngine.buildExecutiveContext(PAC_DATA);
+          handleSend('ช่วยวิเคราะห์โครงสร้างค่าเชียร์ของพนักงาน SSA และแนะนำวิธีการผลักดันยอดขายสินค้ากลุ่มที่มีค่าเชียร์สูงให้ได้ผลตอบแทนสูงสุด', ctx);
+        }
+      });
+    });
+
+    // Clear Cache
+    if (btnClearCache) {
+      btnClearCache.addEventListener('click', async () => {
+        if (confirm('คุณต้องการลบไฟล์แคชโมเดล Gemma 3 (~140 MB) ออกจากเบราว์เซอร์เพื่อคืนพื้นที่หน่วยความจำใช่หรือไม่?')) {
+          await window.GemmaEngine.clearModelCache();
+          alert('ล้างแคชโมเดลเรียบร้อยแล้ว ในการเปิดใช้งานครั้งต่อไปจะต้องดาวน์โหลดใหม่');
+          closeDrawer();
+        }
+      });
+    }
+  };
+
+  // ==============================================================================
   // INITIALIZATION
   // ==============================================================================
   initTheme();
@@ -2643,6 +2896,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initSSAControls();
   initKSDControls();
+  initGemmaCopilot();
   renderCurrentTab();
   console.log("Pharma Alliance Dashboard initialized successfully.");
 });

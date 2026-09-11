@@ -1,0 +1,14 @@
+# Large Model Files (Exceeds GitHub 100MB limit)
+Gemma 3 270M/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# OS Files
+Thumbs.db
+.DS_Store
