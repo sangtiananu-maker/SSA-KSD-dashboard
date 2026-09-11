@@ -58,9 +58,9 @@
     try {
       if (onStatus) onStatus('กำลังเตรียมไลบรารี Transformers.js WebGPU...');
       
-      // Dynamic import of Transformers.js (v4.2.0+ with Gemma 3 support)
+      // Dynamic import of Transformers.js (v4.2.0+ self-contained with ONNX runtime bundled)
       if (!transformersLib) {
-        transformersLib = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/dist/transformers.web.js');
+        transformersLib = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/dist/transformers.js');
         transformersLib.env.allowLocalModels = false;
         transformersLib.env.useBrowserCache = true;
       }

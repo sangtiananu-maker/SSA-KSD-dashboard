@@ -213,6 +213,16 @@
   
   <!-- SheetJS for Client-side Excel/CSV Parsing & Export -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Browser Module Resolution Map (Resolves bare specifiers like onnxruntime-web/webgpu) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "onnxruntime-web/webgpu": "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.webgpu.bundle.min.mjs",
+      "onnxruntime-web": "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.bundle.min.mjs"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -1223,8 +1233,8 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="data.js?v=20260911_03"></script>
-  <script src="gemma_engine.js?v=20260911_03"></script>
-  <script src="app.js?v=20260911_03"></script>
+  <script src="data.js?v=20260911_04"></script>
+  <script src="gemma_engine.js?v=20260911_04"></script>
+  <script src="app.js?v=20260911_04"></script>
 </body>
 </html>
