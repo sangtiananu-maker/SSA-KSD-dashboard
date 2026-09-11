@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260905_5">
+  <link rel="stylesheet" href="styles.css?v=20260911_1">
 
   <!-- Embedded Critical CSS for PIN Security Overlay -->
   <style>
@@ -906,7 +906,7 @@
               <div class="chart-header">
                 <div>
                   <div class="chart-title"><i class="fa-solid fa-chart-column" style="color: var(--ssa-primary);"></i> ยอดขายยา PAC แยกตามสาขาร้านยา SSA ทั้ง 6 สาขา (ส.ค. 2026)</div>
-                  <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">เปรียบเทียบจำนวนขาย (ชิ้น) และมูลค่ายอดขาย (ล้านกีบ LAK) ของแต่ละสาขา</div>
+                  <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="ssa_all_branch_compare_sub">เปรียบเทียบจำนวนขาย (ชิ้น) และมูลค่ายอดขาย (ล้านกีบ LAK) ของแต่ละสาขา</div>
                 </div>
               </div>
               <div id="chart_ssa_all_branch_compare"></div>
@@ -916,7 +916,7 @@
               <div class="chart-header">
                 <div>
                   <div class="chart-title"><i class="fa-solid fa-fire" style="color: var(--accent-amber);"></i> Top 10 ยา PAC ขายดีสูงสุดในร้านยา SSA</div>
-                  <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">จัดอันดับยาที่มีจำนวนขายปลีกหน้าร้านสูงสุด (ส.ค. 2026)</div>
+                  <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="ssa_all_top_products_sub">จัดอันดับยาที่มีจำนวนขายปลีกหน้าร้านสูงสุด (ส.ค. 2026)</div>
                 </div>
               </div>
               <div id="chart_ssa_all_top_products"></div>
@@ -985,7 +985,7 @@
                     <th>ชื่อสินค้า (Product Name)</th>
                     <th>กลุ่มแบรนด์</th>
                     <th>ประเภท</th>
-                    <th style="text-align: right;">รวม 6 สาขา</th>
+                    <th style="text-align: right;" id="th_ssa_audit_total">รวม 6 สาขา</th>
                     <th style="text-align: right;">SSA 1</th>
                     <th style="text-align: right;">SSA 2</th>
                     <th style="text-align: right;">SSA 3</th>
@@ -1111,7 +1111,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="data.js?v=20260905_5"></script>
-  <script src="app.js?v=20260905_5"></script>
+  <script src="data.js?v=20260911_1"></script>
+  <script src="app.js?v=20260911_1"></script>
 </body>
 </html>

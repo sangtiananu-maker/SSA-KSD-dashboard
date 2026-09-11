@@ -424,6 +424,30 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSSATab();
   };
 
+  // Helper: Synchronize SSA Metric (Units vs Monetary Value) across Top Selector & Audit Table Selector
+  const updateSSAMetric = (metricType) => {
+    const isVal = (metricType === 'val' || metricType === 'lak');
+    state.ssaMetric = isVal ? 'val' : 'qty';
+    state.auditMetric = isVal ? 'lak' : 'qty';
+
+    // 1. Sync Top Dashboard Selector (#ssaMetricSelector)
+    const topBtns = document.querySelectorAll('#ssaMetricSelector .pill-option');
+    topBtns.forEach(btn => {
+      const m = btn.getAttribute('data-metric');
+      btn.classList.toggle('active', isVal ? (m === 'val') : (m === 'qty'));
+    });
+
+    // 2. Sync Bottom Audit Table Selector (#auditMetricSelector)
+    const auditBtns = document.querySelectorAll('#auditMetricSelector .pill-option');
+    auditBtns.forEach(btn => {
+      const am = btn.getAttribute('data-audit-metric');
+      btn.classList.toggle('active', isVal ? (am === 'lak') : (am === 'qty'));
+    });
+
+    // 3. Re-render SSA Tab (KPI, Charts, and Tables)
+    renderSSATab();
+  };
+
   // ==============================================================================
   // 3. UNIFIED SSA RETAIL & INCENTIVE ANALYSIS (17-MONTH CONTINUOUS ENGINE)
   // ==============================================================================
@@ -472,14 +496,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 5. Metric Selector (Qty vs Val)
+    // 5. Metric Selector (Qty vs Val) - Linked with Audit Table Selector
     const metricButtons = document.querySelectorAll('#ssaMetricSelector .pill-option');
     metricButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        metricButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        state.ssaMetric = btn.getAttribute('data-metric');
-        renderSSATab();
+        updateSSAMetric(btn.getAttribute('data-metric'));
       });
     });
 
@@ -894,10 +915,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const topProductItem = rankedList[0];
     const topProductText = topProductItem ? topProductItem.name : '-';
-    const topProductSubText = topProductItem ? `ยอดขาย ${formatNum(topProductItem.currQty)} ชิ้น` : '-';
+    const topProductSubText = topProductItem ? (state.ssaMetric === 'val' ? `ยอดขาย ${topProductItem.valFormatted}` : `ยอดขาย ${formatNum(topProductItem.currQty)} ชิ้น`) : '-';
 
     const growthDrivers = [...rankedList]
-      .filter(p => p.diff > 0 && p.currQty > 0)
+      .filter(p => p.diff > 0 && (state.ssaMetric === 'val' ? p.val > 0 : p.currQty > 0))
       .sort((a, b) => b.diff - a.diff);
 
     const dropDrivers = [...rankedList]
@@ -908,7 +929,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const branchSeries = PAC_DATA.branches.map(b => {
       const data = history.map(m => {
         const prods = getMonthProducts(m);
-        return prods.reduce((sum, p) => sum + ((p.branches && p.branches[b]) ? p.branches[b] : 0), 0);
+        return prods.reduce((sum, p) => {
+          if (state.ssaMetric === 'val') {
+            const totQ = p.total_qty || 0;
+            const bQ = (p.branches && p.branches[b]) ? p.branches[b] : 0;
+            const inc = p.total_incentive || 0;
+            const lak = p.total_price_lak || 0;
+            const v = inc > 0 ? inc : lak;
+            return sum + (totQ > 0 ? (v * bQ / totQ) : 0);
+          }
+          return sum + ((p.branches && p.branches[b]) ? p.branches[b] : 0);
+        }, 0);
       });
       return {
         name: `${PAC_DATA.branch_names_th[b]} (${b})`,
@@ -921,7 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.selectedHighlights && state.selectedHighlights.length > 0) {
       highlightItems = state.selectedHighlights;
     } else {
-      highlightItems = rankedList.filter(p => p.currQty > 0).slice(0, 10).map(p => p.name);
+      highlightItems = rankedList.filter(p => (state.ssaMetric === 'val' ? p.val > 0 : p.currQty > 0)).slice(0, 10).map(p => p.name);
     }
 
     const highlightSeries = highlightItems.map(pName => {
@@ -929,7 +960,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const prods = getMonthProducts(m);
         const item = prods.find(p => p.name === pName);
         if (!item) return 0;
-        return getQty(item);
+        return state.ssaMetric === 'val' ? getVal(item) : getQty(item);
       });
       return { name: pName, data };
     });
@@ -1036,6 +1067,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderSSAAllPacReport = () => {
     const prods = PAC_DATA.ssa_products_august || [];
     const bId = state.ssaBranch || 'ALL';
+    const isVal = state.ssaMetric === 'val';
 
     // 1. Calculate August 2026 totals based on branch filter
     let totalUnits = 0;
@@ -1043,8 +1075,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     prods.forEach(p => {
       if (bId === 'ALL') {
-        totalUnits += p.total_qty;
-        totalLak += p.total_price_lak;
+        totalUnits += (p.total_qty || 0);
+        totalLak += (p.total_price_lak || 0.0);
       } else {
         totalUnits += (p.branch_qtys[bId] || 0);
         totalLak += (p.branch_prices_lak[bId] || 0.0);
@@ -1072,21 +1104,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const kpiTopBranchSub = document.getElementById('kpi_ssa_top_branch_sub');
     if (bId === 'ALL') {
       if (kpiTopBranch) kpiTopBranch.textContent = 'SSA 1 (หนองด้วง/สีหอม)';
-      if (kpiTopBranchSub) kpiTopBranchSub.textContent = 'ยอดขาย 25,247 ชิ้น (36.6% ของทั้งเครือ)';
+      if (kpiTopBranchSub) {
+        kpiTopBranchSub.textContent = isVal
+          ? `ยอดขาย ${formatLAK(305434971)} (31.7% ของทั้งเครือ)`
+          : `ยอดขาย 25,247 ชิ้น (36.6% ของทั้งเครือ)`;
+      }
     } else {
       const bNames = { SSA1: 'SSA 1 (หนองด้วง/สีหอม)', SSA2: 'SSA 2 (IMDC)', SSA3: 'SSA 3 (สะพานทอง)', SSA5: 'SSA 5 (จอมมณี)', SSA6: 'SSA 6 (แสงสว่าง)', SSA7: 'SSA 7 (เก้ายอด)' };
       if (kpiTopBranch) kpiTopBranch.textContent = bNames[bId] || bId;
-      const share = totalUnits > 0 ? ((totalUnits / 68902) * 100).toFixed(1) : '0.0';
+      const share = isVal
+        ? (totalLak > 0 ? ((totalLak / 963168446.43) * 100).toFixed(1) : '0.0')
+        : (totalUnits > 0 ? ((totalUnits / 68902) * 100).toFixed(1) : '0.0');
       if (kpiTopBranchSub) kpiTopBranchSub.textContent = `คิดเป็น ${share}% ของยอดรวมทั้งเครือ`;
     }
 
-    // Top Product for August
+    // Top Product for August based on active metric (Units vs Value)
     let bestProd = null;
-    let maxQ = -1;
+    let maxMetric = -1;
     prods.forEach(p => {
-      const q = bId === 'ALL' ? p.total_qty : (p.branch_qtys[bId] || 0);
-      if (q > maxQ) {
-        maxQ = q;
+      const v = isVal
+        ? (bId === 'ALL' ? (p.total_price_lak || 0) : (p.branch_prices_lak[bId] || 0))
+        : (bId === 'ALL' ? (p.total_qty || 0) : (p.branch_qtys[bId] || 0));
+      if (v > maxMetric) {
+        maxMetric = v;
         bestProd = p;
       }
     });
@@ -1097,7 +1137,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const kpiTopProductSub = document.getElementById('kpi_ssa_top_product_sub');
     if (kpiTopProductSub && bestProd) {
-      kpiTopProductSub.textContent = `ยอดขาย ${formatNum(maxQ)} ชิ้น (${bestProd.classification || 'ทั่วไป'})`;
+      kpiTopProductSub.textContent = isVal
+        ? `ยอดขาย ${formatLAK(maxMetric)} (${bestProd.classification || 'ทั่วไป'})`
+        : `ยอดขาย ${formatNum(maxMetric)} ชิ้น (${bestProd.classification || 'ทั่วไป'})`;
     }
 
     // 2. Render Charts & Tables
@@ -1112,14 +1154,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const chartElem = document.getElementById('chart_ssa_all_branch_compare');
       if (!chartElem) return;
 
+      const isVal = state.ssaMetric === 'val';
       const branchLabels = ['SSA 1 (หนองด้วง/สีหอม)', 'SSA 2 (IMDC)', 'SSA 3 (สะพานทอง)', 'SSA 5 (จอมมณี)', 'SSA 6 (แสงสว่าง)', 'SSA 7 (เก้ายอด)'];
       const branchKeys = ['SSA1', 'SSA2', 'SSA3', 'SSA5', 'SSA6', 'SSA7'];
 
-      const qtyData = branchKeys.map(k => PAC_DATA.branch_totals_qty[k] || 0);
+      const subElem = document.getElementById('ssa_all_branch_compare_sub');
+      if (subElem) {
+        subElem.textContent = isVal ? 'เปรียบเทียบมูลค่ายอดขาย (กีบ LAK) ของแต่ละสาขา' : 'เปรียบเทียบจำนวนขาย (ชิ้น) ของแต่ละสาขา';
+      }
+
+      const chartData = branchKeys.map(k => isVal ? (PAC_DATA.branch_totals_lak[k] || 0) : (PAC_DATA.branch_totals_qty[k] || 0));
 
       const options = {
         series: [
-          { name: 'จำนวนขาย (ชิ้น)', data: qtyData }
+          { name: isVal ? 'มูลค่ายอดขาย (กีบ LAK)' : 'จำนวนขาย (ชิ้น)', data: chartData }
         ],
         chart: {
           height: 330,
@@ -1134,13 +1182,13 @@ document.addEventListener('DOMContentLoaded', () => {
             dataLabels: { position: 'top' }
           }
         },
-        colors: ['#009944'],
+        colors: [isVal ? '#06b6d4' : '#009944'],
         dataLabels: {
           enabled: true,
-          formatter: (val) => `${formatNum(val)}`,
+          formatter: (val) => isVal ? (val >= 1000000 ? `${(val / 1000000).toFixed(1)}M ₭` : `${formatNum(Math.round(val / 1000))}k ₭`) : `${formatNum(val)}`,
           offsetY: -20,
           style: {
-            fontSize: '12px',
+            fontSize: '11px',
             colors: [state.theme === 'dark' ? '#f1f5f9' : '#0f172a']
           }
         },
@@ -1151,13 +1199,13 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         },
         yaxis: {
-          title: { text: 'จำนวนชิ้น (Units)' },
-          labels: { formatter: (val) => formatNum(val) }
+          title: { text: isVal ? 'มูลค่ายอดขาย (ล้านกีบ LAK)' : 'จำนวนชิ้น (Units)' },
+          labels: { formatter: (val) => isVal ? `${(val / 1000000).toFixed(0)}M ₭` : formatNum(val) }
         },
         tooltip: {
           theme: state.theme,
           y: {
-            formatter: (val) => `${formatNum(val)} ชิ้น`
+            formatter: (val) => isVal ? formatLAK(val) : `${formatNum(val)} ชิ้น`
           }
         }
       };
@@ -1177,21 +1225,36 @@ document.addEventListener('DOMContentLoaded', () => {
       const chartElem = document.getElementById('chart_ssa_all_top_products');
       if (!chartElem) return;
 
+      const isVal = state.ssaMetric === 'val';
       const prods = [...(PAC_DATA.ssa_products_august || [])];
       const bId = state.ssaBranch || 'ALL';
 
+      const subElem = document.getElementById('ssa_all_top_products_sub');
+      if (subElem) {
+        subElem.textContent = isVal ? 'จัดอันดับยาที่มีมูลค่ายอดขายปลีกหน้าร้านสูงสุด (ส.ค. 2026)' : 'จัดอันดับยาที่มีจำนวนขายปลีกหน้าร้านสูงสุด (ส.ค. 2026)';
+      }
+
       prods.sort((a, b) => {
-        const qa = bId === 'ALL' ? a.total_qty : (a.branch_qtys[bId] || 0);
-        const qb = bId === 'ALL' ? b.total_qty : (b.branch_qtys[bId] || 0);
-        return qb - qa;
+        const valA = isVal
+          ? (bId === 'ALL' ? (a.total_price_lak || 0) : (a.branch_prices_lak[bId] || 0))
+          : (bId === 'ALL' ? (a.total_qty || 0) : (a.branch_qtys[bId] || 0));
+        const valB = isVal
+          ? (bId === 'ALL' ? (b.total_price_lak || 0) : (b.branch_prices_lak[bId] || 0))
+          : (bId === 'ALL' ? (b.total_qty || 0) : (b.branch_qtys[bId] || 0));
+        return valB - valA;
       });
 
       const top10 = prods.slice(0, 10);
       const names = top10.map(p => getProductName(p));
-      const values = top10.map(p => bId === 'ALL' ? p.total_qty : (p.branch_qtys[bId] || 0));
+      const values = top10.map(p => {
+        if (isVal) {
+          return bId === 'ALL' ? (p.total_price_lak || 0) : (p.branch_prices_lak[bId] || 0);
+        }
+        return bId === 'ALL' ? (p.total_qty || 0) : (p.branch_qtys[bId] || 0);
+      });
 
       const options = {
-        series: [{ name: 'ยอดขายหน้าร้าน (ชิ้น)', data: values }],
+        series: [{ name: isVal ? 'ยอดขายหน้าร้าน (กีบ LAK)' : 'ยอดขายหน้าร้าน (ชิ้น)', data: values }],
         chart: {
           type: 'bar',
           height: 330,
@@ -1201,18 +1264,18 @@ document.addEventListener('DOMContentLoaded', () => {
         plotOptions: {
           bar: { borderRadius: 4, horizontal: true, barHeight: '65%' }
         },
-        colors: ['#009944'],
+        colors: [isVal ? '#06b6d4' : '#009944'],
         dataLabels: {
           enabled: true,
-          formatter: (val) => formatNum(val)
+          formatter: (val) => isVal ? (val >= 1000000 ? `${(val / 1000000).toFixed(1)}M ₭` : `${formatNum(Math.round(val / 1000))}k ₭`) : formatNum(val)
         },
         xaxis: {
           categories: names,
-          labels: { formatter: (val) => formatNum(val) }
+          labels: { formatter: (val) => isVal ? `${(val / 1000000).toFixed(0)}M ₭` : formatNum(val) }
         },
         tooltip: {
           theme: state.theme,
-          y: { formatter: (val) => `${formatNum(val)} ชิ้น` }
+          y: { formatter: (val) => isVal ? formatLAK(val) : `${formatNum(val)} ชิ้น` }
         }
       };
 
@@ -1240,21 +1303,25 @@ document.addEventListener('DOMContentLoaded', () => {
       { id: 'SSA7', name: 'SSA 7 (เพียวัด / เก้ายอด)' }
     ];
 
+    const isVal = state.ssaMetric === 'val';
     const totalNetworkUnits = 68902;
+    const totalNetworkLak = 963168446.43;
     const prods = PAC_DATA.ssa_products_august || [];
 
     branchMeta.forEach(b => {
       const q = PAC_DATA.branch_totals_qty[b.id] || 0;
       const lak = PAC_DATA.branch_totals_lak[b.id] || 0;
-      const sharePct = ((q / totalNetworkUnits) * 100).toFixed(1);
+      const sharePct = isVal
+        ? ((lak / totalNetworkLak) * 100).toFixed(1)
+        : ((q / totalNetworkUnits) * 100).toFixed(1);
 
-      // Find top product for this branch
+      // Find top product for this branch based on active metric
       let topP = null;
-      let topQ = -1;
+      let topVal = -1;
       prods.forEach(p => {
-        const bq = p.branch_qtys[b.id] || 0;
-        if (bq > topQ) {
-          topQ = bq;
+        const val = isVal ? (p.branch_prices_lak[b.id] || 0) : (p.branch_qtys[b.id] || 0);
+        if (val > topVal) {
+          topVal = val;
           topP = p;
         }
       });
@@ -1263,15 +1330,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const isCurrentActive = state.ssaBranch === b.id;
       if (isCurrentActive) tr.style.background = 'rgba(0, 153, 68, 0.08)';
 
+      const qtyStyle = !isVal ? 'font-weight: 700; color: var(--ssa-primary);' : '';
+      const lakStyle = isVal ? 'font-weight: 700; color: var(--ssa-primary);' : '';
+      const topPValStr = isVal
+        ? (topVal > 0 ? formatLAK(topVal) : '')
+        : (topVal > 0 ? `${formatNum(topVal)} ชิ้น` : '');
+
       tr.innerHTML = `
         <td><code>${b.id}</code></td>
         <td style="font-weight: 600;">${b.name}</td>
-        <td style="text-align: right; font-weight: 700;">${formatNum(q)}</td>
-        <td style="text-align: right;">${formatLAK(lak)}</td>
+        <td style="text-align: right; ${qtyStyle}">${formatNum(q)}</td>
+        <td style="text-align: right; ${lakStyle}">${formatLAK(lak)}</td>
         <td style="text-align: right;"><span class="badge badge-emerald">${sharePct}%</span></td>
         <td>
           <div style="font-weight: 600; font-size: 12.5px;">${topP ? getProductName(topP) : '-'}</div>
-          <div style="font-size: 11px; color: var(--text-muted);">${topQ > 0 ? `${formatNum(topQ)} ชิ้น` : ''}</div>
+          <div style="font-size: 11px; color: var(--text-muted);">${topPValStr}</div>
         </td>
         <td style="text-align: center;">
           <button class="btn btn-outline" style="font-size: 11px; padding: 4px 10px;" onclick="window.inspectStoreBranch('${b.id}')">
@@ -1290,7 +1363,13 @@ document.addEventListener('DOMContentLoaded', () => {
     tbody.innerHTML = '';
     const query = (state.auditSearchQuery || '').toLowerCase().trim();
     const isBrandGroup = state.ssaGroup === 'brand';
-    const isLak = state.auditMetric === 'lak';
+    const isLak = (state.auditMetric === 'lak' || state.ssaMetric === 'val');
+
+    // Update column header to indicate units vs currency
+    const thTotal = document.getElementById('th_ssa_audit_total');
+    if (thTotal) {
+      thTotal.textContent = isLak ? 'รวม 6 สาขา (กีบ LAK)' : 'รวม 6 สาขา (ชิ้น)';
+    }
 
     let prods = [...(PAC_DATA.ssa_products_august || [])];
 
@@ -1384,7 +1463,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Setup Audit Table Search and Metric Listeners
+  // Setup Audit Table Search and Metric Listeners (Linked with Master Dashboard Metric Selector)
   const auditSearchInput = document.getElementById('auditTableSearch');
   if (auditSearchInput) {
     auditSearchInput.addEventListener('input', (e) => {
@@ -1397,10 +1476,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (auditMetricSelector) {
     auditMetricSelector.querySelectorAll('.pill-option').forEach(btn => {
       btn.addEventListener('click', () => {
-        auditMetricSelector.querySelectorAll('.pill-option').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        state.auditMetric = btn.getAttribute('data-audit-metric');
-        renderSSAAllAuditProductsTable();
+        updateSSAMetric(btn.getAttribute('data-audit-metric'));
       });
     });
   }
@@ -1410,6 +1486,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!chartElem) return;
 
     const isIncScope = state.ssaScope === 'incentive';
+    const isVal = state.ssaMetric === 'val';
     const isDark = state.theme === 'dark';
     const series = d.branchSeries.map(s => ({
       name: s.name,
@@ -1441,14 +1518,14 @@ document.addEventListener('DOMContentLoaded', () => {
         title: { text: isIncScope ? 'เส้นเวลาทางการ 17 เดือน (เม.ย. 2025 – ส.ค. 2026)' : 'เส้นเวลาต่อเนื่อง (เม.ย. 2025 – ส.ค. 2026)' }
       },
       yaxis: {
-        title: { text: 'จำนวนขาย (ชิ้น)' },
-        labels: { formatter: (val) => formatNum(val) }
+        title: { text: isVal ? 'มูลค่าค่าเชียร์ (บาท THB)' : 'จำนวนขาย (ชิ้น)' },
+        labels: { formatter: (val) => isVal ? formatTHB(val) : formatNum(val) }
       },
       tooltip: {
         shared: true,
         intersect: false,
         theme: state.theme,
-        y: { formatter: (val) => `${formatNum(val)} ชิ้น` }
+        y: { formatter: (val) => isVal ? formatTHB(val) : `${formatNum(val)} ชิ้น` }
       },
       legend: {
         position: 'top',
@@ -1468,6 +1545,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!chartElem) return;
 
     const isIncScope = state.ssaScope === 'incentive';
+    const isVal = state.ssaMetric === 'val';
     const badge = document.getElementById('highlightSelectedBadge');
     if (badge) {
       badge.textContent = `แสดง ${d.highlightSeries.length} รายการ`;
@@ -1497,13 +1575,13 @@ document.addEventListener('DOMContentLoaded', () => {
         title: { text: isIncScope ? 'เส้นเวลาทางการ 17 เดือน (เม.ย. 2025 – ส.ค. 2026)' : 'เส้นเวลาต่อเนื่อง (เม.ย. 2025 – ส.ค. 2026)' }
       },
       yaxis: {
-        title: { text: `จำนวนขาย ${state.ssaBranch === 'ALL' ? 'รวมทุกสาขา' : state.ssaBranch} (ชิ้น)` },
-        labels: { formatter: (val) => formatNum(val) }
+        title: { text: isVal ? `มูลค่าขาย ${state.ssaBranch === 'ALL' ? 'รวมทุกสาขา' : state.ssaBranch} (บาท)` : `จำนวนขาย ${state.ssaBranch === 'ALL' ? 'รวมทุกสาขา' : state.ssaBranch} (ชิ้น)` },
+        labels: { formatter: (val) => isVal ? formatTHB(val) : formatNum(val) }
       },
       tooltip: {
         shared: true,
         theme: state.theme,
-        y: { formatter: (val) => `${formatNum(val)} ชิ้น` }
+        y: { formatter: (val) => isVal ? formatTHB(val) : `${formatNum(val)} ชิ้น` }
       },
       legend: {
         position: 'bottom'
@@ -1561,6 +1639,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropElem = document.getElementById('chart_ssa_drop_drivers');
     const limit = state.driverLimit || 5;
     const isDark = state.theme === 'dark';
+    const isVal = state.ssaMetric === 'val';
 
     if (growthElem) {
       const topG = d.growthDrivers.slice(0, limit);
@@ -1571,7 +1650,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const values = topG.map(p => p.diff);
 
         const options = {
-          series: [{ name: 'ยอดขายเพิ่มขึ้น (ชิ้น)', data: values }],
+          series: [{ name: isVal ? 'มูลค่าเพิ่มขึ้น (บาท)' : 'ยอดขายเพิ่มขึ้น (ชิ้น)', data: values }],
           chart: {
             type: 'bar',
             height: 280,
@@ -1584,15 +1663,15 @@ document.addEventListener('DOMContentLoaded', () => {
           colors: ['#009944'],
           dataLabels: {
             enabled: true,
-            formatter: (val) => `+${formatNum(val)}`
+            formatter: (val) => isVal ? `+${formatTHB(val)}` : `+${formatNum(val)}`
           },
           xaxis: {
             categories: names,
-            labels: { formatter: (val) => `+${formatNum(val)}` }
+            labels: { formatter: (val) => isVal ? `+${formatTHB(val)}` : `+${formatNum(val)}` }
           },
           tooltip: {
             theme: state.theme,
-            y: { formatter: (val) => `+${formatNum(val)} ชิ้น` }
+            y: { formatter: (val) => isVal ? `+${formatTHB(val)}` : `+${formatNum(val)} ชิ้น` }
           }
         };
 
@@ -1613,7 +1692,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const values = topD.map(p => p.diff);
 
         const options = {
-          series: [{ name: 'ยอดขายลดลง (ชิ้น)', data: values }],
+          series: [{ name: isVal ? 'มูลค่าลดลง (บาท)' : 'ยอดขายลดลง (ชิ้น)', data: values }],
           chart: {
             type: 'bar',
             height: 280,
@@ -1626,15 +1705,15 @@ document.addEventListener('DOMContentLoaded', () => {
           colors: ['#e11d48'],
           dataLabels: {
             enabled: true,
-            formatter: (val) => `${formatNum(val)}`
+            formatter: (val) => isVal ? formatTHB(val) : `${formatNum(val)}`
           },
           xaxis: {
             categories: names,
-            labels: { formatter: (val) => formatNum(val) }
+            labels: { formatter: (val) => isVal ? formatTHB(val) : formatNum(val) }
           },
           tooltip: {
             theme: state.theme,
-            y: { formatter: (val) => `${formatNum(val)} ชิ้น` }
+            y: { formatter: (val) => isVal ? formatTHB(val) : `${formatNum(val)} ชิ้น` }
           }
         };
 
