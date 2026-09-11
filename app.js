@@ -2673,217 +2673,200 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==============================================================================
-  // GEMMA 3 270M AI COPILOT LOGIC (WebGPU In-Browser Inference)
+  // AI EXECUTIVE INSIGHTS & STORE VISIT BRIEFING (Pre-built Instant Intelligence)
   // ==============================================================================
-  const initGemmaCopilot = () => {
+  const initExecutiveInsightsUI = () => {
     const triggerBtn = document.getElementById('gemmaTriggerBtn');
-    const consentModal = document.getElementById('gemmaConsentModal');
-    const btnCancel = document.getElementById('btnGemmaCancel');
-    const btnAccept = document.getElementById('btnGemmaAccept');
-    const progressBox = document.getElementById('gemmaProgressBox');
-    const progressFill = document.getElementById('gemmaProgressFill');
-    const progressStatus = document.getElementById('gemmaProgressStatus');
-    const progressPercent = document.getElementById('gemmaProgressPercent');
-    const modalActions = document.getElementById('gemmaModalActions');
-
     const drawer = document.getElementById('gemmaDrawer');
     const drawerOverlay = document.getElementById('gemmaDrawerOverlay');
     const drawerCloseBtn = document.getElementById('gemmaDrawerCloseBtn');
-    const headerStatusPill = document.getElementById('gemmaHeaderStatusPill');
+    const container = document.getElementById('gemmaChatMessages');
+    const branchSelect = document.getElementById('insightBranchSelect');
+    const searchInput = document.getElementById('insightSearchInput');
+    const btnMonthly = document.getElementById('btnInsightMonthly');
+    const btnStore = document.getElementById('btnInsightStore');
+    const btnStrategic = document.getElementById('btnInsightStrategic');
 
-    const chatMessages = document.getElementById('gemmaChatMessages');
-    const inputForm = document.getElementById('gemmaInputForm');
-    const textInput = document.getElementById('gemmaTextInput');
-    const sendBtn = document.getElementById('gemmaSendBtn');
-    const btnClearCache = document.getElementById('btnGemmaClearCache');
-    const promptPills = document.querySelectorAll('.gemma-prompt-pill');
+    if (!triggerBtn || !drawer || !container) return;
 
-    if (!triggerBtn || !consentModal || !drawer) return;
+    let currentMode = 'monthly'; // 'monthly' | 'store' | 'strategic'
 
-    // Helper: Open Drawer
-    const openDrawer = async () => {
-      drawer.classList.add('active');
-      drawerOverlay.classList.add('active');
-      if (textInput) textInput.focus();
+    const renderSearchResults = (query) => {
+      const results = window.ExecutiveInsights.smartSearchProducts(query, PAC_DATA.ssa_products_august);
+      
+      const q = query.toLowerCase();
+      const matchedCats = (window.ExecutiveInsights.MEDICAL_SYMPTOM_MAP || []).filter(c => 
+        c.keywords.some(k => q.includes(k.toLowerCase()) || k.toLowerCase().includes(q))
+      );
 
-      // Ensure model is loaded in background if already cached
-      if (window.GemmaEngine && !window.GemmaEngine.isReady()) {
-        try {
-          if (headerStatusPill) {
-            headerStatusPill.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังเตรียมโมเดล...';
-            headerStatusPill.style.color = '#f59e0b';
-          }
-          await window.GemmaEngine.loadGemmaPipeline();
-          if (headerStatusPill) {
-            headerStatusPill.innerHTML = '<i class="fa-solid fa-circle-check"></i> พร้อมใช้งาน';
-            headerStatusPill.style.color = '#10b981';
-          }
-        } catch (err) {
-          console.error('[GemmaCopilot] Engine init error:', err);
-          if (headerStatusPill) {
-            headerStatusPill.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> พร้อมใช้งาน (CPU)';
-            headerStatusPill.style.color = '#f59e0b';
-          }
-        }
+      let html = `
+        <div class="insight-section" style="margin-bottom: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-weight: 700; font-size: 14px; color: #06b6d4;">
+              <i class="fa-solid fa-magnifying-glass"></i> ผลการค้นหาอัจฉริยะ (Smart Search)
+            </div>
+            <span class="rank-badge" style="background: rgba(6, 182, 212, 0.2); color: #06b6d4;">${results.length} รายการ</span>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+            ค้นหาคำว่า: <strong style="color: var(--text-primary);">"${query}"</strong> (รองรับกลุ่มอาการ, ภาษาลาว, ไทย, อังกฤษ และคำสะกดผิด)
+          </div>
+      `;
+
+      if (matchedCats.length > 0) {
+        html += `
+          <div style="margin-bottom: 12px; padding: 8px 12px; background: rgba(16, 185, 129, 0.1); border-left: 3px solid #10b981; border-radius: 6px;">
+            <div style="font-size: 11.5px; font-weight: 700; color: #10b981; margin-bottom: 4px;">
+              <i class="fa-solid fa-stethoscope"></i> ตรวจพบกลุ่มอาการที่ตรงกัน:
+            </div>
+            ${matchedCats.map(c => `<span class="ws-tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981; margin: 2px 4px 2px 0;">${c.category}</span>`).join('')}
+          </div>
+        `;
       }
+
+      if (results.length === 0) {
+        html += `
+          <div style="padding: 24px; text-align: center; color: var(--text-muted); font-size: 13px;">
+            <i class="fa-solid fa-box-open" style="font-size: 28px; margin-bottom: 8px; display: block; opacity: 0.5;"></i>
+            ไม่พบสินค้าที่ตรงกับคำค้นหานี้ กรุณาลองค้นหาด้วยชื่อแบรนด์ ย่อ หรือกลุ่มอาการ
+          </div>
+        </div>`;
+      } else {
+        html += `
+          <div class="table-responsive" style="max-height: 520px; overflow-y: auto;">
+            <table class="insight-mini-table">
+              <thead>
+                <tr>
+                  <th>สินค้า / แบรนด์</th>
+                  <th style="text-align: right;">ยอดขายรวม</th>
+                  <th style="text-align: right;">สาขาที่ขายได้</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+
+        results.slice(0, 30).forEach(p => {
+          const activeBranches = PAC_DATA.branches.filter(b => (p.branch_qtys && p.branch_qtys[b]) > 0);
+          html += `
+            <tr>
+              <td>
+                <div style="font-weight: 600; color: var(--text-primary); font-size: 12.5px;">${p.english_name || p.lao_name}</div>
+                <div style="font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+                  <span class="ws-tag" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4; font-size: 10px; padding: 1px 6px;">${p.brand_group}</span>
+                  <span>SKU: ${p.sku}</span>
+                </div>
+              </td>
+              <td style="text-align: right; white-space: nowrap;">
+                <div style="font-weight: 700; color: var(--accent-emerald); font-size: 12.5px;">${p.total_qty.toLocaleString()} ${p.unit || 'ชิ้น'}</div>
+                <div style="font-size: 10.5px; color: var(--text-muted);">${(p.total_price_lak / 1e6).toFixed(2)}M LAK</div>
+              </td>
+              <td style="text-align: right; font-size: 11px;">
+                ${activeBranches.length > 0 
+                  ? `<span style="color: #10b981; font-weight: 600;">${activeBranches.length}/6 สาขา</span><div style="font-size: 9.5px; color: var(--text-muted);">${activeBranches.join(', ')}</div>` 
+                  : `<span style="color: var(--accent-rose);">ไม่มีจำหน่าย</span>`}
+              </td>
+            </tr>
+          `;
+        });
+
+        html += `
+              </tbody>
+            </table>
+          </div>
+        </div>`;
+      }
+
+      container.innerHTML = html;
+      container.scrollTop = 0;
     };
 
-    // Helper: Close Drawer
+    const renderCurrentMode = () => {
+      if (!window.ExecutiveInsights) {
+        container.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> กำลังโหลดโมดูลวิเคราะห์...</div>';
+        return;
+      }
+
+      const query = searchInput ? searchInput.value.trim() : '';
+      if (query) {
+        renderSearchResults(query);
+        return;
+      }
+
+      if (currentMode === 'monthly') {
+        container.innerHTML = window.ExecutiveInsights.generateExecutiveBriefing(PAC_DATA);
+      } else if (currentMode === 'store') {
+        const branch = (branchSelect ? branchSelect.value : '') || (state.ssaBranch !== 'ALL' ? state.ssaBranch : 'SSA1');
+        container.innerHTML = window.ExecutiveInsights.generateStoreVisitBriefing(PAC_DATA, branch);
+      } else if (currentMode === 'strategic') {
+        container.innerHTML = window.ExecutiveInsights.generateStrategicOpportunities(PAC_DATA);
+      }
+      container.scrollTop = 0;
+    };
+
+    const openDrawer = () => {
+      drawer.classList.add('active');
+      drawerOverlay.classList.add('active');
+      renderCurrentMode();
+    };
+
     const closeDrawer = () => {
       drawer.classList.remove('active');
       drawerOverlay.classList.remove('active');
     };
 
+    triggerBtn.addEventListener('click', openDrawer);
     if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
     if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
 
-    // Trigger Click
-    triggerBtn.addEventListener('click', async () => {
-      if (!window.GemmaEngine) {
-        alert('ไลบรารี GemmaEngine กำลังเตรียมการ กรุณาลองใหม่อีกครั้ง');
-        return;
-      }
-
-      const isCached = await window.GemmaEngine.checkModelCached();
-      if (isCached) {
-        openDrawer();
-      } else {
-        consentModal.classList.add('active');
-      }
-    });
-
-    // Cancel Consent
-    if (btnCancel) {
-      btnCancel.addEventListener('click', () => {
-        consentModal.classList.remove('active');
+    const setActiveBtn = (activeBtn) => {
+      [btnMonthly, btnStore, btnStrategic].forEach(b => {
+        if (b) b.classList.remove('active');
       });
-    }
-
-    // Accept Consent & Download
-    if (btnAccept) {
-      btnAccept.addEventListener('click', async () => {
-        modalActions.style.display = 'none';
-        progressBox.style.display = 'block';
-
-        try {
-          await window.GemmaEngine.loadGemmaPipeline(
-            (progress) => {
-              if (progressFill) progressFill.style.width = `${progress.percent}%`;
-              if (progressPercent) progressPercent.textContent = `${progress.percent}%`;
-              if (progressStatus) {
-                progressStatus.textContent = `กำลังดาวน์โหลด: ${progress.loadedMB} / ${progress.totalMB || '140'} MB...`;
-              }
-            },
-            (statusText) => {
-              if (progressStatus) progressStatus.textContent = statusText;
-            }
-          );
-
-          // Success
-          setTimeout(() => {
-            consentModal.classList.remove('active');
-            modalActions.style.display = 'flex';
-            progressBox.style.display = 'none';
-            openDrawer();
-          }, 600);
-        } catch (err) {
-          alert('เกิดข้อผิดพลาดในการดาวน์โหลดโมเดล: ' + (err.message || err));
-          modalActions.style.display = 'flex';
-          progressBox.style.display = 'none';
-        }
-      });
-    }
-
-    // Append Message to Chat
-    const appendMessage = (role, text) => {
-      const msgDiv = document.createElement('div');
-      msgDiv.className = `gemma-msg ${role}`;
-      const avatarIcon = role === 'user' ? 'fa-user' : 'fa-brain';
-      msgDiv.innerHTML = `
-        <div class="gemma-msg-avatar"><i class="fa-solid ${avatarIcon}"></i></div>
-        <div class="gemma-bubble">${text}</div>
-      `;
-      chatMessages.appendChild(msgDiv);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-      return msgDiv.querySelector('.gemma-bubble');
+      if (activeBtn) activeBtn.classList.add('active');
     };
 
-    // Handle Form Submit
-    const handleSend = async (customPrompt, systemContext) => {
-      const userText = customPrompt || (textInput ? textInput.value.trim() : '');
-      if (!userText) return;
-
-      if (!customPrompt && textInput) {
-        textInput.value = '';
-      }
-
-      appendMessage('user', userText);
-
-      // Loading bubble for assistant
-      const assistantBubble = appendMessage('assistant', '<i class="fa-solid fa-spinner fa-spin"></i> กำลังวิเคราะห์ข้อมูล...');
-      if (sendBtn) sendBtn.disabled = true;
-
-      try {
-        if (!window.GemmaEngine.isReady()) {
-          assistantBubble.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังโหลดโมเดลเข้าหน่วยความจำ WebGPU...';
-          await window.GemmaEngine.loadGemmaPipeline();
-        }
-
-        const context = systemContext || window.GemmaEngine.buildExecutiveContext(PAC_DATA);
-        
-        let hasStreamed = false;
-        await window.GemmaEngine.generateResponse(userText, context, (token, fullText) => {
-          if (!hasStreamed) {
-            assistantBubble.innerHTML = '';
-            hasStreamed = true;
-          }
-          assistantBubble.textContent = fullText;
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        });
-
-      } catch (err) {
-        assistantBubble.innerHTML = `<span style="color: var(--accent-rose);"><i class="fa-solid fa-circle-exclamation"></i> ไม่สามารถประมวลผลได้: ${err.message || err}</span>`;
-      } finally {
-        if (sendBtn) sendBtn.disabled = false;
-      }
-    };
-
-    if (inputForm) {
-      inputForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        handleSend();
+    if (btnMonthly) {
+      btnMonthly.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentMode = 'monthly';
+        setActiveBtn(btnMonthly);
+        renderCurrentMode();
       });
     }
 
-    // Quick Prompts
-    promptPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        const type = pill.dataset.prompt;
-        if (type === 'summary-monthly') {
-          const ctx = window.GemmaEngine.buildExecutiveContext(PAC_DATA);
-          handleSend('ช่วยสรุปสภาวะยอดขายร้านยา SSA ประจำเดือนสิงหาคม 2026 อย่างกระชับ พร้อมระบุสาขาที่ผลงานดีเด่น และสินค้าขายดี Top 5', ctx);
-        } else if (type === 'store-visit') {
-          const activeBranch = state.ssaBranch !== 'ALL' ? state.ssaBranch : 'SSA1';
-          const ctx = window.GemmaEngine.buildStoreVisitContext(PAC_DATA, activeBranch);
-          handleSend(`ช่วยเตรียมข้อมูลก่อนลงตรวจเยี่ยมร้านยา ${activeBranch} โดยสรุปสินค้าที่เป็น Hero ของสาขานี้ และสินค้ากลยุทธ์ที่ยังไม่มียอดขายเลย (White Space) เพื่อนำไปหารือกับผู้จัดการร้าน`, ctx);
-        } else if (type === 'white-space') {
-          const ctx = window.GemmaEngine.buildExecutiveContext(PAC_DATA);
-          handleSend('จากข้อมูลสินค้าและสาขา มีสินค้ากลุ่มกลยุทธ์ตัวไหนที่มีโอกาสขยายหน้าร้านเพิ่มขึ้นได้อีกบ้าง และควรโฟกัสสาขาใด', ctx);
-        } else if (type === 'incentive-tips') {
-          const ctx = window.GemmaEngine.buildExecutiveContext(PAC_DATA);
-          handleSend('ช่วยวิเคราะห์โครงสร้างค่าเชียร์ของพนักงาน SSA และแนะนำวิธีการผลักดันยอดขายสินค้ากลุ่มที่มีค่าเชียร์สูงให้ได้ผลตอบแทนสูงสุด', ctx);
-        }
+    if (btnStore) {
+      btnStore.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentMode = 'store';
+        setActiveBtn(btnStore);
+        renderCurrentMode();
       });
-    });
+    }
 
-    // Clear Cache
-    if (btnClearCache) {
-      btnClearCache.addEventListener('click', async () => {
-        if (confirm('คุณต้องการลบไฟล์แคชโมเดล Gemma 3 (~140 MB) ออกจากเบราว์เซอร์เพื่อคืนพื้นที่หน่วยความจำใช่หรือไม่?')) {
-          await window.GemmaEngine.clearModelCache();
-          alert('ล้างแคชโมเดลเรียบร้อยแล้ว ในการเปิดใช้งานครั้งต่อไปจะต้องดาวน์โหลดใหม่');
-          closeDrawer();
-        }
+    if (btnStrategic) {
+      btnStrategic.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentMode = 'strategic';
+        setActiveBtn(btnStrategic);
+        renderCurrentMode();
+      });
+    }
+
+    if (branchSelect) {
+      branchSelect.addEventListener('change', () => {
+        if (searchInput) searchInput.value = '';
+        currentMode = 'store';
+        setActiveBtn(btnStore);
+        renderCurrentMode();
+      });
+    }
+
+    if (searchInput) {
+      let debounceTimer = null;
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          renderCurrentMode();
+        }, 120);
       });
     }
   };
@@ -2896,7 +2879,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initSSAControls();
   initKSDControls();
-  initGemmaCopilot();
+  initExecutiveInsightsUI();
   renderCurrentTab();
   console.log("Pharma Alliance Dashboard initialized successfully.");
 });
