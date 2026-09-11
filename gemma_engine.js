@@ -58,9 +58,9 @@
     try {
       if (onStatus) onStatus('กำลังเตรียมไลบรารี Transformers.js WebGPU...');
       
-      // Dynamic import of Transformers.js v3
+      // Dynamic import of Transformers.js (v4.2.0+ with Gemma 3 support)
       if (!transformersLib) {
-        transformersLib = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.3.3');
+        transformersLib = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/dist/transformers.web.js');
         transformersLib.env.allowLocalModels = false;
         transformersLib.env.useBrowserCache = true;
       }
@@ -110,12 +110,22 @@
         }
       };
 
-      // Load text-generation pipeline
-      pipelineInstance = await transformersLib.pipeline('text-generation', MODEL_ID, {
-        device: caps.recommendedDevice,
-        dtype: caps.recommendedDtype,
-        progress_callback: handleProgress
-      });
+      // Load text-generation pipeline with auto-fallback
+      try {
+        pipelineInstance = await transformersLib.pipeline('text-generation', MODEL_ID, {
+          device: caps.recommendedDevice,
+          dtype: caps.recommendedDtype,
+          progress_callback: handleProgress
+        });
+      } catch (gpuErr) {
+        console.warn('[GemmaEngine] WebGPU init failed, falling back to wasm/q4:', gpuErr);
+        if (onStatus) onStatus('กำลังสลับไปใช้ WASM (CPU) สำรอง...');
+        pipelineInstance = await transformersLib.pipeline('text-generation', MODEL_ID, {
+          device: 'wasm',
+          dtype: 'q4',
+          progress_callback: handleProgress
+        });
+      }
 
       localStorage.setItem(CACHE_FLAG_KEY, 'true');
       isInitializing = false;
